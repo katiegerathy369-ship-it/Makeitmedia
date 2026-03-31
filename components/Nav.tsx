@@ -1,0 +1,164 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import CalButton from './CalButton'
+import { usePathname } from 'next/navigation'
+import { useAnimate } from 'framer-motion'
+
+export default function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const isWork = pathname === '/work'
+  const s = isWork ? '/' : ''
+  const [scope, animate] = useAnimate()
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sequence = async () => {
+      await animate('#logo-circle', { strokeDashoffset: [157, 0] }, { duration: 0.9, ease: [0.4, 0, 0.2, 1] })
+      animate('#logo-stem', { strokeDashoffset: [74, 0] }, { duration: 0.7, ease: [0.4, 0, 0.2, 1] })
+      await animate('#logo-leaf1', { opacity: [0, 1] }, { duration: 0.5, delay: 0.1 })
+      await animate('#logo-leaf2', { opacity: [0, 1] }, { duration: 0.5 })
+      animate('#logo-dot', { opacity: [0, 1], scale: [0, 1] }, { duration: 0.35 })
+    }
+    sequence()
+  }, [])
+
+  const linkClass =
+    'font-body text-[14px] font-normal text-ink-mid tracking-[0.02em] no-underline hover:text-sage-dark transition-colors duration-200'
+  const activeLinkClass =
+    'font-body text-[14px] font-medium text-ink tracking-[0.02em] no-underline'
+
+  return (
+    <nav
+      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between backdrop-blur-md border-b border-sage/20 transition-all duration-300"
+      style={{
+        padding: scrolled ? '14px 48px' : '20px 48px',
+        background: 'rgba(250,248,244,0.85)',
+      }}
+    >
+      <Link href="/" className="flex-shrink-0">
+        <div
+          ref={scope}
+          style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
+        >
+          {/* Botanical mark */}
+          <svg
+            width={52}
+            height={62}
+            viewBox="0 0 56 68"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle
+              id="logo-circle"
+              cx="28"
+              cy="28"
+              r="22"
+              stroke="#4a6e57"
+              strokeWidth="2.2"
+              strokeDasharray="157"
+              strokeDashoffset="157"
+            />
+            <line
+              id="logo-stem"
+              x1="28"
+              y1="66"
+              x2="28"
+              y2="2"
+              stroke="#4a6e57"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeDasharray="74"
+              strokeDashoffset="74"
+            />
+            <path
+              id="logo-leaf1"
+              d="M28 36 C18 29 10 25 10 14 C18 14 28 22 28 36Z"
+              fill="#4a6e57"
+              opacity={0}
+            />
+            <path
+              id="logo-leaf2"
+              d="M28 22 C38 14 46 11 48 2 C40 3 28 11 28 22Z"
+              fill="#7a9e87"
+              opacity={0}
+            />
+            <circle
+              id="logo-dot"
+              cx="28"
+              cy="2"
+              r="4"
+              fill="#4a6e57"
+              style={{ opacity: 0, transform: 'scale(0)', transformOrigin: '28px 2px' }}
+            />
+          </svg>
+
+          {/* Vertical divider */}
+          <div style={{ width: '1px', height: '40px', background: 'rgba(42,37,32,0.15)' }} />
+
+          {/* Wordmark */}
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '22px',
+                fontWeight: 600,
+                color: '#2a2520',
+                letterSpacing: '0.02em',
+              }}
+            >
+              make it
+            </span>
+            <span
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '22px',
+                fontWeight: 600,
+                fontStyle: 'italic',
+                color: '#4a6e57',
+                letterSpacing: '0.02em',
+              }}
+            >
+              media
+            </span>
+          </div>
+        </div>
+      </Link>
+
+      <ul className="hidden md:flex items-center gap-9 list-none">
+        <li>
+          <a href={`${s}#services`} className={linkClass}>
+            Services
+          </a>
+        </li>
+        <li>
+          <Link href="/work" className={isWork ? activeLinkClass : linkClass}>
+            Portfolio
+          </Link>
+        </li>
+        <li>
+          <a href={`${s}#about`} className={linkClass}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href={`${s}#faq`} className={linkClass}>
+            FAQ
+          </a>
+        </li>
+        <li>
+          <CalButton className="font-body text-[13px] font-medium tracking-[0.03em] no-underline px-[22px] py-[10px] rounded-full bg-sage-dark text-white hover:bg-ink hover:-translate-y-px transition-all duration-200 border-none cursor-pointer">
+            Book a call
+          </CalButton>
+        </li>
+      </ul>
+    </nav>
+  )
+}

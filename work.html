@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Make It Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7a9e87;
+    --sage-light: #b8d4c0;
+    --sage-dark: #4a6e57;
+    --sage-pale: #edf4ef;
+    --terra: #c4714a;
+    --terra-light: #e8b49a;
+    --terra-pale: #faf0eb;
+    --cream: #faf8f4;
+    --warm-white: #f5f2ec;
+    --ink: #2a2520;
+    --ink-mid: #5a524a;
+    --ink-light: #8a8078;
+    --border: rgba(122,158,135,0.2);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250,248,244,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--sage-dark); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sage-dark); }
+  .nav-links a.active { color: var(--ink); font-weight: 500; }
+
+  .nav-cta {
+    background: var(--sage-dark);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.03em !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--ink) !important;
+    transform: translateY(-1px);
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: 160px 0 80px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .blob-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(184,212,192,0.3) 0%, transparent 70%);
+    top: -100px; right: -80px;
+  }
+
+  .blob-2 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(232,180,154,0.18) 0%, transparent 70%);
+    bottom: -60px; left: 100px;
+  }
+
+  .page-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage-pale);
+    border: 1px solid var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .page-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--sage);
+    border-radius: 50%;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  .page-title em { font-style: italic; color: var(--sage-dark); }
+
+  .page-hero-right {
+    padding-bottom: 12px;
+  }
+
+  .page-desc {
+    font-size: 17px;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .hero-stats-row {
+    display: flex;
+    gap: 32px;
+  }
+
+  .hero-stat { display: flex; flex-direction: column; gap: 2px; }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--cream);
+    position: sticky;
+    top: 65px;
+    z-index: 90;
+    backdrop-filter: blur(8px);
+    background: rgba(250,248,244,0.92);
+  }
+
+  .filter-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .filter-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 400;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--ink-mid);
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .filter-pill:hover {
+    border-color: var(--sage);
+    color: var(--sage-dark);
+    background: var(--sage-pale);
+  }
+
+  .filter-pill.active {
+    background: var(--sage-dark);
+    border-color: var(--sage-dark);
+    color: #fff;
+  }
+
+  .filter-pill .pill-count {
+    font-size: 11px;
+    opacity: 0.65;
+  }
+
+  .filter-right {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  .filter-right span {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── WORK GRID ── */
+  .work-section {
+    padding: 72px 0 120px;
+  }
+
+  /* Section divider label */
+  .work-section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .work-section-label-text {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+
+  .work-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Main grid */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  /* Cards */
+  .work-card {
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(42,37,32,0.09);
+  }
+
+  .work-card.full-width {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  /* Browser mockup */
+  .browser-wrap {
+    background: #e8e5e0;
+    padding: 14px 14px 0;
+  }
+
+  .work-card.full-width .browser-wrap {
+    padding: 18px 18px 0;
+  }
+
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .b-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .b-dot:nth-child(1) { background: #ff6058; }
+  .b-dot:nth-child(2) { background: #ffbd2e; }
+  .b-dot:nth-child(3) { background: #28c840; }
+
+  .b-url {
+    flex: 1;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    height: 18px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .b-url-text {
+    font-size: 9px;
+    color: var(--ink-light);
+    font-family: var(--font-body);
+    letter-spacing: 0.01em;
+  }
+
+  .browser-screen {
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+
+  .work-card.full-width .browser-screen { aspect-ratio: 16/9; border-radius: 8px 8px 0 0; }
+
+  /* ── SITE PREVIEWS — CSS illustrations ── */
+  .site-preview {
+    width: 100%; height: 100%;
+    position: relative; overflow: hidden;
+  }
+
+  /* Shared preview nav */
+  .pv-nav {
+    height: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  .pv-logo { width: 38px; height: 5px; border-radius: 2px; opacity: 0.55; }
+  .pv-nav-links { display: flex; gap: 5px; margin-left: auto; }
+  .pv-nav-link { width: 18px; height: 4px; border-radius: 1px; background: var(--ink-light); opacity: 0.2; }
+
+  .pv-hero { padding: 14px 12px 0; position: relative; }
+  .pv-eyebrow { width: 56px; height: 5px; border-radius: 2px; opacity: 0.45; margin-bottom: 8px; }
+  .pv-h1 { height: 8px; border-radius: 2px; opacity: 0.2; margin-bottom: 5px; }
+  .pv-h1.w-90 { width: 90%; }
+  .pv-h1.w-75 { width: 75%; }
+  .pv-h1.w-55 { width: 55%; }
+  .pv-body { height: 4px; border-radius: 1px; opacity: 0.15; margin-bottom: 4px; }
+  .pv-body.w-100 { width: 100%; }
+  .pv-body.w-80 { width: 80%; }
+  .pv-body.w-60 { width: 60%; }
+  .pv-ctas { display: flex; gap: 7px; margin-top: 10px; }
+  .pv-cta { height: 14px; border-radius: 7px; opacity: 0.65; }
+  .pv-cta.primary { width: 58px; }
+  .pv-cta.ghost { width: 42px; background: transparent !important; border-width: 1.5px; border-style: solid; opacity: 0.35; }
+  .pv-img { position: absolute; right: 0; top: 0; bottom: 0; width: 36%; }
+
+  /* Amy — naturopath, sage green */
+  .pv-amy { background: linear-gradient(155deg, #f0f7f2 0%, #e6f2ea 100%); }
+  .pv-amy .pv-nav { background: rgba(255,255,255,0.92); border-color: rgba(122,158,135,0.12); }
+  .pv-amy .pv-logo { background: var(--sage-dark); }
+  .pv-amy .pv-eyebrow { background: var(--sage); }
+  .pv-amy .pv-h1 { background: var(--ink); }
+  .pv-amy .pv-body { background: var(--ink-mid); }
+  .pv-amy .pv-cta.primary { background: var(--sage-dark); }
+  .pv-amy .pv-cta.ghost { border-color: var(--sage); }
+  .pv-amy .pv-img { background: linear-gradient(135deg, #9fd4b2 0%, #d4eddc 100%); opacity: 0.55; }
+
+  /* Nutritionist — warm amber */
+  .pv-nutri { background: linear-gradient(155deg, #fdf8f0 0%, #faf2e2 100%); }
+  .pv-nutri .pv-nav { background: rgba(255,255,255,0.92); border-color: rgba(196,154,74,0.12); }
+  .pv-nutri .pv-logo { background: #7a5c10; }
+  .pv-nutri .pv-eyebrow { background: #c49a4a; }
+  .pv-nutri .pv-h1 { background: #3a2e18; }
+  .pv-nutri .pv-body { background: #7a6a4a; }
+  .pv-nutri .pv-cta.primary { background: #7a5c10; }
+  .pv-nutri .pv-cta.ghost { border-color: #c49a4a; }
+  .pv-nutri .pv-img { background: linear-gradient(135deg, #f5d48a 0%, #fef0c8 100%); opacity: 0.6; }
+
+  /* Women's coach — blush rose */
+  .pv-coach { background: linear-gradient(155deg, #fdf4f4 0%, #faeaea 100%); }
+  .pv-coach .pv-nav { background: rgba(255,255,255,0.92); border-color: rgba(196,113,74,0.12); }
+  .pv-coach .pv-logo { background: #9c3d4e; }
+  .pv-coach .pv-eyebrow { background: #c4666e; }
+  .pv-coach .pv-h1 { background: #3a2020; }
+  .pv-coach .pv-body { background: #7a5050; }
+  .pv-coach .pv-cta.primary { background: #9c3d4e; }
+  .pv-coach .pv-cta.ghost { border-color: #c4666e; }
+  .pv-coach .pv-img { background: linear-gradient(135deg, #f5a8b4 0%, #fde0e4 100%); opacity: 0.6; }
+
+  /* Integrative GP — deep navy */
+  .pv-gp { background: linear-gradient(155deg, #f0f2f8 0%, #e8ecf6 100%); }
+  .pv-gp .pv-nav { background: rgba(255,255,255,0.95); border-color: rgba(74,90,140,0.12); }
+  .pv-gp .pv-logo { background: #1e2c5e; }
+  .pv-gp .pv-eyebrow { background: #4a5a8c; }
+  .pv-gp .pv-h1 { background: #1a2040; }
+  .pv-gp .pv-body { background: #4a5070; }
+  .pv-gp .pv-cta.primary { background: #1e2c5e; }
+  .pv-gp .pv-cta.ghost { border-color: #4a5a8c; }
+  .pv-gp .pv-img { background: linear-gradient(135deg, #a0b0e0 0%, #dce4f5 100%); opacity: 0.6; }
+
+  /* Placeholder — coming soon */
+  .pv-placeholder {
+    background: var(--warm-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .placeholder-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholder-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .placeholder-line {
+    height: 5px;
+    border-radius: 2px;
+    background: var(--border);
+  }
+
+  .placeholder-line.w-60 { width: 60px; }
+  .placeholder-line.w-40 { width: 40px; }
+
+  /* Card info */
+  .card-info {
+    padding: 24px 28px 28px;
+  }
+
+  .work-card.full-width .card-info {
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border-radius: 100px;
+  }
+
+  .tag-live { background: var(--sage-pale); color: var(--sage-dark); border: 1px solid var(--sage-light); }
+  .tag-concept { background: var(--terra-pale); color: var(--terra); border: 1px solid var(--terra-light); }
+  .tag-coming { background: var(--warm-white); color: var(--ink-light); border: 1px solid var(--border); }
+  .tag-type { background: #fff; color: var(--ink-mid); border: 1px solid var(--border); }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  .work-card.full-width .card-title { font-size: 30px; margin-bottom: 8px; }
+
+  .card-practice {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-weight: 300;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .work-card.full-width .card-practice { font-size: 15px; margin-bottom: 20px; }
+
+  .card-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .card-pill {
+    font-size: 11px;
+    color: var(--ink-mid);
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sage-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-light);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .card-link:hover { color: var(--ink); border-color: var(--ink); }
+  .card-link svg { transition: transform 0.2s; }
+  .card-link:hover svg { transform: translateX(3px); }
+
+  .card-link-muted {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  /* Coming soon card state */
+  .work-card.coming-soon {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .work-card.coming-soon:hover { transform: none; box-shadow: none; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    margin-top: 80px;
+    background: var(--sage-dark);
+    border-radius: 24px;
+    padding: 56px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-strip::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-strip-left { max-width: 540px; }
+
+  .cta-strip-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 12px;
+  }
+
+  .cta-strip-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .cta-strip-title em { font-style: italic; color: var(--sage-light); }
+
+  .cta-strip-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    background: #fff;
+    color: var(--sage-dark);
+    padding: 15px 32px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .btn-primary:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--sage-light); font-style: italic; }
+  footer p { font-size: 13px; font-weight: 300; }
+
+  footer a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: rgba(255,255,255,0.85); }
+  .footer-links { display: flex; gap: 24px; }
+
+  /* ── REVEAL ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: none; }
+
+  .stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+  .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.08s; }
+  .stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.16s; }
+  .stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.24s; }
+  .stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.32s; }
+  .stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.40s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .container { padding: 0 24px; }
+    .page-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .hero-stats-row { gap: 24px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-card.full-width { grid-column: 1; grid-template-columns: 1fr; }
+    .cta-strip { flex-direction: column; padding: 40px 32px; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .filter-bar { top: 57px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">make it <span>media</span></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/work" class="active">Work</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact" class="nav-cta">Book a call</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-blob blob-1"></div>
+  <div class="page-hero-blob blob-2"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-eyebrow">Portfolio</div>
+        <h1 class="page-title">Sites that<br>actually <em>work</em></h1>
+      </div>
+      <div class="page-hero-right">
+        <p class="page-desc">Every site here is built custom — no templates, no drag-and-drop, no shortcuts. One live client, three concept designs showing the range of what's possible across different practice types.</p>
+        <div class="hero-stats-row">
+          <div class="hero-stat">
+            <span class="hero-stat-num">1</span>
+            <span class="hero-stat-label">live client site</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">3</span>
+            <span class="hero-stat-label">concept designs</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">2–3</span>
+            <span class="hero-stat-label">week delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <div class="filter-pills" id="filters">
+        <button class="filter-pill active" data-filter="all" onclick="filterWork('all', this)">All work <span class="pill-count">(4)</span></button>
+        <button class="filter-pill" data-filter="live" onclick="filterWork('live', this)">Live sites <span class="pill-count">(1)</span></button>
+        <button class="filter-pill" data-filter="concept" onclick="filterWork('concept', this)">Concept designs <span class="pill-count">(3)</span></button>
+        <button class="filter-pill" data-filter="naturopath" onclick="filterWork('naturopath', this)">Naturopath</button>
+        <button class="filter-pill" data-filter="nutritionist" onclick="filterWork('nutritionist', this)">Nutritionist</button>
+        <button class="filter-pill" data-filter="coach" onclick="filterWork('coach', this)">Health coach</button>
+        <button class="filter-pill" data-filter="gp" onclick="filterWork('gp', this)">Integrative GP</button>
+      </div>
+      <div class="filter-right">Showing <span id="count">4</span> projects</div>
+    </div>
+  </div>
+</div>
+
+<!-- WORK GRID -->
+<section class="work-section">
+  <div class="container">
+
+    <!-- LIVE WORK -->
+    <div class="work-section-label reveal">
+      <span class="work-section-label-text">Live client work</span>
+      <div class="work-section-label-line"></div>
+    </div>
+
+    <div class="work-grid stagger" id="work-grid">
+
+      <!-- Amy Angus — LIVE, full width -->
+      <a href="/work/amy-angus" class="work-card full-width" data-tags="live naturopath">
+        <div class="browser-wrap">
+          <div class="browser-bar">
+            <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+            <div class="b-url"><span class="b-url-text">amy-angus-naturopathy.com.au</span></div>
+          </div>
+          <div class="browser-screen">
+            <div class="site-preview pv-amy">
+              <div class="pv-nav">
+                <div class="pv-logo"></div>
+                <div class="pv-nav-links">
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                </div>
+              </div>
+              <div class="pv-hero">
+                <div class="pv-eyebrow"></div>
+                <div class="pv-h1 w-75"></div>
+                <div class="pv-h1 w-90"></div>
+                <div class="pv-h1 w-55"></div>
+                <div class="pv-body w-100" style="margin-top:8px;"></div>
+                <div class="pv-body w-80"></div>
+                <div class="pv-ctas">
+                  <div class="pv-cta primary"></div>
+                  <div class="pv-cta ghost"></div>
+                </div>
+                <div class="pv-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-tags">
+            <span class="tag tag-live">✦ Live site</span>
+            <span class="tag tag-type">Naturopath</span>
+            <span class="tag tag-type">Brisbane</span>
+          </div>
+          <div class="card-title">Amy Angus Naturopathy</div>
+          <div class="card-practice">Naturopath · Brisbane, QLD · Tier 2 — Visibility package</div>
+          <div class="card-pills">
+            <span class="card-pill">6-page custom website</span>
+            <span class="card-pill">AI copywriting</span>
+            <span class="card-pill">Cal.com bookings</span>
+            <span class="card-pill">30-day content launch</span>
+            <span class="card-pill">Email welcome sequence</span>
+            <span class="card-pill">GA4 + Clarity setup</span>
+          </div>
+          <!-- Swap this for real link once case study page is built -->
+          <span class="card-link">
+            View case study
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- CONCEPT WORK divider — injected by JS after live section -->
+      <div class="work-section-label reveal" style="grid-column: 1 / -1; margin-top: 40px;" id="concept-divider">
+        <span class="work-section-label-text">Concept designs</span>
+        <div class="work-section-label-line"></div>
+      </div>
+
+      <!-- Concept 1 — Nutritionist -->
+      <a href="/work/concept-nutritionist" class="work-card" data-tags="concept nutritionist">
+        <div class="browser-wrap">
+          <div class="browser-bar">
+            <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+            <div class="b-url"><span class="b-url-text">concept — nutritionist</span></div>
+          </div>
+          <div class="browser-screen">
+            <div class="site-preview pv-nutri">
+              <div class="pv-nav">
+                <div class="pv-logo"></div>
+                <div class="pv-nav-links">
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                </div>
+              </div>
+              <div class="pv-hero">
+                <div class="pv-eyebrow"></div>
+                <div class="pv-h1 w-90"></div>
+                <div class="pv-h1 w-75"></div>
+                <div class="pv-body w-100" style="margin-top:8px;"></div>
+                <div class="pv-body w-60"></div>
+                <div class="pv-ctas">
+                  <div class="pv-cta primary"></div>
+                  <div class="pv-cta ghost"></div>
+                </div>
+                <div class="pv-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-tags">
+            <span class="tag tag-concept">Concept design</span>
+            <span class="tag tag-type">Nutritionist</span>
+          </div>
+          <div class="card-title">Nourish & Co.</div>
+          <div class="card-practice">Nutritionist · Warm amber palette · Tier 1 — Presence</div>
+          <div class="card-pills">
+            <span class="card-pill">6-page website</span>
+            <span class="card-pill">Booking integration</span>
+            <span class="card-pill">Lead magnet page</span>
+            <span class="card-pill">On-page SEO</span>
+          </div>
+          <!-- Replace with real link once concept site is built -->
+          <span class="card-link-muted">Case study coming soon</span>
+        </div>
+      </a>
+
+      <!-- Concept 2 — Women's health coach -->
+      <a href="/work/concept-womens-coach" class="work-card" data-tags="concept coach">
+        <div class="browser-wrap">
+          <div class="browser-bar">
+            <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+            <div class="b-url"><span class="b-url-text">concept — women's health coach</span></div>
+          </div>
+          <div class="browser-screen">
+            <div class="site-preview pv-coach">
+              <div class="pv-nav">
+                <div class="pv-logo"></div>
+                <div class="pv-nav-links">
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                </div>
+              </div>
+              <div class="pv-hero">
+                <div class="pv-eyebrow"></div>
+                <div class="pv-h1 w-55"></div>
+                <div class="pv-h1 w-90"></div>
+                <div class="pv-body w-80" style="margin-top:8px;"></div>
+                <div class="pv-body w-100"></div>
+                <div class="pv-ctas">
+                  <div class="pv-cta primary"></div>
+                  <div class="pv-cta ghost"></div>
+                </div>
+                <div class="pv-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-tags">
+            <span class="tag tag-concept">Concept design</span>
+            <span class="tag tag-type">Health coach</span>
+          </div>
+          <div class="card-title">Bloom Health Coaching</div>
+          <div class="card-practice">Women's health coach · Blush rose palette · Tier 2 — Visibility</div>
+          <div class="card-pills">
+            <span class="card-pill">6-page website</span>
+            <span class="card-pill">Brand messaging</span>
+            <span class="card-pill">Instagram launch kit</span>
+            <span class="card-pill">Email sequence</span>
+          </div>
+          <span class="card-link-muted">Case study coming soon</span>
+        </div>
+      </a>
+
+      <!-- Concept 3 — Integrative GP -->
+      <a href="/work/concept-integrative-gp" class="work-card" data-tags="concept gp">
+        <div class="browser-wrap">
+          <div class="browser-bar">
+            <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+            <div class="b-url"><span class="b-url-text">concept — integrative GP</span></div>
+          </div>
+          <div class="browser-screen">
+            <div class="site-preview pv-gp">
+              <div class="pv-nav">
+                <div class="pv-logo"></div>
+                <div class="pv-nav-links">
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                  <div class="pv-nav-link"></div>
+                </div>
+              </div>
+              <div class="pv-hero">
+                <div class="pv-eyebrow"></div>
+                <div class="pv-h1 w-75"></div>
+                <div class="pv-h1 w-90"></div>
+                <div class="pv-h1 w-55"></div>
+                <div class="pv-body w-100" style="margin-top:8px;"></div>
+                <div class="pv-body w-80"></div>
+                <div class="pv-ctas">
+                  <div class="pv-cta primary"></div>
+                  <div class="pv-cta ghost"></div>
+                </div>
+                <div class="pv-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-tags">
+            <span class="tag tag-concept">Concept design</span>
+            <span class="tag tag-type">Integrative GP</span>
+          </div>
+          <div class="card-title">Meridian Integrative Medicine</div>
+          <div class="card-practice">Integrative GP · Deep navy palette · Tier 1 — Presence</div>
+          <div class="card-pills">
+            <span class="card-pill">6-page website</span>
+            <span class="card-pill">Patient intake flow</span>
+            <span class="card-pill">SEO foundations</span>
+            <span class="card-pill">Analytics setup</span>
+          </div>
+          <span class="card-link-muted">Case study coming soon</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip reveal">
+      <div class="cta-strip-left">
+        <p class="cta-strip-eyebrow">Ready to be next?</p>
+        <h2 class="cta-strip-title">Your practice could be<br><em>on this page.</em></h2>
+        <p class="cta-strip-sub">3 founding client spots remaining at current rates. Book a free 30-minute discovery call — no pressure, just an honest conversation.</p>
+      </div>
+      <a href="/#contact" class="btn-primary">
+        Book a discovery call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">make it <span>media</span></a>
+  <p>© 2026 Make It Media. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy policy</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal, .stagger');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav shrink
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.padding = window.scrollY > 50 ? '14px 48px' : '20px 48px';
+  });
+
+  // Filter
+  function filterWork(filter, btn) {
+    // Update active pill
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.work-card');
+    const divider = document.getElementById('concept-divider');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const tags = card.getAttribute('data-tags') || '';
+      const show = filter === 'all' || tags.includes(filter);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Hide concept divider if only showing live
+    if (divider) {
+      divider.style.display = (filter === 'live') ? 'none' : '';
+    }
+
+    document.getElementById('count').textContent = visible;
+  }
+</script>
+</body>
+</html>

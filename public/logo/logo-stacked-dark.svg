@@ -1,0 +1,22 @@
+<svg width="140" height="132" viewBox="0 0 140 132" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="70" cy="36" r="28" fill="none" stroke="#b8d4c0" stroke-width="2.2"/>
+  <line x1="70" y1="78" x2="70" y2="2" stroke="#b8d4c0" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M70 46 C57 38 47 33 47 20 C57 20 70 29 70 46Z" fill="#7a9e87"/>
+  <path d="M70 28 C83 20 93 16 95 6 C85 7 70 16 70 28Z" fill="rgba(184,212,192,0.55)"/>
+  <circle cx="70" cy="2" r="4" fill="#b8d4c0"/>
+  <text x="70" y="100"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    font-size="24"
+    font-weight="400"
+    fill="rgba(255,255,255,0.92)"
+    letter-spacing="1.5"
+    text-anchor="middle">make it</text>
+  <text x="70" y="126"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    font-size="24"
+    font-style="italic"
+    font-weight="400"
+    fill="#b8d4c0"
+    letter-spacing="1.5"
+    text-anchor="middle">media</text>
+</svg>

@@ -1,0 +1,24 @@
+/* ── She Thrives Co. — Design Tokens ─────────────────────────────────────── */
+
+.sheThrivesRoot {
+  --blush: #f2d4cc;
+  --blush-deep: #e8b4a8;
+  --blush-pale: #fdf4f0;
+  --rose: #c4706a;
+  --rose-dark: #9a4a44;
+  --rose-pale: #fae8e4;
+  --cream: #fdfaf6;
+  --warm: #f8f2e8;
+  --sand: #e8dcc8;
+  --ink: #1e1412;
+  --ink-mid: #5a4a44;
+  --ink-light: #9a8a84;
+  --gold: #c8a060;
+  --gold-light: #e8c888;
+
+  color: var(--ink);
+  background: var(--cream);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

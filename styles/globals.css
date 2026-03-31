@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS VARIABLES ── */
+:root {
+  --sage: #7a9e87;
+  --sage-light: #b8d4c0;
+  --sage-dark: #4a6e57;
+  --sage-pale: #edf4ef;
+  --terra: #c4714a;
+  --terra-light: #e8b49a;
+  --terra-pale: #faf0eb;
+  --cream: #faf8f4;
+  --warm-white: #f5f2ec;
+  --ink: #2a2520;
+  --ink-mid: #5a524a;
+  --ink-light: #8a8078;
+  --border: rgba(122, 158, 135, 0.2);
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+/* ── BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.4;
+}
+
+/* ── HERO EYEBROW DOT ── */
+.hero-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--sage);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* ── ACCENT UNDERLINE ── */
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--terra-light);
+  border-radius: 2px;
+}
+
+/* ── CARD FEATURE CHECK ICONS ── */
+.feature-check::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--sage-pale);
+  border: 1.5px solid var(--sage);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%234a6e57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px 6px;
+}
+
+.feature-check-white::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%23ffffff' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px 6px;
+}
+
+/* ── QUALIFY CHECK ── */
+.qualify-check::before {
+  content: '✓';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sage-pale);
+  border: 1.5px solid var(--sage);
+  color: var(--sage-dark);
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── ABOUT IMAGE PATTERN ── */
+.about-img-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(122,158,135,0.15)' stroke-width='1'/%3E%3C/svg%3E") repeat;
+  background-size: 60px 60px;
+}
+
+/* ── PROCESS CONNECTOR LINE ── */
+.step-connector::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -16px;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, var(--sage-light), transparent);
+}
+
+/* ── SELECT CUSTOM ARROW ── */
+.form-select-custom {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px !important;
+}
+
+.form-select-custom option {
+  background: var(--sage-dark);
+  color: #fff;
+}
+
+/* ── STUDENT CARD TOP ACCENT ── */
+.student-card-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--sage), var(--sage-light));
+}
+
+/* ── PAGE EYEBROW DOT (work page hero) ── */
+.page-eyebrow-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--sage);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* ── BROWSER MOCKUP CHROME ── */
+.browser-wrap {
+  background: #e8e5e0;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.b-dot { width: 9px; height: 9px; border-radius: 50%; }
+.b-dot:nth-child(1) { background: #ff6058; }
+.b-dot:nth-child(2) { background: #ffbd2e; }
+.b-dot:nth-child(3) { background: #28c840; }
+
+.b-url {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  height: 18px;
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.b-url-text {
+  font-size: 9px;
+  color: var(--ink-light);
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+}
+
+/* ── SITE PREVIEW SKELETONS ── */
+.site-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pv-nav {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.pv-logo { width: 38px; height: 5px; border-radius: 2px; opacity: 0.55; }
+.pv-nav-links { display: flex; gap: 5px; margin-left: auto; }
+.pv-nav-link { width: 18px; height: 4px; border-radius: 1px; background: var(--ink-light); opacity: 0.2; }
+
+.pv-hero { padding: 14px 12px 0; position: relative; }
+.pv-eyebrow { width: 56px; height: 5px; border-radius: 2px; opacity: 0.45; margin-bottom: 8px; }
+.pv-h1 { height: 8px; border-radius: 2px; opacity: 0.2; margin-bottom: 5px; }
+.pv-h1.w-90 { width: 90%; }
+.pv-h1.w-75 { width: 75%; }
+.pv-h1.w-55 { width: 55%; }
+.pv-body { height: 4px; border-radius: 1px; opacity: 0.15; margin-bottom: 4px; }
+.pv-body.w-100 { width: 100%; }
+.pv-body.w-80 { width: 80%; }
+.pv-body.w-60 { width: 60%; }
+.pv-ctas { display: flex; gap: 7px; margin-top: 10px; }
+.pv-cta { height: 14px; border-radius: 7px; opacity: 0.65; }
+.pv-cta.primary { width: 58px; }
+.pv-cta.ghost {
+  width: 42px;
+  background: transparent !important;
+  border-width: 1.5px;
+  border-style: solid;
+  opacity: 0.35;
+}
+.pv-img { position: absolute; right: 0; top: 0; bottom: 0; width: 36%; }
+
+/* Amy — naturopath, sage green */
+.pv-amy { background: linear-gradient(155deg, #f0f7f2 0%, #e6f2ea 100%); }
+.pv-amy .pv-nav { background: rgba(255,255,255,0.92); border-color: rgba(122,158,135,0.12); }
+.pv-amy .pv-logo { background: var(--sage-dark); }
+.pv-amy .pv-eyebrow { background: var(--sage); }
+.pv-amy .pv-h1 { background: var(--ink); }
+.pv-amy .pv-body { background: var(--ink-mid); }
+.pv-amy .pv-cta.primary { background: var(--sage-dark); }
+.pv-amy .pv-cta.ghost { border-color: var(--sage); }
+.pv-amy .pv-img { background: linear-gradient(135deg, #9fd4b2 0%, #d4eddc 100%); opacity: 0.55; }
+
+/* Nutritionist — Nourish & Co. retro-playful */
+.pv-nutri { background: #f5f0e8; }
+.pv-nutri .pv-nav { background: #2d5a27; border-color: #1a1a0e; }
+.pv-nutri .pv-logo { background: #f2c94c; }
+.pv-nutri .pv-nav-link { background: rgba(255,255,255,0.5); }
+.pv-nutri .pv-eyebrow { background: #f2c94c; border-radius: 3px; }
+.pv-nutri .pv-h1 { background: #1a1a0e; }
+.pv-nutri .pv-body { background: rgba(26,26,14,0.25); }
+.pv-nutri .pv-cta.primary { background: #2d5a27; box-shadow: 2px 2px 0 #1a1a0e; border-radius: 3px; }
+.pv-nutri .pv-cta.ghost { border-color: #1a1a0e; border-radius: 3px; }
+.pv-nutri .pv-img { background: linear-gradient(160deg, #fde8ee 0%, #f4c5d0 50%, #e8b8c8 100%); border: 2px solid #1a1a0e; border-radius: 5px; box-shadow: 3px 3px 0 #1a1a0e; opacity: 1; }
+
+/* Women's coach — blush rose */
+.pv-coach { background: linear-gradient(155deg, #fdf4f4 0%, #faeaea 100%); }
+.pv-coach .pv-nav { background: rgba(255,255,255,0.92); border-color: rgba(196,113,74,0.12); }
+.pv-coach .pv-logo { background: #9c3d4e; }
+.pv-coach .pv-eyebrow { background: #c4666e; }
+.pv-coach .pv-h1 { background: #3a2020; }
+.pv-coach .pv-body { background: #7a5050; }
+.pv-coach .pv-cta.primary { background: #9c3d4e; }
+.pv-coach .pv-cta.ghost { border-color: #c4666e; }
+.pv-coach .pv-img { background: linear-gradient(135deg, #f5a8b4 0%, #fde0e4 100%); opacity: 0.6; }
+
+/* Integrative GP — deep navy */
+.pv-gp { background: linear-gradient(155deg, #f0f2f8 0%, #e8ecf6 100%); }
+.pv-gp .pv-nav { background: rgba(255,255,255,0.95); border-color: rgba(74,90,140,0.12); }
+.pv-gp .pv-logo { background: #1e2c5e; }
+.pv-gp .pv-eyebrow { background: #4a5a8c; }
+.pv-gp .pv-h1 { background: #1a2040; }
+.pv-gp .pv-body { background: #4a5070; }
+.pv-gp .pv-cta.primary { background: #1e2c5e; }
+.pv-gp .pv-cta.ghost { border-color: #4a5a8c; }
+.pv-gp .pv-img { background: linear-gradient(135deg, #a0b0e0 0%, #dce4f5 100%); opacity: 0.6; }
+
+/* ── MARQUEE ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+

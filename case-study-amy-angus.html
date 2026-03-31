@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amy Angus Naturopathy — Case Study | Make It Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage:#7a9e87;--sage-light:#b8d4c0;--sage-dark:#4a6e57;
+    --sage-pale:#edf4ef;--terra:#c4714a;--terra-light:#e8b49a;
+    --terra-pale:#faf0eb;--cream:#faf8f4;--warm-white:#f5f2ec;
+    --ink:#2a2520;--ink-mid:#5a524a;--ink-light:#8a8078;
+    --border:rgba(122,158,135,0.2);
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --radius:16px;--radius-sm:8px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+  body::before{
+    content:'';position:fixed;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none;z-index:999;opacity:0.4;
+  }
+
+  /* ── NAV ── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 48px;display:flex;align-items:center;justify-content:space-between;
+    background:rgba(42,37,32,0.92);backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);
+    transition:padding 0.3s;
+  }
+  .nav-logo{font-family:var(--font-display);font-size:22px;font-weight:500;color:rgba(255,255,255,0.92);letter-spacing:0.01em;text-decoration:none;}
+  .nav-logo span{color:var(--sage-light);font-style:italic;}
+  .nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+  .nav-links a{font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;}
+  .nav-links a:hover{color:rgba(255,255,255,0.9);}
+  .nav-cta{background:var(--sage-dark);color:#fff !important;padding:10px 22px;border-radius:100px;font-weight:500 !important;font-size:13px !important;transition:background 0.2s,transform 0.15s !important;}
+  .nav-cta:hover{background:var(--ink) !important;transform:translateY(-1px);}
+
+  .container{max-width:1120px;margin:0 auto;padding:0 48px;}
+
+  /* ── HERO ── */
+  .case-hero{
+    padding:140px 0 80px;
+    background:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .case-hero::before{
+    content:'';position:absolute;top:-200px;right:-200px;
+    width:700px;height:700px;
+    background:radial-gradient(circle,rgba(122,158,135,0.08) 0%,transparent 70%);
+    border-radius:50%;pointer-events:none;
+  }
+  .case-hero::after{
+    content:'';position:absolute;bottom:-100px;left:-100px;
+    width:400px;height:400px;
+    background:radial-gradient(circle,rgba(196,113,74,0.06) 0%,transparent 70%);
+    border-radius:50%;pointer-events:none;
+  }
+
+  .case-hero-inner{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:80px;align-items:center;
+  }
+
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:400;color:rgba(255,255,255,0.4);
+    text-decoration:none;margin-bottom:28px;
+    transition:color 0.2s;letter-spacing:0.02em;
+  }
+  .back-link:hover{color:var(--sage-light);}
+  .back-link svg{transition:transform 0.2s;}
+  .back-link:hover svg{transform:translateX(-3px);}
+
+  .case-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(184,212,192,0.1);border:1px solid rgba(184,212,192,0.2);
+    color:var(--sage-light);font-size:11px;font-weight:500;
+    letter-spacing:0.1em;text-transform:uppercase;
+    padding:5px 14px;border-radius:100px;margin-bottom:20px;
+  }
+
+  .case-title{
+    font-family:var(--font-display);
+    font-size:clamp(44px,5.5vw,68px);
+    font-weight:400;line-height:1.08;
+    color:#fff;margin-bottom:20px;
+  }
+  .case-title em{font-style:italic;color:var(--sage-light);}
+
+  .case-desc{
+    font-size:16px;color:rgba(255,255,255,0.6);
+    font-weight:300;line-height:1.75;margin-bottom:36px;
+  }
+
+  .case-meta-row{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+
+  .meta-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:100px;padding:7px 14px;
+    font-size:12px;color:rgba(255,255,255,0.6);font-weight:400;
+  }
+  .meta-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--sage);}
+
+  /* Hero visual — browser mockup placeholder */
+  .hero-mockup{
+    position:relative;
+    animation:fadeUp 0.7s ease 0.2s both;
+  }
+
+  .browser-frame{
+    background:#e8e5e0;border-radius:16px;
+    padding:14px 14px 0;
+    box-shadow:0 32px 80px rgba(0,0,0,0.4);
+  }
+
+  .browser-bar{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+  .b-dot{width:9px;height:9px;border-radius:50%;}
+  .b-dot:nth-child(1){background:#ff6058;}
+  .b-dot:nth-child(2){background:#ffbd2e;}
+  .b-dot:nth-child(3){background:#28c840;}
+  .b-url{
+    flex:1;background:rgba(255,255,255,0.5);border-radius:4px;
+    height:18px;margin-left:6px;display:flex;align-items:center;padding:0 10px;
+  }
+  .b-url-text{font-size:9px;color:var(--ink-light);font-family:var(--font-body);}
+
+  .browser-screen{
+    border-radius:8px 8px 0 0;overflow:hidden;
+    aspect-ratio:16/10;background:var(--cream);
+    display:flex;flex-direction:column;
+  }
+
+  /* Live site preview placeholder */
+  .site-preview-placeholder{
+    width:100%;height:100%;
+    background:linear-gradient(155deg,#f0f7f2 0%,#e6f2ea 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:12px;
+    font-family:var(--font-display);font-size:16px;font-style:italic;
+    color:var(--sage-dark);
+  }
+
+  .upload-hint{
+    font-family:var(--font-body);font-size:11px;font-style:normal;
+    color:var(--sage);opacity:0.7;letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+
+  /* ── OUTCOME STATS BAR ── */
+  .stats-bar{
+    background:var(--sage-dark);padding:48px 0;
+  }
+
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:0;
+    text-align:center;
+  }
+
+  .stat-item{
+    padding:0 24px;
+    border-right:1px solid rgba(255,255,255,0.1);
+  }
+  .stat-item:last-child{border-right:none;}
+
+  .stat-num{
+    font-family:var(--font-display);font-size:52px;font-weight:400;
+    color:#fff;line-height:1;margin-bottom:6px;
+  }
+  .stat-label{
+    font-size:13px;color:rgba(255,255,255,0.55);
+    font-weight:300;letter-spacing:0.03em;
+  }
+
+  /* ── OVERVIEW ── */
+  .overview-section{padding:100px 0;background:var(--cream);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+  .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;}
+
+  .section-eyebrow{
+    font-size:11px;font-weight:500;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--terra);margin-bottom:14px;
+  }
+
+  .section-title{
+    font-family:var(--font-display);
+    font-size:clamp(32px,3.5vw,48px);
+    font-weight:400;line-height:1.12;
+    color:var(--ink);margin-bottom:16px;
+  }
+  .section-title em{font-style:italic;color:var(--sage-dark);}
+
+  .body-text{
+    font-size:15px;color:var(--ink-mid);
+    font-weight:300;line-height:1.8;margin-bottom:16px;
+  }
+  .body-text strong{font-weight:500;color:var(--ink);}
+
+  /* Challenge/solution cards */
+  .challenge-card{
+    background:#fff;border:1px solid var(--border);
+    border-radius:var(--radius);padding:28px;
+  }
+  .challenge-card-icon{
+    width:40px;height:40px;border-radius:10px;
+    background:var(--sage-pale);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;font-size:18px;
+  }
+  .challenge-card-title{
+    font-family:var(--font-display);font-size:18px;font-weight:500;
+    color:var(--ink);margin-bottom:8px;
+  }
+  .challenge-card-desc{
+    font-size:13px;color:var(--ink-light);font-weight:300;line-height:1.65;
+  }
+
+  /* ── BEFORE / AFTER ── */
+  .before-after-section{
+    padding:100px 0;background:var(--warm-white);
+  }
+
+  .ba-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:28px;margin-top:56px;
+  }
+
+  .ba-card{
+    border-radius:20px;overflow:hidden;
+    border:1px solid var(--border);
+    background:#fff;
+  }
+
+  /* Card header — label + controls row */
+  .ba-header{
+    padding:12px 16px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;border-bottom:1px solid var(--border);
+  }
+
+  .ba-header-left{display:flex;align-items:center;gap:8px;}
+
+  .ba-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .ba-card.before .ba-dot{background:var(--terra);}
+  .ba-card.after .ba-dot{background:var(--sage);}
+
+  .ba-label{
+    font-size:11px;font-weight:500;letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .ba-card.before .ba-label{color:var(--terra);}
+  .ba-card.after .ba-label{color:var(--sage-dark);}
+
+  /* Page selector dropdown */
+  .page-select{
+    font-family:var(--font-body);font-size:12px;font-weight:400;
+    color:var(--ink-mid);background:var(--warm-white);
+    border:1px solid var(--border);border-radius:100px;
+    padding:5px 28px 5px 12px;cursor:pointer;outline:none;
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a8078' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    transition:border-color 0.2s;
+    min-width:120px;
+  }
+  .page-select:hover{border-color:var(--sage);}
+  .page-select:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(122,158,135,0.1);}
+
+  /* Viewport toggle — desktop/mobile */
+  .viewport-toggle{
+    display:flex;align-items:center;gap:2px;
+    background:var(--warm-white);border:1px solid var(--border);
+    border-radius:100px;padding:3px;
+    flex-shrink:0;
+  }
+
+  .vp-btn{
+    width:28px;height:26px;border-radius:100px;
+    border:none;background:transparent;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background 0.15s;color:var(--ink-light);
+  }
+
+  .vp-btn.active{background:#fff;box-shadow:0 1px 4px rgba(42,37,32,0.1);color:var(--ink);}
+  .vp-btn:hover:not(.active){background:rgba(0,0,0,0.04);}
+
+  /* Screen area */
+  .ba-screen-wrap{
+    position:relative;overflow:hidden;
+    background:var(--warm-white);
+    transition:height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .ba-screen-wrap.desktop{aspect-ratio:4/3;}
+  .ba-screen-wrap.mobile{
+    aspect-ratio:unset;
+    height:480px;
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;background:#e8e5e0;
+  }
+
+  /* Desktop image frame */
+  .ba-img-frame{
+    width:100%;height:100%;
+    position:relative;overflow:hidden;
+  }
+
+  .ba-img-frame img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:top;
+    display:block;
+    transition:opacity 0.3s ease;
+  }
+
+  /* Mobile device frame */
+  .mobile-device{
+    width:200px;
+    background:#1a1a1a;border-radius:28px;
+    padding:10px;
+    box-shadow:0 20px 48px rgba(0,0,0,0.3);
+    position:relative;
+  }
+
+  .mobile-notch{
+    width:60px;height:18px;background:#1a1a1a;
+    border-radius:0 0 12px 12px;
+    position:absolute;top:0;left:50%;transform:translateX(-50%);
+    z-index:2;
+  }
+
+  .mobile-screen{
+    background:var(--warm-white);border-radius:20px;
+    overflow:hidden;
+    aspect-ratio:9/19;
+    position:relative;
+  }
+
+  .mobile-screen img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:top;
+    display:block;
+    transition:opacity 0.3s ease;
+  }
+
+  /* Placeholder states */
+  .ba-placeholder{
+    width:100%;height:100%;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;
+    position:absolute;inset:0;
+  }
+
+  .before .ba-placeholder{background:linear-gradient(155deg,#f5f0ea 0%,#ede8e2 100%);}
+  .after .ba-placeholder{background:linear-gradient(155deg,#f0f7f2 0%,#e6f2ea 100%);}
+
+  .placeholder-icon{font-size:28px;opacity:0.3;margin-bottom:4px;}
+
+  .placeholder-text{
+    font-family:var(--font-display);font-size:13px;
+    font-style:italic;color:var(--ink-light);opacity:0.7;
+  }
+
+  .placeholder-page{
+    font-size:10px;font-family:var(--font-body);
+    color:var(--ink-light);opacity:0.45;
+    letter-spacing:0.06em;text-transform:uppercase;
+  }
+
+  .placeholder-hint{
+    margin-top:8px;font-size:10px;font-family:var(--font-body);
+    color:var(--terra);opacity:0.5;
+    letter-spacing:0.06em;text-transform:uppercase;
+    background:var(--terra-pale);border:1px solid var(--terra-light);
+    padding:3px 10px;border-radius:100px;
+  }
+
+  /* Fade transition between pages */
+  .ba-img-frame.fading img,
+  .mobile-screen.fading img{opacity:0;}
+
+  /* BA comparison list */
+  .ba-comparison{
+    margin-top:48px;
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+
+  .ba-col-header{
+    font-size:11px;font-weight:500;letter-spacing:0.1em;
+    text-transform:uppercase;margin-bottom:16px;
+    padding-bottom:12px;border-bottom:1px solid var(--border);
+  }
+
+  .ba-col-header.before{color:var(--terra);}
+  .ba-col-header.after{color:var(--sage-dark);}
+
+  .ba-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+
+  .ba-list li{
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:13px;color:var(--ink-mid);font-weight:300;line-height:1.5;
+  }
+
+  .ba-list li::before{
+    content:'';width:16px;height:16px;border-radius:50%;
+    flex-shrink:0;margin-top:1px;
+    background-size:8px 6px;background-repeat:no-repeat;background-position:center;
+  }
+
+  .ba-list.bad li::before{
+    background-color:#faf0eb;border:1.5px solid var(--terra-light);
+    background-image:url("data:image/svg+xml,%3Csvg width='8' height='2' viewBox='0 0 8 2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h6' stroke='%23c4714a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
+  .ba-list.good li::before{
+    background-color:var(--sage-pale);border:1.5px solid var(--sage);
+    background-image:url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%234a6e57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  @media(max-width:768px){
+    .ba-grid{grid-template-columns:1fr;}
+    .ba-comparison{grid-template-columns:1fr;}
+    .ba-header{flex-wrap:wrap;gap:8px;}
+  }
+
+  /* ── DELIVERABLES ── */
+  .deliverables-section{padding:100px 0;background:var(--cream);}
+
+  .deliverables-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:20px;margin-top:56px;
+  }
+
+  .deliverable-card{
+    background:#fff;border:1px solid var(--border);
+    border-radius:var(--radius);padding:28px;
+    transition:transform 0.2s,box-shadow 0.2s;
+  }
+  .deliverable-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 32px rgba(42,37,32,0.07);
+  }
+
+  .deliverable-num{
+    font-family:var(--font-display);font-size:36px;
+    font-weight:300;color:var(--sage-light);
+    line-height:1;margin-bottom:12px;
+  }
+
+  .deliverable-title{
+    font-family:var(--font-display);font-size:20px;
+    font-weight:500;color:var(--ink);margin-bottom:8px;
+  }
+
+  .deliverable-desc{
+    font-size:13px;color:var(--ink-light);
+    font-weight:300;line-height:1.65;
+  }
+
+  /* ── PROCESS ── */
+  .process-section{
+    padding:100px 0;background:var(--sage-dark);
+    position:relative;overflow:hidden;
+  }
+
+  .process-section::before{
+    content:'';position:absolute;top:-200px;right:-200px;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);
+    border-radius:50%;pointer-events:none;
+  }
+
+  .process-section .section-eyebrow{color:var(--sage-light);}
+  .process-section .section-title{color:#fff;}
+  .process-section .section-title em{color:var(--sage-light);}
+
+  .process-timeline{
+    margin-top:64px;
+    display:flex;flex-direction:column;gap:0;
+    position:relative;
+  }
+
+  .process-timeline::before{
+    content:'';position:absolute;
+    left:28px;top:0;bottom:0;width:1px;
+    background:rgba(184,212,192,0.2);
+  }
+
+  .timeline-item{
+    display:grid;grid-template-columns:56px 1fr;
+    gap:32px;padding-bottom:48px;
+    position:relative;
+  }
+
+  .timeline-item:last-child{padding-bottom:0;}
+
+  .timeline-dot{
+    width:56px;height:56px;border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(184,212,192,0.25);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    font-family:var(--font-display);font-size:20px;
+    font-weight:500;color:var(--sage-light);
+    position:relative;z-index:1;
+  }
+
+  .timeline-content{padding-top:14px;}
+
+  .timeline-title{
+    font-family:var(--font-display);font-size:22px;
+    font-weight:500;color:#fff;margin-bottom:8px;
+  }
+
+  .timeline-desc{
+    font-size:14px;color:rgba(255,255,255,0.55);
+    font-weight:300;line-height:1.75;
+  }
+
+  .timeline-tag{
+    display:inline-block;margin-top:10px;
+    font-size:11px;font-weight:500;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--sage-light);
+    background:rgba(184,212,192,0.1);
+    border:1px solid rgba(184,212,192,0.2);
+    padding:4px 12px;border-radius:100px;
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-section{
+    padding:100px 0;background:var(--warm-white);
+  }
+
+  .testimonial-card{
+    background:#fff;border:1px solid var(--border);
+    border-radius:24px;padding:56px 64px;
+    position:relative;max-width:800px;margin:0 auto;
+    text-align:center;
+  }
+
+  .quote-mark{
+    font-family:var(--font-display);font-size:120px;
+    font-weight:300;color:var(--sage-light);
+    line-height:0.5;margin-bottom:24px;display:block;
+    opacity:0.5;
+  }
+
+  .testimonial-text{
+    font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);
+    font-weight:400;font-style:italic;color:var(--ink);
+    line-height:1.5;margin-bottom:36px;
+  }
+
+  .testimonial-placeholder{
+    font-family:var(--font-display);font-size:20px;
+    font-style:italic;color:var(--ink-light);
+    opacity:0.5;margin-bottom:24px;
+  }
+
+  .testimonial-divider{
+    width:48px;height:1px;background:var(--sage-light);
+    margin:0 auto 20px;
+  }
+
+  .testimonial-author{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+  }
+
+  .author-avatar{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--sage-light);display:flex;
+    align-items:center;justify-content:center;
+    font-family:var(--font-display);font-size:20px;
+    font-weight:500;color:var(--sage-dark);
+  }
+
+  .author-info{}
+  .author-name{font-size:14px;font-weight:500;color:var(--ink);}
+  .author-title{font-size:12px;color:var(--ink-light);font-weight:300;}
+
+  /* ── NEXT PROJECT CTA ── */
+  .next-section{
+    padding:100px 0;background:var(--ink);
+    position:relative;overflow:hidden;
+  }
+
+  .next-section::before{
+    content:'';position:absolute;top:-200px;right:-200px;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(122,158,135,0.06) 0%,transparent 70%);
+    border-radius:50%;pointer-events:none;
+  }
+
+  .next-inner{
+    display:flex;align-items:center;
+    justify-content:space-between;gap:60px;flex-wrap:wrap;
+  }
+
+  .next-left{max-width:560px;}
+
+  .next-eyebrow{
+    font-size:11px;font-weight:500;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--sage-light);margin-bottom:14px;
+  }
+
+  .next-title{
+    font-family:var(--font-display);
+    font-size:clamp(36px,4vw,52px);
+    font-weight:400;color:#fff;line-height:1.12;margin-bottom:14px;
+  }
+  .next-title em{font-style:italic;color:var(--sage-light);}
+
+  .next-sub{
+    font-size:15px;color:rgba(255,255,255,0.5);
+    font-weight:300;line-height:1.7;
+  }
+
+  .btn-primary{
+    background:#fff;color:var(--sage-dark);
+    padding:15px 32px;border-radius:100px;
+    font-family:var(--font-body);font-size:15px;font-weight:500;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+    flex-shrink:0;
+  }
+  .btn-primary:hover{
+    background:var(--cream);transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .work-nav{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:64px;padding-top:40px;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+
+  .work-nav-link{
+    display:flex;flex-direction:column;gap:4px;
+    text-decoration:none;transition:opacity 0.2s;
+    opacity:0.5;
+  }
+  .work-nav-link:hover{opacity:1;}
+  .work-nav-link.prev{align-items:flex-start;}
+  .work-nav-link.next-work{align-items:flex-end;}
+  .work-nav-dir{
+    font-size:10px;font-weight:500;letter-spacing:0.1em;
+    text-transform:uppercase;color:rgba(255,255,255,0.4);
+  }
+  .work-nav-title{
+    font-family:var(--font-display);font-size:18px;
+    font-weight:400;color:rgba(255,255,255,0.8);font-style:italic;
+  }
+
+  /* ── FOOTER ── */
+  footer{
+    background:var(--ink);color:rgba(255,255,255,0.5);
+    padding:40px 48px;display:flex;align-items:center;
+    justify-content:space-between;gap:20px;flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo{font-family:var(--font-display);font-size:20px;font-weight:500;color:rgba(255,255,255,0.85);text-decoration:none;}
+  .footer-logo span{color:var(--sage-light);font-style:italic;}
+  footer p{font-size:13px;font-weight:300;}
+  footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
+  footer a:hover{color:rgba(255,255,255,0.85);}
+  .footer-links{display:flex;gap:24px;}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  .stagger>*{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;}
+  .stagger.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:0s;}
+  .stagger.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:0.08s;}
+  .stagger.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:0.16s;}
+  .stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:0.24s;}
+  .stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:0.32s;}
+  .stagger.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:0.40s;}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    nav{padding:16px 24px;}
+    .nav-links{display:none;}
+    .container{padding:0 24px;}
+    .case-hero-inner{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;gap:48px;}
+    .three-col{grid-template-columns:1fr;}
+    .ba-grid{grid-template-columns:1fr;}
+    .ba-comparison{grid-template-columns:1fr;}
+    .deliverables-grid{grid-template-columns:1fr 1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:32px;}
+    .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:24px;}
+    .testimonial-card{padding:36px 28px;}
+    .next-inner{flex-direction:column;}
+    footer{flex-direction:column;text-align:center;}
+    .footer-links{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">make it <span>media</span></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/work">Work</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact" class="nav-cta">Book a call</a></li>
+  </ul>
+</nav>
+
+<!-- CASE STUDY HERO -->
+<section class="case-hero">
+  <div class="container">
+    <div class="case-hero-inner">
+
+      <div>
+        <a href="/work" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All work
+        </a>
+        <div class="case-eyebrow">Case study</div>
+        <h1 class="case-title">Amy Angus<br><em>Naturopathy</em></h1>
+        <p class="case-desc">A complete digital rebuild for a Brisbane naturopath — new custom website, brand identity, Simple Clinic integration, and SEO foundations. From outdated and invisible to polished and bookable.</p>
+        <div class="case-meta-row">
+          <span class="meta-pill"><span class="dot"></span>Naturopath</span>
+          <span class="meta-pill"><span class="dot"></span>Brisbane, QLD</span>
+          <span class="meta-pill"><span class="dot"></span>Custom arrangement</span>
+          <span class="meta-pill"><span class="dot"></span>2025</span>
+        </div>
+      </div>
+
+      <div class="hero-mockup">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+            <div class="b-url"><span class="b-url-text">amy-angus-naturopathy.com.au</span></div>
+          </div>
+          <div class="browser-screen">
+            <!-- REPLACE: swap this div for an <img> of Amy's live site screenshot -->
+            <div class="site-preview-placeholder">
+              <div style="font-size:32px;opacity:0.3;">✦</div>
+              <div>Amy's live site</div>
+              <div class="upload-hint">Replace with screenshot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid stagger">
+      <div class="stat-item">
+        <div class="stat-num">2–3</div>
+        <div class="stat-label">weeks to launch</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">custom pages built</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">copy written by Make It Media</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">WordPress plugins</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview-section">
+  <div class="container">
+    <div class="two-col">
+
+      <div class="reveal">
+        <p class="section-eyebrow">The brief</p>
+        <h2 class="section-title">An outdated site that didn't reflect her <em>expertise</em></h2>
+        <p class="body-text">Amy had been practising naturopathy for years but her online presence didn't match the quality of her work. Her existing site was built on an outdated platform — slow, generic, and not converting visitors into bookings.</p>
+        <p class="body-text">She needed something that felt <strong>premium, personal, and professional</strong> — a site that immediately communicated her expertise and made it easy for patients to book. And she needed someone who understood the naturopathic world well enough to write the copy without her having to explain it.</p>
+        <p class="body-text">That's where Make It Media came in.</p>
+      </div>
+
+      <div class="three-col stagger" style="align-self:start;margin-top:16px;">
+        <div class="challenge-card" style="grid-column:1/-1;">
+          <div class="challenge-card-icon">⚡</div>
+          <div class="challenge-card-title">The problem</div>
+          <div class="challenge-card-desc">Outdated site on an old platform. Slow load times, no booking integration, copy that didn't reflect her clinical expertise, and no SEO foundations in place.</div>
+        </div>
+        <div class="challenge-card" style="grid-column:1/-1;">
+          <div class="challenge-card-icon">✦</div>
+          <div class="challenge-card-title">The solution</div>
+          <div class="challenge-card-desc">A fully custom Next.js site with AI-assisted copywriting, Simple Clinic integration for online bookings, on-page SEO, GA4 analytics, and a brand identity that finally matched her level of practice.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="before-after-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Before & after</p>
+      <h2 class="section-title">The <em>transformation</em></h2>
+    </div>
+
+    <div class="ba-grid reveal">
+
+      <!-- BEFORE CARD -->
+      <div class="ba-card before">
+        <div class="ba-header">
+          <div class="ba-header-left">
+            <div class="ba-dot"></div>
+            <span class="ba-label">Before — old site</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <!-- Page selector -->
+            <select class="page-select" id="before-page-select" onchange="switchPage('before', this.value)">
+              <option value="home">Home</option>
+              <option value="about">About</option>
+              <option value="services">Services</option>
+              <option value="contact">Contact</option>
+            </select>
+            <!-- Viewport toggle -->
+            <div class="viewport-toggle">
+              <button class="vp-btn active" id="before-desktop-btn" onclick="switchViewport('before','desktop')" title="Desktop view">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><line x1="5" y1="10" x2="9" y2="10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7" y1="10" x2="7" y2="12" stroke="currentColor" stroke-width="1.2"/></svg>
+              </button>
+              <button class="vp-btn" id="before-mobile-btn" onclick="switchViewport('before','mobile')" title="Mobile view">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="3.5" y="1" width="7" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="11" r="0.8" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop view -->
+        <div class="ba-screen-wrap desktop" id="before-desktop">
+          <div class="ba-img-frame" id="before-desktop-frame">
+            <!-- REPLACE: add real <img> tags per page below -->
+            <!-- Example: <img id="before-desktop-home" src="/images/case-study/amy/before-home-desktop.jpg" alt="Amy's old home page"> -->
+            <div class="ba-placeholder">
+              <div class="placeholder-icon">📸</div>
+              <div class="placeholder-text" id="before-desktop-label">Home — desktop</div>
+              <div class="placeholder-page">Add screenshot to activate</div>
+              <div class="placeholder-hint">Upload before images</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile view (hidden by default) -->
+        <div class="ba-screen-wrap mobile" id="before-mobile" style="display:none;">
+          <div class="mobile-device">
+            <div class="mobile-notch"></div>
+            <div class="mobile-screen" id="before-mobile-frame">
+              <!-- REPLACE: add mobile screenshots here -->
+              <!-- Example: <img id="before-mobile-home" src="/images/case-study/amy/before-home-mobile.jpg" alt="Mobile view"> -->
+              <div class="ba-placeholder">
+                <div class="placeholder-text" id="before-mobile-label" style="font-size:11px;">Home — mobile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER CARD -->
+      <div class="ba-card after">
+        <div class="ba-header">
+          <div class="ba-header-left">
+            <div class="ba-dot"></div>
+            <span class="ba-label">After — Make It Media</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <!-- Page selector synced to before -->
+            <select class="page-select" id="after-page-select" onchange="switchPage('after', this.value)">
+              <option value="home">Home</option>
+              <option value="about">About</option>
+              <option value="services">Services</option>
+              <option value="contact">Contact</option>
+            </select>
+            <!-- Viewport toggle -->
+            <div class="viewport-toggle">
+              <button class="vp-btn active" id="after-desktop-btn" onclick="switchViewport('after','desktop')" title="Desktop view">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><line x1="5" y1="10" x2="9" y2="10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7" y1="10" x2="7" y2="12" stroke="currentColor" stroke-width="1.2"/></svg>
+              </button>
+              <button class="vp-btn" id="after-mobile-btn" onclick="switchViewport('after','mobile')" title="Mobile view">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="3.5" y="1" width="7" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="11" r="0.8" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop view -->
+        <div class="ba-screen-wrap desktop" id="after-desktop">
+          <div class="ba-img-frame" id="after-desktop-frame">
+            <!-- REPLACE: add real <img> tags per page below -->
+            <!-- Example: <img id="after-desktop-home" src="/images/case-study/amy/after-home-desktop.jpg" alt="Amy's new home page"> -->
+            <div class="ba-placeholder">
+              <div class="placeholder-icon">✦</div>
+              <div class="placeholder-text" id="after-desktop-label">Home — desktop</div>
+              <div class="placeholder-page">Add screenshot to activate</div>
+              <div class="placeholder-hint">Upload after images</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile view (hidden by default) -->
+        <div class="ba-screen-wrap mobile" id="after-mobile" style="display:none;">
+          <div class="mobile-device">
+            <div class="mobile-notch"></div>
+            <div class="mobile-screen" id="after-mobile-frame">
+              <!-- REPLACE: add mobile screenshots here -->
+              <div class="ba-placeholder">
+                <div class="placeholder-text" id="after-mobile-label" style="font-size:11px;">Home — mobile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sync hint -->
+    <p style="text-align:center;font-size:12px;color:var(--ink-light);margin-top:16px;font-weight:300;font-style:italic;">
+      Page selectors are synced — changing one updates both sides simultaneously.
+    </p>
+
+    <div class="ba-comparison reveal">
+      <div>
+        <div class="ba-col-header before">Before</div>
+        <ul class="ba-list bad">
+          <li>Outdated platform, slow load times</li>
+          <li>Generic template design</li>
+          <li>No online booking system</li>
+          <li>Copy written without clinical context</li>
+          <li>No SEO foundations or analytics</li>
+          <li>Not optimised for mobile</li>
+          <li>No clear patient journey</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ba-col-header after">After</div>
+        <ul class="ba-list good">
+          <li>Custom Next.js — fast, modern, scalable</li>
+          <li>Unique brand identity and visual design</li>
+          <li>Simple Clinic booking integration</li>
+          <li>AHPRA-aware copy written by a naturopath</li>
+          <li>GA4 + Google Search Console live</li>
+          <li>Fully responsive across all devices</li>
+          <li>Clear path from landing to booking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="deliverables-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">What was delivered</p>
+      <h2 class="section-title">Every piece of the <em>puzzle</em></h2>
+    </div>
+    <div class="deliverables-grid stagger">
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">01</div>
+        <div class="deliverable-title">Custom website build</div>
+        <div class="deliverable-desc">6-page site built on Next.js 14 with Tailwind CSS and Framer Motion animations. No WordPress, no templates, no shared aesthetic with any other site.</div>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">02</div>
+        <div class="deliverable-title">Brand new visual identity</div>
+        <div class="deliverable-desc">Colour palette, typography, and visual language developed from scratch to reflect Amy's clinical expertise and warm, approachable practice style.</div>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">03</div>
+        <div class="deliverable-title">AI-assisted copywriting</div>
+        <div class="deliverable-desc">Every word on the site written by Make It Media — using AI tools and naturopathic clinical background to write AHPRA-aware copy that converts.</div>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">04</div>
+        <div class="deliverable-title">Simple Clinic integration</div>
+        <div class="deliverable-desc">Online booking linked directly to Amy's Simple Clinic account. Patients can book, complete intake forms, and manage appointments without Amy's manual involvement.</div>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">05</div>
+        <div class="deliverable-title">SEO foundations</div>
+        <div class="deliverable-desc">On-page SEO across all pages — meta titles, descriptions, semantic HTML structure, image alt text, and Google Search Console setup and verification.</div>
+      </div>
+
+      <div class="deliverable-card">
+        <div class="deliverable-num">06</div>
+        <div class="deliverable-title">GA4 + analytics setup</div>
+        <div class="deliverable-desc">Google Analytics 4 and Microsoft Clarity installed and verified. Amy can see exactly where patients come from, which pages they visit, and where they drop off.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">The process</p>
+      <h2 class="section-title">How we built it <em>together</em></h2>
+    </div>
+    <div class="two-col" style="margin-top:64px;">
+      <div class="process-timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-dot">01</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Discovery session</div>
+            <div class="timeline-desc">A 60-minute brand messaging session to understand Amy's practice, her ideal patients, what she wanted to be known for, and what wasn't working about her old site.</div>
+            <span class="timeline-tag">Week 1</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">02</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Copy & strategy</div>
+            <div class="timeline-desc">All 6 pages of copy written using AI tools and clinical background knowledge. Sent to Amy for review — minimal changes needed because the brief was done properly upfront.</div>
+            <span class="timeline-tag">Week 1–2</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">03</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Design & build</div>
+            <div class="timeline-desc">Visual identity developed, then full site built in Next.js. Simple Clinic booking connected, all pages built and reviewed with two rounds of revisions.</div>
+            <span class="timeline-tag">Week 2–3</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">04</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Launch & handover</div>
+            <div class="timeline-desc">Site deployed to Netlify, domain connected, GA4 and Search Console live. Full walkthrough with Amy so she knows how to manage her site going forward.</div>
+            <span class="timeline-tag">Week 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="padding-top:16px;">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(184,212,192,0.15);border-radius:20px;padding:36px;">
+          <p style="font-family:var(--font-display);font-size:13px;font-weight:400;color:rgba(255,255,255,0.4);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;">Tech stack</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Framework</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">Next.js 14</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Styling</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">Tailwind CSS</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Animations</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">Framer Motion</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Bookings</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">Simple Clinic</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Analytics</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">GA4 + Clarity</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:400;">Hosting</span>
+              <span style="font-size:13px;color:var(--sage-light);font-weight:500;">Netlify</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-card reveal">
+      <span class="quote-mark">"</span>
+      <!-- REPLACE: swap placeholder with Amy's real testimonial once received -->
+      <p class="testimonial-placeholder">Amy's testimonial will appear here — check your messages!</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div class="author-info">
+          <div class="author-name">Amy Angus</div>
+          <div class="author-title">Naturopath · Brisbane, QLD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT / CTA -->
+<section class="next-section">
+  <div class="container">
+    <div class="next-inner reveal">
+      <div class="next-left">
+        <p class="next-eyebrow">Ready to be next?</p>
+        <h2 class="next-title">Your practice could look<br><em>this good too.</em></h2>
+        <p class="next-sub">3 founding client spots remaining at current rates. Book a free 30-minute discovery call — no pressure, just an honest conversation about what you need.</p>
+      </div>
+      <a href="/#contact" class="btn-primary">
+        Book a discovery call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="work-nav reveal">
+      <a href="/work" class="work-nav-link prev">
+        <span class="work-nav-dir">← Back to</span>
+        <span class="work-nav-title">All work</span>
+      </a>
+      <a href="/work/concept-nutritionist" class="work-nav-link next-work">
+        <span class="work-nav-dir">Next project →</span>
+        <span class="work-nav-title">Nourish & Co.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">make it <span>media</span></a>
+  <p>© 2026 Make It Media. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy policy</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  // ── BEFORE / AFTER VIEWER ──
+
+  const pages = ['home','about','services','contact'];
+  const pageLabels = { home:'Home', about:'About', services:'Services', contact:'Contact' };
+
+  // Image map — populate these when you have real screenshots
+  // Format: { before: { desktop: { home: '/path/to/img.jpg', ... }, mobile: { home: ... } }, after: { ... } }
+  const images = {
+    before: {
+      desktop: { home: null, about: null, services: null, contact: null },
+      mobile:  { home: null, about: null, services: null, contact: null }
+    },
+    after: {
+      desktop: { home: null, about: null, services: null, contact: null },
+      mobile:  { home: null, about: null, services: null, contact: null }
+    }
+  };
+
+  let state = { before: { page: 'home', viewport: 'desktop' }, after: { page: 'home', viewport: 'desktop' } };
+
+  function switchPage(side, page) {
+    // Sync both selectors
+    document.getElementById('before-page-select').value = page;
+    document.getElementById('after-page-select').value = page;
+    state.before.page = page;
+    state.after.page = page;
+    updateDisplay('before');
+    updateDisplay('after');
+  }
+
+  function switchViewport(side, viewport) {
+    state[side].viewport = viewport;
+
+    const desktopBtn = document.getElementById(side + '-desktop-btn');
+    const mobileBtn  = document.getElementById(side + '-mobile-btn');
+    const desktopWrap = document.getElementById(side + '-desktop');
+    const mobileWrap  = document.getElementById(side + '-mobile');
+
+    if (viewport === 'desktop') {
+      desktopBtn.classList.add('active');
+      mobileBtn.classList.remove('active');
+      desktopWrap.style.display = '';
+      mobileWrap.style.display = 'none';
+    } else {
+      mobileBtn.classList.add('active');
+      desktopBtn.classList.remove('active');
+      desktopWrap.style.display = 'none';
+      mobileWrap.style.display = '';
+    }
+
+    updateDisplay(side);
+  }
+
+  function updateDisplay(side) {
+    const { page, viewport } = state[side];
+    const label = pageLabels[page];
+    const imgSrc = images[side][viewport][page];
+
+    // Update labels
+    const desktopLabel = document.getElementById(side + '-desktop-label');
+    const mobileLabel  = document.getElementById(side + '-mobile-label');
+    if (desktopLabel) desktopLabel.textContent = label + ' — desktop';
+    if (mobileLabel)  mobileLabel.textContent  = label + ' — mobile';
+
+    // If real image exists, inject it — otherwise placeholder stays
+    const frameId = viewport === 'desktop'
+      ? side + '-desktop-frame'
+      : side + '-mobile-frame';
+    const frame = document.getElementById(frameId);
+    if (!frame) return;
+
+    if (imgSrc) {
+      // Fade out, swap src, fade in
+      frame.classList.add('fading');
+      setTimeout(() => {
+        const existing = frame.querySelector('img');
+        if (existing) {
+          existing.src = imgSrc;
+          existing.alt = side + ' ' + page + ' ' + viewport;
+        } else {
+          // Remove placeholder, insert real img
+          frame.innerHTML = '<img src="' + imgSrc + '" alt="' + side + ' ' + page + '">';
+        }
+        frame.classList.remove('fading');
+      }, 300);
+    }
+    // If no image, placeholder already shows the updated label text
+  }
+
+  const reveals = document.querySelectorAll('.reveal, .stagger');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.padding = window.scrollY > 50 ? '14px 48px' : '20px 48px';
+  });
+</script>
+</body>
+</html>
