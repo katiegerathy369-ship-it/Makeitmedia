@@ -39,7 +39,7 @@ export default function Contact() {
       const formData = new URLSearchParams()
       formData.append('form-name', 'contact')
       Object.entries(form).forEach(([key, value]) => formData.append(key, value))
-      await fetch('/', {
+      await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData.toString(),
@@ -160,22 +160,8 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
           >
-            {/* Hidden form for Netlify bot detection */}
-            <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-              <input type="text" name="firstName" />
-              <input type="text" name="lastName" />
-              <input type="email" name="email" />
-              <input type="tel" name="phone" />
-              <select name="practiceType"><option value=""></option></select>
-              <select name="service"><option value=""></option></select>
-              <textarea name="message"></textarea>
-            </form>
-
             <form
               name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="rounded-[20px] p-10"
               style={{
