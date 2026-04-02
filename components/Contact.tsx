@@ -33,9 +33,21 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    try {
+      const formData = new URLSearchParams()
+      formData.append('form-name', 'contact')
+      Object.entries(form).forEach(([key, value]) => formData.append(key, value))
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      })
+      setSubmitted(true)
+    } catch {
+      setSubmitted(true)
+    }
   }
 
   const inputBase =
@@ -148,7 +160,22 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
           >
+            {/* Hidden form for Netlify bot detection */}
+            <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+              <input type="text" name="firstName" />
+              <input type="text" name="lastName" />
+              <input type="email" name="email" />
+              <input type="tel" name="phone" />
+              <select name="practiceType"><option value=""></option></select>
+              <select name="service"><option value=""></option></select>
+              <textarea name="message"></textarea>
+            </form>
+
             <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="rounded-[20px] p-10"
               style={{
@@ -157,6 +184,8 @@ export default function Contact() {
                 backdropFilter: 'blur(8px)',
               }}
             >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden"><label>Don&apos;t fill this out: <input name="bot-field" /></label></p>
               <div className="grid grid-cols-2 gap-4 mb-5">
                 <div>
                   <label className="block text-[12px] font-medium tracking-[0.06em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>

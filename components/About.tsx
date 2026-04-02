@@ -56,51 +56,7 @@ export default function About() {
         </svg>
       </div>
       <div className="max-w-container mx-auto px-12 relative" style={{ zIndex: 1 }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[100px] items-center">
-
-          {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="relative"
-          >
-            <div
-              className="about-img-pattern w-full rounded-[24px] relative overflow-hidden flex flex-col items-center justify-center gap-3"
-              style={{
-                aspectRatio: '4/5',
-                background: 'linear-gradient(145deg, var(--sage-light) 0%, var(--sage-pale) 60%, var(--terra-pale) 100%)',
-                border: '1px solid var(--border)',
-                fontFamily: 'var(--font-display)',
-                fontSize: 22,
-                fontStyle: 'italic',
-                color: 'var(--sage-dark)',
-              }}
-            >
-              <div style={{ fontSize: 40, opacity: 0.4 }}>✦</div>
-              <span>Your photo here</span>
-              <span
-                className="font-body text-[13px] not-italic font-normal text-ink-light tracking-[0.05em]"
-              >
-                Kate · Founder, Make It Media
-              </span>
-            </div>
-
-            {/* Badge */}
-            <div
-              className="absolute bottom-6 right-[-20px] bg-white rounded-[14px] p-4 max-w-[200px]"
-              style={{
-                border: '1px solid var(--border)',
-                boxShadow: '0 12px 32px rgba(42,37,32,0.08)',
-              }}
-            >
-              <div className="text-[14px] font-medium text-ink mb-1">BHSc (Naturopathy)</div>
-              <div className="text-[12px] text-ink-light font-light leading-[1.4]">
-                Qualified practitioner turned web designer and marketing specialist
-              </div>
-            </div>
-          </motion.div>
+        <div className="max-w-[720px] mx-auto">
 
           {/* Content */}
           <motion.div
@@ -121,30 +77,21 @@ export default function About() {
 
             <div className="mt-6 space-y-5">
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                Make It Media is an Australian web design agency that works exclusively with health practitioners — naturopaths, nutritionists, health coaches, and integrative professionals.
+                Make It Media is an Australian web design agency that works exclusively with health practitioners — naturopaths, nutritionists, health coaches, and integrative professionals. I spent six years studying naturopathy, graduated, and went straight into clinical practice. I loved the work. I didn't love running a practice with no marketing support and a website I kept putting off. Sound familiar?
               </p>
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                I spent six years studying naturopathy at university, graduated, and went straight into clinical practice. After a year and a half, I burned out. I loved the work. I didn't love the reality of running a practice with no support, no marketing, and a website I'd been putting off because every time I opened Wix or Squarespace I felt overstimulated and closed the laptop.
-              </p>
-              <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                Sound familiar? That's exactly why I started Make It Media. I already had a background in graphic design and a sharp eye for what actually works in UX and UI. I knew what practitioners needed because I'd needed it myself. So I built it.
-              </p>
-              <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                Here's how it works: we start with a conversation about your practice, your patients, and what you want your website to do.{' '}
+                I already had a background in graphic design and a sharp eye for UX. I knew what practitioners needed because I'd needed it myself. So I built it.{' '}
                 <strong className="font-medium text-ink">
-                  I design everything in Canva first — so you can see exactly what your site will look like before a single line of code is written.
+                  I design everything in Canva first — you see exactly what your site will look like before a single line of code is written.
                 </strong>
-                {' '}Once you're 100% happy with the design, then I build it. No back and forth. No wasted time. No surprises on your invoice.
+                {' '}Once you're happy, I build it. No surprises.
               </p>
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                I also use AI tools throughout the build — to write cleaner code faster, to research what your ideal patients are actually typing into Google, and to draft copy that's structured to rank. But here's the thing:{' '}
+                I use AI tools to write cleaner code faster and research what your ideal patients are actually searching for.{' '}
                 <strong className="font-medium text-ink">
-                  nothing goes live without your sign-off.
+                  Nothing goes live without your sign-off.
                 </strong>
-                {' '}I use AI to do the heavy lifting. You still get the final say on every word and every design decision.
-              </p>
-              <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                I also know exactly what works on today's social media — what stops the scroll, what gets saved, what actually drives bookings. That's why the Visibility and Growth packages exist.
+                {' '}You get the final say on every word and every design decision.
               </p>
             </div>
 
