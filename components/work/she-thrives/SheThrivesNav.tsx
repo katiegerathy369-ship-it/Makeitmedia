@@ -1,10 +1,19 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 
 const BASE = '/work/concept-womens-coach'
 
+const navLinks = [
+  { label: 'About', href: `${BASE}/about` },
+  { label: 'Work with me', href: `${BASE}/work-with-me` },
+  { label: 'Contact', href: `${BASE}/contact` },
+]
+
 export default function SheThrivesNav() {
+  const [open, setOpen] = useState(false)
+
   return (
     <nav
       style={{
@@ -13,7 +22,7 @@ export default function SheThrivesNav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: '0 48px',
+        padding: '0 clamp(16px, 4vw, 48px)',
         height: 72,
         display: 'flex',
         alignItems: 'center',
@@ -37,13 +46,9 @@ export default function SheThrivesNav() {
         She Thrives Co.
       </Link>
 
-      {/* Nav links + CTA */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
-        {[
-          { label: 'About', href: `${BASE}/about` },
-          { label: 'Work with me', href: `${BASE}/work-with-me` },
-          { label: 'Contact', href: `${BASE}/contact` },
-        ].map((link) => (
+      {/* Desktop nav */}
+      <div className="hidden md:flex" style={{ alignItems: 'center', gap: 36 }}>
+        {navLinks.map((link) => (
           <Link
             key={link.label}
             href={link.href}
@@ -59,7 +64,6 @@ export default function SheThrivesNav() {
             {link.label}
           </Link>
         ))}
-
         <Link
           href={`${BASE}/contact`}
           style={{
@@ -67,7 +71,7 @@ export default function SheThrivesNav() {
             fontSize: 12,
             fontWeight: 700,
             letterSpacing: '0.08em',
-            textTransform: 'uppercase' as const,
+            textTransform: 'uppercase',
             color: '#fff',
             background: 'var(--rose)',
             padding: '10px 24px',
@@ -79,9 +83,101 @@ export default function SheThrivesNav() {
         </Link>
       </div>
 
-      {/* Back to portfolio — subtle */}
+      {/* Mobile hamburger */}
+      <button
+        className="md:hidden"
+        onClick={() => setOpen(!open)}
+        aria-label="Toggle menu"
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: 5,
+          width: 40,
+          height: 40,
+        }}
+      >
+        <span style={{
+          display: 'block', width: 20, height: 2, background: '#1e1412',
+          transition: 'all 0.3s',
+          ...(open ? { transform: 'rotate(45deg) translate(2.5px, 2.5px)' } : {}),
+        }} />
+        <span style={{
+          display: 'block', width: 20, height: 2, background: '#1e1412',
+          transition: 'all 0.3s',
+          ...(open ? { opacity: 0 } : {}),
+        }} />
+        <span style={{
+          display: 'block', width: 20, height: 2, background: '#1e1412',
+          transition: 'all 0.3s',
+          ...(open ? { transform: 'rotate(-45deg) translate(2.5px, -2.5px)' } : {}),
+        }} />
+      </button>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div
+          className="md:hidden"
+          style={{
+            position: 'fixed',
+            top: 72,
+            left: 0,
+            right: 0,
+            background: 'rgba(253,250,246,0.98)',
+            backdropFilter: 'blur(12px)',
+            padding: '24px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 4,
+          }}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              style={{
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
+                fontSize: 16,
+                fontWeight: 400,
+                color: 'var(--ink-mid)',
+                textDecoration: 'none',
+                padding: '12px 0',
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href={`${BASE}/contact`}
+            onClick={() => setOpen(false)}
+            style={{
+              fontFamily: 'var(--font-body), system-ui, sans-serif',
+              fontSize: 14,
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: '#fff',
+              background: 'var(--rose)',
+              padding: '14px 24px',
+              borderRadius: 100,
+              textDecoration: 'none',
+              textAlign: 'center',
+              marginTop: 8,
+            }}
+          >
+            Book a call
+          </Link>
+        </div>
+      )}
+
+      {/* Back to portfolio — hidden on mobile */}
       <Link
         href="/work"
+        className="hidden lg:block"
         style={{
           position: 'absolute',
           top: '50%',
@@ -92,7 +188,7 @@ export default function SheThrivesNav() {
           color: 'rgba(30,20,18,0.25)',
           textDecoration: 'none',
           letterSpacing: '0.06em',
-          whiteSpace: 'nowrap' as const,
+          whiteSpace: 'nowrap',
         }}
       >
         ← Concept by Make It Media

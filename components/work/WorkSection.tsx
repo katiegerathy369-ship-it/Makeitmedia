@@ -22,7 +22,7 @@ export default function WorkSection() {
       />
 
       <section className="pt-[72px] pb-[120px]">
-        <div className="max-w-container mx-auto px-12">
+        <div className="max-w-container mx-auto px-5 md:px-12">
 
           {/* Live client work label */}
           <motion.div

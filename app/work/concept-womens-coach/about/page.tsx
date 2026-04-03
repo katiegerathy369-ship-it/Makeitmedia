@@ -28,12 +28,12 @@ function PageHero() {
       }}
     >
       <div
+        className="grid grid-cols-1 md:grid-cols-2"
         style={{
           maxWidth: 1120,
           margin: '0 auto',
-          padding: '140px 48px 100px',
+          padding: '140px clamp(20px, 4vw, 48px) 100px',
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 72,
           alignItems: 'center',
           width: '100%',
@@ -176,7 +176,7 @@ function GracesStory() {
   return (
     <>
       {/* Section heading */}
-      <section style={{ padding: '72px 48px 0', background: '#fdfaf6' }}>
+      <section style={{ padding: '72px clamp(20px, 4vw, 48px) 0', background: '#fdfaf6' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: 0 }}>
             <span
@@ -215,17 +215,17 @@ function GracesStory() {
           <section
             key={beat.label}
             style={{
-              padding: '72px 48px',
+              padding: '72px clamp(20px, 4vw, 48px)',
               background: beat.bg,
               borderTop: '1px solid rgba(232,220,200,0.5)',
             }}
           >
             <div
+              className="grid grid-cols-1 md:grid-cols-2"
               style={{
                 maxWidth: 1120,
                 margin: '0 auto',
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
                 gap: 64,
                 alignItems: 'center',
               }}
@@ -335,14 +335,14 @@ const credentials = [
 
 function CredentialsBar() {
   return (
-    <section style={{ padding: '64px 48px', background: 'var(--warm)', borderTop: '1px solid rgba(232,220,200,0.5)' }}>
+    <section style={{ padding: '64px clamp(20px, 4vw, 48px)', background: 'var(--warm)', borderTop: '1px solid rgba(232,220,200,0.5)' }}>
       <motion.div
         {...fadeUp}
+        className="grid grid-cols-2 md:grid-cols-4"
         style={{
           maxWidth: 1120,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
           gap: 20,
         }}
       >
@@ -417,7 +417,7 @@ const values = [
 
 function Values() {
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--cream)' }}>
+    <section style={{ padding: '100px clamp(20px, 4vw, 48px)', background: 'var(--cream)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto' }}>
         <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: 56 }}>
           <span
@@ -447,7 +447,7 @@ function Values() {
           </h2>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ display: 'grid', gap: 28 }}>
           {values.map((val, i) => (
             <motion.div
               key={val.num}
@@ -507,7 +507,7 @@ function Values() {
 
 function CtaClose() {
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--blush-pale)' }}>
+    <section style={{ padding: '100px clamp(20px, 4vw, 48px)', background: 'var(--blush-pale)' }}>
       <motion.div
         {...fadeUp}
         style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}

@@ -35,12 +35,12 @@ const otherWork = [
 export default function OtherWorkStrip() {
   return (
     <section
+      className="px-5 md:px-12 py-16 md:py-20"
       style={{
-        padding: '80px 48px',
         background: 'var(--warm-white)',
       }}
     >
-      <div className="max-w-container mx-auto px-12">
+      <div className="max-w-container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

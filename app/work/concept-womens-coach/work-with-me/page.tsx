@@ -51,7 +51,7 @@ function PageHero() {
         Thrive
       </span>
 
-      <div style={{ maxWidth: 700, margin: '0 auto', padding: '160px 48px 100px', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: 700, margin: '0 auto', padding: '160px clamp(20px, 4vw, 48px) 100px', position: 'relative', zIndex: 1 }}>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -242,13 +242,13 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
   const flipped = index % 2 !== 0
 
   return (
-    <section style={{ padding: '88px 48px', background: program.bg }}>
+    <section style={{ padding: '88px clamp(20px, 4vw, 48px)', background: program.bg }}>
       <div
+        className="grid grid-cols-1 md:grid-cols-2"
         style={{
           maxWidth: 1120,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 72,
           alignItems: 'center',
         }}
@@ -460,7 +460,7 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
 function FreeDiscoveryCall() {
   return (
     <section style={{ background: '#fdf4f0', padding: '72px 0', borderTop: '1px solid #e8dcc8' }}>
-      <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 56px', textAlign: 'center' }}>
+      <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 56px)', textAlign: 'center' }}>
         <span style={{ fontSize: '36px' }}>☎️</span>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '36px', color: '#1e1412', margin: '16px 0 12px' }}>
           Not sure where to start?
@@ -595,7 +595,7 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--cream)' }}>
+    <section style={{ padding: '100px clamp(20px, 4vw, 48px)', background: 'var(--cream)' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: 56 }}>
           <span
@@ -648,7 +648,7 @@ function CtaBanner() {
   return (
     <section
       style={{
-        padding: '88px 48px',
+        padding: '88px clamp(20px, 4vw, 48px)',
         background: 'var(--rose)',
         textAlign: 'center',
       }}

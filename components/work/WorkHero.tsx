@@ -28,7 +28,7 @@ export default function WorkHero() {
         }}
       />
 
-      <div className="max-w-container mx-auto px-12 relative">
+      <div className="max-w-container mx-auto px-5 md:px-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-end">
 
           {/* Left */}

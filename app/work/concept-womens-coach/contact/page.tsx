@@ -85,7 +85,7 @@ function LeftPanel() {
     <div
       style={{
         background: '#fdf4f0',
-        padding: '120px 64px 64px',
+        padding: '120px clamp(20px, 4vw, 64px) 64px',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -228,7 +228,7 @@ function LeftPanel() {
         style={{
           position: 'absolute',
           bottom: 32,
-          left: 64,
+          left: 'clamp(20px, 4vw, 64px)',
           fontSize: '11px',
           color: '#9a8a84',
           display: 'flex',
@@ -278,13 +278,13 @@ function RightPanel() {
   }
 
   return (
-    <div style={{ background: '#fff', padding: '120px 64px 64px' }}>
+    <div style={{ background: '#fff', padding: '120px clamp(20px, 4vw, 64px) 64px' }}>
       {submitted ? (
         <div
           style={{
             background: '#fdf4f0',
             borderRadius: '20px',
-            padding: '56px 48px',
+            padding: '56px clamp(20px, 4vw, 48px)',
             textAlign: 'center',
             border: '1px solid #e8dcc8',
           }}
@@ -331,7 +331,7 @@ function RightPanel() {
           </span>
 
           {/* First + Last name */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ display: 'grid', gap: 16, marginBottom: 16 }}>
             <div>
               <label
                 style={{

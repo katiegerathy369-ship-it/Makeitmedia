@@ -171,7 +171,7 @@ export default function Contact() {
               }}
             >
               <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden"><label>Don&apos;t fill this out: <input name="bot-field" /></label></p>
+              <div className="hidden"><label>Don&apos;t fill this out: <input name="bot-field" /></label></div>
               <div className="grid grid-cols-2 gap-4 mb-5">
                 <div>
                   <label className="block text-[12px] font-medium tracking-[0.06em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>

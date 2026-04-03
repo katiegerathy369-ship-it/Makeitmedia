@@ -34,21 +34,21 @@ interface FilterBarProps {
 export default function FilterBar({ activeFilter, onFilter, visibleCount }: FilterBarProps) {
   return (
     <div
-      className="border-b border-sage/20 sticky z-[90] py-8"
+      className="border-b border-sage/20 sticky z-[90] py-5 md:py-8"
       style={{
         top: 65,
         background: 'rgba(250,248,244,0.92)',
         backdropFilter: 'blur(8px)',
       }}
     >
-      <div className="max-w-container mx-auto px-12">
-        <div className="flex items-center justify-between gap-5 flex-wrap">
-          <div className="flex gap-2 flex-wrap">
+      <div className="max-w-container mx-auto px-5 md:px-12">
+        <div className="flex items-center justify-between gap-3 md:gap-5 flex-wrap">
+          <div className="flex gap-1.5 md:gap-2 flex-wrap">
             {PILLS.map((pill) => (
               <button
                 key={pill.key}
                 onClick={() => onFilter(pill.key)}
-                className="inline-flex items-center gap-1.5 px-[18px] py-2 rounded-full text-[13px] font-normal font-body tracking-[0.01em] cursor-pointer border transition-all duration-200"
+                className="inline-flex items-center gap-1 md:gap-1.5 px-3 md:px-[18px] py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] font-normal font-body tracking-[0.01em] cursor-pointer border transition-all duration-200"
                 style={
                   activeFilter === pill.key
                     ? {
@@ -70,7 +70,7 @@ export default function FilterBar({ activeFilter, onFilter, visibleCount }: Filt
               </button>
             ))}
           </div>
-          <div className="text-[13px] font-light" style={{ color: 'var(--ink-light)' }}>
+          <div className="text-[11px] md:text-[13px] font-light" style={{ color: 'var(--ink-light)' }}>
             Showing{' '}
             <span className="text-ink font-medium">{visibleCount}</span>{' '}
             projects

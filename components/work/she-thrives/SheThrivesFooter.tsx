@@ -17,7 +17,7 @@ export default function SheThrivesFooter() {
       style={{
         background: 'var(--ink)',
         color: 'var(--blush)',
-        padding: '72px 48px 40px',
+        padding: '72px clamp(20px, 4vw, 48px) 40px',
       }}
     >
       <div style={{ maxWidth: 1120, margin: '0 auto' }}>

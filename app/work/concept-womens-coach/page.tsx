@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SheThrivesNav from '@/components/work/she-thrives/SheThrivesNav'
 import SheThrivesFooter from '@/components/work/she-thrives/SheThrivesFooter'
+import styles from '@/components/work/she-thrives/she-thrives.module.css'
 
 const BASE = '/work/concept-womens-coach'
 
@@ -24,26 +25,9 @@ const microStats = [
 
 function Hero() {
   return (
-    <section
-      style={{
-        height: '100vh',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        position: 'relative',
-      }}
-    >
+    <section className={styles.hero}>
       {/* LEFT — cream editorial panel */}
-      <div
-        style={{
-          background: 'var(--blush-pale)',
-          padding: '0 64px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
+      <div className={styles.heroLeft}>
         {/* Label with rose line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +57,7 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           style={{
             fontFamily: 'var(--font-display), Georgia, serif',
-            fontSize: 'clamp(64px, 6.5vw, 96px)',
+            fontSize: 'clamp(40px, 6.5vw, 96px)',
             fontWeight: 400,
             lineHeight: 0.9,
             letterSpacing: '-0.02em',
@@ -112,7 +96,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.65 }}
-          style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 40 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 mt-8 sm:mt-10"
         >
           <Link
             href={`${BASE}/work-with-me`}
@@ -148,18 +132,12 @@ function Hero() {
           </Link>
         </motion.div>
 
-        {/* Micro stats — bottom left */}
+        {/* Micro stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          style={{
-            position: 'absolute',
-            bottom: 32,
-            left: 64,
-            display: 'flex',
-            gap: 36,
-          }}
+          className={styles.heroStats}
         >
           {microStats.map((stat) => (
             <div key={stat.label} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -190,13 +168,7 @@ function Hero() {
       </div>
 
       {/* RIGHT — photo full bleed */}
-      <div
-        style={{
-          position: 'relative',
-          overflow: 'hidden',
-          height: '100%',
-        }}
-      >
+      <div className={styles.heroRight}>
         <img
           src="/images/portfolio/concept-womens-health-coach-shethrivesco/shethrivesco-hero-headshot2.jpg"
           alt="Grace Mitchell — She Thrives Co."
@@ -268,17 +240,7 @@ function Hero() {
       </div>
 
       {/* Divider line between panels */}
-      <div
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 80,
-          bottom: 80,
-          width: 1,
-          background: 'rgba(196,112,106,0.2)',
-          zIndex: 3,
-        }}
-      />
+      <div className={styles.heroDivider} />
     </section>
   )
 }
@@ -302,7 +264,7 @@ const values = [
 
 function MissionStrip() {
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--cream)' }}>
+    <section className={styles.sectionPadding} style={{ background: 'var(--cream)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto' }}>
         <motion.div {...fadeUp}>
           <span
@@ -328,14 +290,14 @@ function MissionStrip() {
               lineHeight: 1.15,
               textAlign: 'center',
               color: 'var(--ink)',
-              marginBottom: 64,
+              marginBottom: 48,
             }}
           >
             A different kind of <em style={{ fontStyle: 'italic', color: 'var(--rose)' }}>coaching.</em>
           </h2>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40 }}>
+        <div className={styles.valuesGrid}>
           {values.map((val, i) => (
             <motion.div
               key={val.title}
@@ -401,7 +363,7 @@ function MissionStrip() {
 
 function ServicesPreview() {
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--warm)' }}>
+    <section className={styles.sectionPadding} style={{ background: 'var(--warm)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto' }}>
         <motion.div {...fadeUp}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
@@ -449,7 +411,7 @@ function ServicesPreview() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className={styles.servicesGrid}>
           {/* Card 1 — The Thrive Method */}
           <motion.div
             {...fadeUp}
@@ -666,41 +628,123 @@ function ServicesPreview() {
 
 function Testimonial() {
   return (
-    <section style={{ padding: '100px 48px', background: 'var(--blush-pale)' }}>
-      <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
-        <motion.div {...fadeUp}>
-          <span
-            style={{
-              fontFamily: 'var(--font-body), system-ui, sans-serif',
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: 'var(--rose)',
-              display: 'block',
-              marginBottom: 28,
-            }}
-          >
-            Kind words
-          </span>
+    <section
+      className={styles.sectionPadding}
+      style={{
+        background: 'linear-gradient(180deg, var(--blush-deep) 0%, var(--blush) 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Background air quotes */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        {/* Large opening quote — top left */}
+        <svg
+          width="120" height="100" viewBox="0 0 120 100"
+          style={{ position: 'absolute', top: '10%', left: '5%', opacity: 0.12 }}
+        >
+          <text x="0" y="85" fontFamily="Georgia, serif" fontSize="140" fill="var(--ink)">&ldquo;</text>
+        </svg>
+        {/* Large closing quote — top right */}
+        <svg
+          width="120" height="100" viewBox="0 0 120 100"
+          style={{ position: 'absolute', top: '10%', right: '5%', opacity: 0.12 }}
+        >
+          <text x="0" y="85" fontFamily="Georgia, serif" fontSize="140" fill="var(--ink)">&rdquo;</text>
+        </svg>
+        {/* Small opening quote — bottom left */}
+        <svg
+          width="80" height="70" viewBox="0 0 80 70"
+          style={{ position: 'absolute', bottom: '15%', left: '12%', opacity: 0.07 }}
+        >
+          <text x="0" y="58" fontFamily="Georgia, serif" fontSize="96" fill="var(--ink)">&ldquo;</text>
+        </svg>
+        {/* Small closing quote — bottom right */}
+        <svg
+          width="80" height="70" viewBox="0 0 80 70"
+          style={{ position: 'absolute', bottom: '20%', right: '10%', opacity: 0.07 }}
+        >
+          <text x="0" y="58" fontFamily="Georgia, serif" fontSize="96" fill="var(--ink)">&rdquo;</text>
+        </svg>
+      </div>
 
-          <blockquote
+      <div style={{ maxWidth: 600, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+        <motion.div {...fadeUp}>
+          {/* Speech bubble */}
+          <div
             style={{
-              fontFamily: 'var(--font-display), Georgia, serif',
-              fontSize: 'clamp(24px, 3vw, 36px)',
-              fontWeight: 400,
-              lineHeight: 1.4,
-              color: 'var(--ink)',
-              fontStyle: 'italic',
+              background: '#fff',
+              borderRadius: 24,
+              padding: 'clamp(28px, 4vw, 44px)',
+              boxShadow: '0 12px 40px rgba(30,20,18,0.08)',
+              position: 'relative',
               marginBottom: 32,
             }}
           >
-            &ldquo;Working with She Thrives completely changed the way I think about
-            my health. For the first time, I feel like someone actually
-            <span style={{ color: 'var(--rose)' }}> listened</span> — and gave me
-            a plan that fits my real life.&rdquo;
-          </blockquote>
+            {/* Red quote mark inside bubble */}
+            <div
+              style={{
+                position: 'absolute',
+                top: -16,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: 36,
+                height: 36,
+                borderRadius: '50%',
+                background: 'var(--rose)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+                <path d="M6.4 0H0v6.4c0 4.2 2.6 6.8 6.4 7.6l.6-1.6C4.6 11.6 3.4 9.8 3.2 7.6H6.4V0zm9.6 0H9.6v6.4c0 4.2 2.6 6.8 6.4 7.6l.6-1.6c-2.4-.8-3.6-2.6-3.8-4.8H16V0z" fill="#fff"/>
+              </svg>
+            </div>
 
+            <blockquote
+              style={{
+                fontFamily: 'var(--font-body), system-ui, sans-serif',
+                fontSize: 'clamp(14px, 2vw, 16px)',
+                fontWeight: 300,
+                lineHeight: 1.75,
+                color: 'var(--ink-mid)',
+                fontStyle: 'italic',
+                margin: 0,
+                marginTop: 8,
+              }}
+            >
+              Working with She Thrives completely changed the way I think about
+              my health. For the first time, I feel like someone actually
+              <span style={{ color: 'var(--rose)', fontWeight: 500 }}> listened</span> — and gave me
+              a plan that fits my real life.
+            </blockquote>
+
+            {/* Speech bubble tail */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: -12,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: 0,
+                height: 0,
+                borderLeft: '14px solid transparent',
+                borderRight: '14px solid transparent',
+                borderTop: '14px solid #fff',
+              }}
+            />
+          </div>
+
+          {/* Dots */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 20 }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--rose)', opacity: 1 }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--rose)', opacity: 0.3 }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--rose)', opacity: 0.3 }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--rose)', opacity: 0.3 }} />
+          </div>
+
+          {/* Attribution */}
           <div
             style={{
               display: 'flex',
@@ -741,8 +785,8 @@ function Testimonial() {
 function CtaBanner() {
   return (
     <section
+      className={styles.sectionPadding}
       style={{
-        padding: '88px 48px',
         background: 'var(--rose)',
         textAlign: 'center',
       }}

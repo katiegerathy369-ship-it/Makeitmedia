@@ -74,6 +74,23 @@
     }
     .btn-danger:hover { background: var(--terra); color: white; }
     .toolbar-spacer { flex: 1; }
+    .btn-currency {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border: 1px solid var(--ink-light);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--ink-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-currency.active {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: white;
+    }
     .toolbar-label {
       color: var(--ink-light);
       font-size: 12px;
@@ -169,10 +186,10 @@
       border-bottom: 2px solid var(--sage);
       text-align: left;
     }
-    .items-table thead th:nth-child(2) { width: 50%; }
-    .items-table thead th:nth-child(3),
-    .items-table thead th:nth-child(4),
-    .items-table thead th:nth-child(5) { text-align: right; width: 12%; }
+    .items-table thead th:nth-child(2) { width: auto; }
+    .items-table thead th:nth-child(3) { text-align: right; width: 60px; }
+    .items-table thead th:nth-child(4) { text-align: right; width: 80px; }
+    .items-table thead th:nth-child(5) { text-align: right; width: 100px; }
     .items-table tbody td {
       padding: 10px 8px;
       border-bottom: 1px solid #eee;
@@ -295,10 +312,13 @@
       letter-spacing: 0.02em;
     }
 
+    /* ── Print-only tax rate (hidden on screen) ── */
+    .print-tax-rate { display: none; }
+
     /* ── Print styles ── */
     @media print {
       body { background: white; }
-      .toolbar, .add-row-btn, .row-delete, .no-print { display: none !important; }
+      .toolbar, .add-row-btn, .no-print { display: none !important; }
       .invoice-page {
         box-shadow: none;
         margin: 0;
@@ -308,6 +328,14 @@
       [contenteditable]:hover,
       [contenteditable]:focus { background: transparent; }
       .items-table tbody tr:hover { background: transparent; }
+      /* Hide delete column, give description full width */
+      .items-table .row-delete { display: none; }
+      .items-table thead th:first-child { display: none; }
+      .items-table thead th:nth-child(2) { width: auto; }
+      .items-table tbody td:nth-child(2) { width: auto; }
+      /* Show tax rate text in print */
+      .print-tax-rate { display: inline; }
+      .tax-rate-input { display: none; }
       @page {
         margin: 0.5in;
         size: A4;
@@ -321,6 +349,10 @@
 <div class="toolbar no-print">
   <span class="toolbar-label">Make It Media Invoice</span>
   <div class="toolbar-spacer"></div>
+  <div class="currency-toggle no-print" style="display:flex;align-items:center;gap:4px;">
+    <button class="btn-currency active" id="btnAUD" onclick="setCurrency('AUD')">AUD</button>
+    <button class="btn-currency" id="btnUSD" onclick="setCurrency('USD')">USD</button>
+  </div>
   <button class="btn-secondary" onclick="saveAsDraft()">Save Draft</button>
   <button class="btn-secondary" onclick="loadDraft()">Load Draft</button>
   <button class="btn-primary" onclick="window.print()">Print / Save PDF</button>
@@ -419,7 +451,7 @@
         <td id="subtotal">$0.00</td>
       </tr>
       <tr>
-        <td>GST (<input type="text" class="tax-rate-input no-print" id="taxRate" value="10" oninput="recalc()">%)<span class="print-only"></span></td>
+        <td>GST (<input type="text" class="tax-rate-input no-print" id="taxRate" value="10" oninput="recalc()"><span class="print-tax-rate"></span>%)</td>
         <td id="taxAmount">$0.00</td>
       </tr>
       <tr>
@@ -579,6 +611,9 @@
 
     const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
     const tax = subtotal * (taxRate / 100);
+
+    // Update the print-only tax rate span
+    document.querySelector('.print-tax-rate').textContent = taxRate;
 
     const discountText = document.getElementById('discount').textContent.replace(/[^0-9.\-]/g, '');
     const discount = parseFloat(discountText) || 0;
@@ -747,6 +782,37 @@
       toast.style.opacity = '0';
       setTimeout(() => toast.remove(), 300);
     }, 2000);
+  }
+
+  // ── Currency switching ──
+  let currentCurrency = 'AUD';
+  const currencyConfig = {
+    AUD: { symbol: 'A$', sign: '$', taxLabel: 'GST', defaultTax: '10' },
+    USD: { symbol: 'US$', sign: '$', taxLabel: 'Tax', defaultTax: '0' }
+  };
+
+  function setCurrency(code) {
+    currentCurrency = code;
+    const cfg = currencyConfig[code];
+
+    // Update toolbar buttons
+    document.getElementById('btnAUD').classList.toggle('active', code === 'AUD');
+    document.getElementById('btnUSD').classList.toggle('active', code === 'USD');
+
+    // Update table headers
+    const headers = document.querySelectorAll('.items-table thead th');
+    headers[3].textContent = 'Rate (' + cfg.sign + ')';
+    headers[4].textContent = 'Amount (' + cfg.sign + ')';
+
+    // Update tax label
+    const taxCell = document.getElementById('taxRate').parentElement;
+    taxCell.firstChild.textContent = cfg.taxLabel + ' (';
+
+    // Update default tax rate
+    document.getElementById('taxRate').value = cfg.defaultTax;
+
+    recalc();
+    showToast('Currency set to ' + code);
   }
 
   // Initial calc

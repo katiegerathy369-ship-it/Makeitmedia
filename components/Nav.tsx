@@ -8,6 +8,7 @@ import { useAnimate } from 'framer-motion'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const isWork = pathname === '/work'
   const s = isWork ? '/' : ''
@@ -28,6 +29,7 @@ export default function Nav() {
       animate('#logo-dot', { opacity: [0, 1], scale: [0, 1] }, { duration: 0.35 })
     }
     sequence()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const linkClass =
@@ -39,7 +41,7 @@ export default function Nav() {
     <nav
       className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between backdrop-blur-md border-b border-sage/20 transition-all duration-300"
       style={{
-        padding: scrolled ? '14px 48px' : '20px 48px',
+        padding: scrolled ? '14px clamp(16px, 4vw, 48px)' : '20px clamp(16px, 4vw, 48px)',
         background: 'rgba(250,248,244,0.85)',
       }}
     >
@@ -132,6 +134,7 @@ export default function Nav() {
         </div>
       </Link>
 
+      {/* Desktop nav */}
       <ul className="hidden md:flex items-center gap-9 list-none">
         <li>
           <a href={`${s}#services`} className={linkClass}>
@@ -159,6 +162,85 @@ export default function Nav() {
           </CalButton>
         </li>
       </ul>
+
+      {/* Mobile hamburger */}
+      <button
+        className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] bg-transparent border-none cursor-pointer"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Toggle menu"
+      >
+        <span
+          className="block w-5 h-[2px] bg-ink transition-all duration-300"
+          style={mobileOpen ? { transform: 'rotate(45deg) translate(2.5px, 2.5px)' } : {}}
+        />
+        <span
+          className="block w-5 h-[2px] bg-ink transition-all duration-300"
+          style={mobileOpen ? { opacity: 0 } : {}}
+        />
+        <span
+          className="block w-5 h-[2px] bg-ink transition-all duration-300"
+          style={mobileOpen ? { transform: 'rotate(-45deg) translate(2.5px, -2.5px)' } : {}}
+        />
+      </button>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-[99]"
+          style={{ top: scrolled ? '56px' : '68px' }}
+        >
+          <div
+            className="absolute inset-0 bg-black/20"
+            onClick={() => setMobileOpen(false)}
+          />
+          <ul
+            className="relative flex flex-col gap-1 list-none p-6"
+            style={{ background: 'rgba(250,248,244,0.98)', backdropFilter: 'blur(12px)' }}
+          >
+            <li>
+              <a
+                href={`${s}#services`}
+                className={`${linkClass} block py-3 text-[16px]`}
+                onClick={() => setMobileOpen(false)}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <Link
+                href="/work"
+                className={`${isWork ? activeLinkClass : linkClass} block py-3 text-[16px]`}
+                onClick={() => setMobileOpen(false)}
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <a
+                href={`${s}#about`}
+                className={`${linkClass} block py-3 text-[16px]`}
+                onClick={() => setMobileOpen(false)}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href={`${s}#faq`}
+                className={`${linkClass} block py-3 text-[16px]`}
+                onClick={() => setMobileOpen(false)}
+              >
+                FAQ
+              </a>
+            </li>
+            <li className="pt-3">
+              <CalButton className="font-body text-[14px] font-medium tracking-[0.03em] no-underline px-[22px] py-[12px] rounded-full bg-sage-dark text-white border-none cursor-pointer w-full text-center block">
+                Book a call
+              </CalButton>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   )
 }

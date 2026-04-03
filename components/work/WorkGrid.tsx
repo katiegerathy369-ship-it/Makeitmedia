@@ -268,7 +268,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.08 }}
       whileHover={{ y: -6, boxShadow: '0 24px 52px rgba(42,37,32,0.13)', transition: { type: 'spring', stiffness: 350, damping: 22 } }}
       whileTap={{ scale: 0.985 }}
-      className={`${sharedClass} ${project.fullWidth ? 'col-span-2 grid grid-cols-[1.15fr_1fr]' : ''}`}
+      className={`${sharedClass} ${project.fullWidth ? 'md:col-span-2 md:grid md:grid-cols-[1.15fr_1fr]' : ''}`}
     >
       {cardInner}
     </motion.a>
@@ -284,7 +284,7 @@ function SectionDivider({ label }: { label: string }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="col-span-2 flex items-center gap-4 mt-10 mb-0"
+      className="col-span-1 md:col-span-2 flex items-center gap-4 mt-10 mb-0"
     >
       <span className="text-[11px] font-medium tracking-[0.1em] uppercase text-ink-light whitespace-nowrap">
         {label}
@@ -308,7 +308,7 @@ export default function WorkGrid({ activeFilter }: { activeFilter: FilterKey }) 
   let cardIndex = 0
 
   return (
-    <div className="grid grid-cols-2 gap-7">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
       {PROJECTS.map((project) => {
         const isVisible =
           activeFilter === 'all' || project.filterTags.includes(activeFilter)
@@ -321,14 +321,13 @@ export default function WorkGrid({ activeFilter }: { activeFilter: FilterKey }) 
 
         if (!isVisible) return null
 
-        const el = (
-          <>
-            {isFirstConcept && <SectionDivider key="concept-divider" label="Concept designs" />}
-            <WorkCard key={project.id} project={project} index={cardIndex} />
-          </>
-        )
+        const elements = []
+        if (isFirstConcept) {
+          elements.push(<SectionDivider key="concept-divider" label="Concept designs" />)
+        }
+        elements.push(<WorkCard key={project.id} project={project} index={cardIndex} />)
         cardIndex++
-        return el
+        return elements
       })}
     </div>
   )

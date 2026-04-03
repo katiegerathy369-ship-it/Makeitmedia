@@ -22,3 +22,113 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Global mobile overrides for all She Thrives sections */
+@media (max-width: 767px) {
+  .sheThrivesRoot section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .sheThrivesRoot [style*="gridTemplateColumns: '1fr 1fr'"],
+  .sheThrivesRoot [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Hero ── */
+.hero {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.heroLeft {
+  background: var(--blush-pale);
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.heroRight {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.heroDivider {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  bottom: 80px;
+  width: 1px;
+  background: rgba(196,112,106,0.2);
+  z-index: 3;
+}
+.heroStats {
+  position: absolute;
+  bottom: 32px;
+  left: 64px;
+  display: flex;
+  gap: 36px;
+}
+
+/* ── Sections ── */
+.sectionPadding {
+  padding: 100px 48px;
+}
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+  }
+  .heroLeft {
+    padding: 100px 24px 48px;
+    order: 1;
+  }
+  .heroRight {
+    height: 50vh;
+    order: 0;
+  }
+  .heroDivider {
+    display: none;
+  }
+  .heroStats {
+    position: static;
+    margin-top: 32px;
+    gap: 24px;
+  }
+  .sectionPadding {
+    padding: 64px 20px;
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .twoColGrid {
+    grid-template-columns: 1fr !important;
+  }
+  .fourColGrid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .threeColGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
