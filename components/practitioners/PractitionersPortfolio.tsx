@@ -9,7 +9,7 @@ const projects = [
     type: 'Naturopath · Brisbane',
     tag: 'Live site',
     href: '/work/amy-angus',
-    image: '/images/portfolio/amy-angus-naturopathy/desktop-after/desktop-after-home.png',
+    image: '/images/portfolio/amy-angus-naturopathy/amy-angus-naturopath-website.jpg',
   },
   {
     title: 'Nourish & Co.',
@@ -23,7 +23,7 @@ const projects = [
     type: "Women's health coach · Concept",
     tag: 'Concept',
     href: '/work/concept-womens-coach',
-    image: '/images/portfolio/concept-womens-health-coach-shethrivesco/shethrivesco-preview.jpg',
+    image: '/images/portfolio/concept-womens-health-coach-shethrivesco/shethrives-conceptsite.jpg',
   },
 ]
 
