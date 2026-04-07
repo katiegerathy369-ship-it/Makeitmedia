@@ -1,134 +1,425 @@
-/* ── She Thrives Co. — Design Tokens ─────────────────────────────────────── */
+/* ── She Thrives Co. — Design Tokens (Ethereal Editorial Palette) ────────── */
+/* Based on DESIGN.md: "The Sacred Storybook" */
 
 .sheThrivesRoot {
-  --blush: #f2d4cc;
-  --blush-deep: #e8b4a8;
-  --blush-pale: #fdf4f0;
-  --rose: #c4706a;
-  --rose-dark: #9a4a44;
-  --rose-pale: #fae8e4;
-  --cream: #fdfaf6;
-  --warm: #f8f2e8;
-  --sand: #e8dcc8;
-  --ink: #1e1412;
-  --ink-mid: #5a4a44;
-  --ink-light: #9a8a84;
-  --gold: #c8a060;
-  --gold-light: #e8c888;
+  /* Core palette — aligned to DESIGN.md */
+  --st-primary: #56695a;
+  --st-primary-dim: #4a5d4e;
+  --st-primary-fixed: #d3e8d5;
+  --st-primary-fixed-dim: #c5dac7;
+  --st-secondary: #815a5b;
+  --st-secondary-fixed: #ffdad9;
+  --st-secondary-fixed-dim: #fac8c8;
+  --st-tertiary: #6d5b93;
+  --st-tertiary-fixed: #cab4f3;
+  --st-tertiary-fixed-dim: #bca6e4;
 
-  color: var(--ink);
-  background: var(--cream);
-  font-family: var(--font-body), system-ui, sans-serif;
+  /* Surfaces — warm cream, never cold white */
+  --st-surface: #fffcf6;
+  --st-surface-dim: #e4e3d3;
+  --st-surface-bright: #fffcf6;
+  --st-surface-container-lowest: #ffffff;
+  --st-surface-container-low: #fcf9f1;
+  --st-surface-container: #f6f4ea;
+  --st-surface-container-high: #f0eee3;
+  --st-surface-container-highest: #eae9db;
+  --st-surface-variant: #eae9db;
+
+  /* Text — never pure black */
+  --st-on-surface: #38392f;
+  --st-on-surface-variant: #65655a;
+  --st-on-primary: #ffffff;
+
+  /* Outline — used sparingly */
+  --st-outline: #818176;
+  --st-outline-variant: #babaad;
+
+  /* Legacy aliases for easier migration */
+  --st-dark: #38392f;
+  --st-dark-soft: #65655a;
+  --st-moss: #56695a;
+  --st-moss-dark: #4a5d4e;
+  --st-beige: #fffcf6;
+  --st-beige-dark: #fcf9f1;
+  --st-rosy: #815a5b;
+  --st-rosy-light: rgba(129, 90, 91, 0.15);
+  --st-midnight: #6d5b93;
+
+  /* Ambient shadows — tinted olive, ultra-diffused per DESIGN.md */
+  --st-shadow-ambient: 0 8px 40px rgba(56, 57, 47, 0.05);
+  --st-shadow-float: 0 12px 48px rgba(56, 57, 47, 0.07);
+  --st-shadow-glow-primary: 0 0 24px rgba(86, 105, 90, 0.3);
+  --st-shadow-glow-primary-hover: 0 0 48px rgba(86, 105, 90, 0.5);
+
+  /* Radii — soft, never sharp (DESIGN.md: no "none" or "sm") */
+  --st-radius-md: 20px;
+  --st-radius-lg: 28px;
+  --st-radius-xl: 36px;
+  --st-radius-pill: 9999px;
+
+  color: var(--st-on-surface);
+  background: var(--st-surface);
+  font-family: var(--font-body), 'Raleway', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Global mobile overrides for all She Thrives sections */
-@media (max-width: 767px) {
-  .sheThrivesRoot section {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .sheThrivesRoot [style*="gridTemplateColumns: '1fr 1fr'"],
-  .sheThrivesRoot [style*="grid-template-columns: 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-  }
+/* ── Floating Animation ───────────────────────────────────────────────────── */
+
+.floatSlow {
+  animation: floatSlow 8s ease-in-out infinite;
 }
 
-/* ── Hero ── */
+.floatMedium {
+  animation: floatMedium 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ── Botanical Dot Pattern (DESIGN.md: botanical-bg) ─────────────────────── */
+
+.botanicalBg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(86, 105, 90, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* ── Wave Dividers ────────────────────────────────────────────────────────── */
+
+.waveTop {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 2;
+}
+
+.waveBottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 2;
+}
+
+/* ── Section Layouts ──────────────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px clamp(20px, 5vw, 64px);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────────── */
+
 .hero {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
-}
-.heroLeft {
-  background: var(--blush-pale);
-  padding: 0 64px;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  position: relative;
+  text-align: center;
   overflow: hidden;
 }
-.heroRight {
-  position: relative;
-  overflow: hidden;
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.8;
 }
-.heroDivider {
+
+.heroOverlay {
   position: absolute;
-  left: 50%;
-  top: 80px;
-  bottom: 80px;
-  width: 1px;
-  background: rgba(196,112,106,0.2);
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 252, 246, 0.2) 0%,
+    rgba(255, 252, 246, 0.4) 40%,
+    rgba(255, 252, 246, 0.7) 65%,
+    #fffcf6 100%
+  );
+}
+
+.heroContent {
+  position: relative;
   z-index: 3;
+  max-width: 800px;
+  padding: 0 clamp(20px, 4vw, 40px);
 }
-.heroStats {
+
+/* ── Buttons (DESIGN.md: pebble-like, gradient primary) ──────────────────── */
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body), 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--st-on-primary);
+  background: linear-gradient(135deg, var(--st-primary) 0%, var(--st-primary-dim) 100%);
+  padding: 16px 36px;
+  border-radius: var(--st-radius-pill);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: var(--st-shadow-glow-primary);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--st-shadow-glow-primary-hover);
+}
+
+/* Ghost button — surface-container-high bg, no border (DESIGN.md) */
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body), 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--st-primary);
+  background: var(--st-surface-container-high);
+  padding: 15px 32px;
+  border-radius: var(--st-radius-pill);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnGhost:hover {
+  background: var(--st-surface-container-highest);
+}
+
+/* Glow CTA — hero use */
+.btnGlow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display), 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--st-on-primary);
+  background: linear-gradient(135deg, var(--st-primary) 0%, var(--st-primary-dim) 100%);
+  padding: 20px 48px;
+  border-radius: var(--st-radius-pill);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--st-shadow-glow-primary);
+  transition: all 0.5s ease;
+}
+
+.btnGlow:hover {
+  box-shadow: var(--st-shadow-glow-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Tertiary button — typographic with underline (DESIGN.md) */
+.btnTertiary {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display), 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--st-primary);
+  background: none;
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid var(--st-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: letter-spacing 0.3s ease;
+}
+
+.btnTertiary:hover {
+  letter-spacing: 0.08em;
+}
+
+/* White solid CTA */
+.btnSolid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body), 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--st-primary);
+  background: var(--st-surface-container-lowest);
+  padding: 16px 36px;
+  border-radius: var(--st-radius-pill);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: var(--st-shadow-float);
+}
+
+.btnSolid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 56px rgba(56, 57, 47, 0.1);
+}
+
+/* ── Service Cards (Glassmorphism, winding path layout) ──────────────────── */
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: clamp(32px, 4vw, 40px);
+  border-radius: var(--st-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.7s ease;
+}
+
+.serviceCard:hover {
+  box-shadow: 0 20px 60px rgba(56, 57, 47, 0.1);
+}
+
+/* ── Arch Photo Frame (Wavy Portal — DESIGN.md signature component) ──────── */
+
+.archPhoto {
+  border-radius: 200px 200px 24px 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Arch border uses primary-fixed-dim tonal shift instead of hard line */
+.archPhotoBorder {
   position: absolute;
-  bottom: 32px;
-  left: 64px;
-  display: flex;
-  gap: 36px;
+  inset: -8px;
+  border-radius: 208px 208px 32px 32px;
+  background: var(--st-primary-fixed-dim);
+  z-index: -1;
 }
 
-/* ── Sections ── */
-.sectionPadding {
-  padding: 100px 48px;
-}
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* ── Testimonial Section ──────────────────────────────────────────────────── */
+
+.testimonialSection {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 10vw, 120px) clamp(20px, 5vw, 64px);
+  background: var(--st-surface);
 }
 
-/* ── Mobile overrides ── */
+/* Testimonial card — asymmetric radius, hover lift */
+.testimonialCard {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-8px);
+}
+
+/* ── CTA Section ─────────────────────────────────────────────────────────── */
+
+.ctaSection {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(100px, 12vw, 160px) clamp(20px, 5vw, 64px);
+  text-align: center;
+}
+
+.ctaBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ctaBgTint {
+  position: absolute;
+  inset: 0;
+  background: rgba(86, 105, 90, 0.05);
+}
+
+/* ── Wavy Keyword Marquee ────────────────────────────────────────────────── */
+
+.wavyMarquee {
+  background: var(--st-surface);
+  overflow: visible;
+  padding: 0;
+  margin-top: -20px;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.wavyMarqueeSvg {
+  display: block;
+  width: 200%;
+  height: auto;
+}
+
+.wavyMarqueeText {
+  font-family: var(--font-display), 'Lora', Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  fill: var(--st-primary);
+  opacity: 0.2;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
 @media (max-width: 767px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    grid-template-columns: 1fr;
+  .section {
+    padding: 72px clamp(20px, 5vw, 32px);
   }
-  .heroLeft {
-    padding: 100px 24px 48px;
-    order: 1;
+
+  .heroContent {
+    padding-top: 100px;
   }
-  .heroRight {
-    height: 50vh;
-    order: 0;
+}
+
+
+/* ── Reduced Motion ───────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .floatSlow,
+  .floatMedium {
+    animation: none !important;
   }
-  .heroDivider {
-    display: none;
-  }
-  .heroStats {
-    position: static;
-    margin-top: 32px;
-    gap: 24px;
-  }
-  .sectionPadding {
-    padding: 64px 20px;
-  }
-  .valuesGrid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .twoColGrid {
-    grid-template-columns: 1fr !important;
-  }
-  .fourColGrid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .threeColGrid {
-    grid-template-columns: 1fr !important;
+
+  .pillarCard:hover,
+  .testimonialCard:hover {
+    transform: none !important;
   }
 }

@@ -7,8 +7,8 @@ const faqs = [
   {
     q: "Why don't you build on WordPress, Wix, or Squarespace?",
     a: [
-      "I've used them. Most practitioners have tried them too — opened the builder, stared at 400 templates, felt overwhelmed, and closed the laptop. That's not a design process. That's a guessing game.",
-      "The sites I build are custom-designed from scratch. I start by designing your entire site in Canva so you can see exactly what it will look like before anything gets built. Once you're happy, I code it. The result loads faster, ranks better in Google, and looks nothing like a template. <strong>Your patients notice the difference even if they can't name it.</strong>",
+      "I've used them. Most business owners have tried them too — opened the builder, stared at 400 templates, felt overwhelmed, and closed the laptop. That's not a design process. That's a guessing game.",
+      "The sites I build are custom-designed from scratch. I start by designing your entire site in Canva so you can see exactly what it will look like before anything gets built. Once you're happy, I code it. The result loads faster, ranks better in Google, and looks nothing like a template. <strong>Your clients notice the difference even if they can't name it.</strong>",
       "The short version: I don't use those platforms because I can build something better, and better is what you're paying for.",
     ],
   },
@@ -16,13 +16,13 @@ const faqs = [
     q: "Can I update the site myself once it's live?",
     a: [
       "Yes, for most content changes — updating your bio, adding a new service, swapping a photo. I'll walk you through how to do this and leave you with clear documentation.",
-      "For bigger structural changes or new sections, that's what the Care Plan monthly maintenance add-on is for. It includes up to 2 hours of site updates per month so you're never stuck.",
+      "For bigger structural changes or new sections, that's what the Growth monthly retainer is for. It includes up to 2 hours of site updates per month so you're never stuck.",
     ],
   },
   {
     q: "Do you write all the copy or do I need to provide it?",
     a: [
-      "I write all of it. Every page, every heading, every call to action — using my clinical background to make it sound like you, not a template.",
+      "I write all of it. Every page, every heading, every call to action — written specifically for your business and your ideal clients.",
       "All I need from you is a 60-minute brand messaging session and answers to a short questionnaire. <strong>You don't need to write a single word.</strong> I'll send you a draft and you tell me what to tweak.",
     ],
   },
@@ -43,15 +43,15 @@ const faqs = [
   {
     q: "Do you use AI to build websites?",
     a: [
-      "Yes — and I'm upfront about it. I use AI tools to write cleaner code faster, research search terms your patients actually use, and draft copy that's structured to rank in Google. It's why I can deliver a custom site in 2–3 weeks at a price that would be impossible for a traditional agency.",
-      "What I don't do is hand everything to a chatbot and call it done. <strong>Every design, every word of copy, and every strategy decision is made by me — a qualified health practitioner who understands your patients.</strong> AI handles the heavy lifting. I handle the thinking. You approve everything before it goes live.",
+      "Yes — and I'm upfront about it. I use AI tools to write cleaner code faster, research search terms your clients actually use, and draft copy that's structured to rank in Google. It's why I can deliver a custom site in 2–3 weeks at a price that would be impossible for a traditional agency.",
+      "What I don't do is hand everything to a chatbot and call it done. <strong>Every design, every word of copy, and every strategy decision is made by me.</strong> AI handles the heavy lifting. I handle the thinking. You approve everything before it goes live.",
     ],
   },
   {
-    q: "Do you only work with naturopaths?",
+    q: "What industries do you work with?",
     a: [
-      "No — I work with any health or wellness practitioner. Naturopaths, nutritionists, herbalists, health coaches, women's coaches, integrative GPs, and more.",
-      "My background is in naturopathy, which gives me a deep understanding of the broader health practitioner world — the patient relationship, the language, the way your clients search for help online. <strong>If you work in health and wellness, I can help you.</strong>",
+      "I work with small businesses across all industries — health & wellness, professional services, hospitality, trades, coaching, retail, and more.",
+      "I also have a <strong><a href='/health-practitioners' style='color: #c9a84c; text-decoration: underline;'>dedicated service for health practitioners</a></strong> built on my background as a qualified naturopath. If you're a naturopath, nutritionist, health coach, or integrative practitioner, that page has everything you need.",
     ],
   },
 ]
@@ -62,19 +62,19 @@ function FaqItem({ q, a }: { q: string; a: string[] }) {
   return (
     <div
       className="rounded-lg overflow-hidden bg-white transition-colors duration-200"
-      style={{ border: open ? '1px solid var(--sage)' : '1px solid var(--border)' }}
+      style={{ border: open ? '1px solid var(--gold)' : '1px solid var(--border)' }}
     >
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 font-body text-left cursor-pointer border-none transition-colors duration-200"
-        style={{ background: open ? 'var(--sage-pale)' : 'transparent' }}
+        style={{ background: open ? 'var(--gold-pale)' : 'transparent' }}
       >
         <span className="text-[15px] font-medium text-ink leading-[1.4] flex-1">
           {q}
         </span>
         <span
-          className="text-sage-dark flex-shrink-0 flex items-center transition-transform duration-300"
+          className="text-gold flex-shrink-0 flex items-center transition-transform duration-300"
           style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -119,7 +119,7 @@ export default function FAQ() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="md:sticky md:top-[100px]"
           >
-            <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-terra mb-4">
+            <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-gold mb-4">
               Common questions
             </p>
             <h2
@@ -127,7 +127,7 @@ export default function FAQ() {
               style={{ fontSize: 'clamp(36px, 4vw, 56px)' }}
             >
               Things people<br />
-              ask me <em className="italic text-sage-dark">first</em>
+              ask me <em className="italic" style={{ color: '#c9a84c' }}>first</em>
             </h2>
             <p className="text-[15px] text-ink-mid font-light leading-[1.7] mt-4">
               Honest answers — no fluff.

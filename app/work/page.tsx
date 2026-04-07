@@ -3,12 +3,11 @@ import Nav from '@/components/Nav'
 import WorkHero from '@/components/work/WorkHero'
 import WorkSection from '@/components/work/WorkSection'
 import Footer from '@/components/Footer'
-import OtherWorkStrip from '@/components/work/OtherWorkStrip'
 
 export const metadata: Metadata = {
-  title: 'Naturopath Website Portfolio | Make It Media',
+  title: 'Website Design Portfolio | Make It Media',
   description:
-    'Real websites built for Australian health practitioners. See naturopath, nutritionist and health coach website examples.',
+    'Custom websites built for Australian small businesses. See real client work across health, finance, real estate and more.',
 }
 
 export default function WorkPage() {
@@ -19,7 +18,6 @@ export default function WorkPage() {
         <WorkHero />
         <WorkSection />
       </main>
-      <OtherWorkStrip />
       <Footer />
     </>
   )

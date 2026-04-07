@@ -4,114 +4,79 @@ import Link from 'next/link'
 
 const BASE = '/work/concept-womens-coach'
 
-const navLinks = [
-  { label: 'Home', href: BASE },
-  { label: 'About', href: `${BASE}/about` },
-  { label: 'Work with me', href: `${BASE}/work-with-me` },
-  { label: 'Contact', href: `${BASE}/contact` },
-]
-
 export default function SheThrivesFooter() {
   return (
-    <footer
-      style={{
-        background: 'var(--ink)',
-        color: 'var(--blush)',
-        padding: '72px clamp(20px, 4vw, 48px) 40px',
-      }}
-    >
-      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-        {/* Top row */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginBottom: 48,
-          }}
-        >
+    <footer style={{ position: 'relative', overflow: 'hidden' }}>
+      <div style={{
+        background: '#2a2f28',
+        padding: 'clamp(48px, 6vw, 72px) clamp(20px, 5vw, 48px) clamp(32px, 4vw, 48px)',
+      }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           {/* Logo */}
-          <Link
-            href={BASE}
-            style={{
-              fontFamily: 'var(--font-display), Georgia, serif',
-              fontSize: 24,
-              color: 'var(--blush)',
-              textDecoration: 'none',
-            }}
-          >
-            She Thrives Co.
-          </Link>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <span style={{
+              fontFamily: "var(--font-display), 'Lora', Georgia, serif",
+              fontSize: 20, fontWeight: 400, fontStyle: 'italic',
+              color: 'rgba(255, 252, 246, 0.85)',
+            }}>
+              She Thrives Co.
+            </span>
+          </div>
 
-          {/* Nav */}
-          <div style={{ display: 'flex', gap: 32 }}>
-            {navLinks.map((link) => (
+          {/* Nav links */}
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
+            gap: 'clamp(20px, 3vw, 40px)', marginBottom: 40,
+          }}>
+            {[
+              { label: 'Privacy Policy', href: `${BASE}` },
+              { label: 'Terms', href: `${BASE}` },
+              { label: 'Contact Us', href: `${BASE}/contact` },
+              { label: 'Instagram', href: `${BASE}` },
+              { label: 'Pinterest', href: `${BASE}` },
+            ].map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 style={{
-                  fontFamily: 'var(--font-body), system-ui, sans-serif',
-                  fontSize: 13,
-                  color: 'rgba(242,212,204,0.6)',
+                  fontFamily: "var(--font-body), 'Raleway', sans-serif",
+                  fontSize: 12, fontWeight: 400,
+                  letterSpacing: '0.12em', textTransform: 'uppercase',
+                  color: 'rgba(255, 252, 246, 0.35)',
                   textDecoration: 'none',
-                  letterSpacing: '0.03em',
+                  transition: 'letter-spacing 0.3s ease',
                 }}
               >
                 {link.label}
               </Link>
             ))}
           </div>
-        </div>
 
-        {/* Divider */}
-        <div
-          style={{
-            height: 1,
-            background: 'rgba(242,212,204,0.12)',
-            marginBottom: 24,
-          }}
-        />
+          {/* Bottom line */}
+          <div style={{ textAlign: 'center' }}>
+            <span style={{
+              fontFamily: "var(--font-body), 'Raleway', sans-serif",
+              fontSize: 11, fontWeight: 400,
+              letterSpacing: '0.1em', textTransform: 'uppercase',
+              color: 'rgba(255, 252, 246, 0.2)',
+            }}>
+              &copy; {new Date().getFullYear()} She Thrives Co. Return to yourself.
+            </span>
+          </div>
 
-        {/* Bottom row */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-body), system-ui, sans-serif',
-              fontSize: 12,
-              color: 'rgba(242,212,204,0.4)',
-              fontWeight: 300,
-            }}
-          >
-            © 2026 She Thrives Co. All rights reserved.
-          </span>
-
-          <span
-            style={{
-              fontFamily: 'var(--font-body), system-ui, sans-serif',
-              fontSize: 11,
-              color: 'rgba(242,212,204,0.35)',
-              fontWeight: 300,
-              letterSpacing: '0.04em',
-            }}
-          >
-            Site by{' '}
+          {/* Make It Media credit */}
+          <div style={{ textAlign: 'center', marginTop: 16 }}>
             <Link
-              href="/"
+              href="/work"
               style={{
-                color: 'rgba(242,212,204,0.5)',
-                textDecoration: 'none',
-                borderBottom: '1px solid rgba(242,212,204,0.15)',
+                fontFamily: "var(--font-body), 'Raleway', sans-serif",
+                fontSize: 10, color: 'rgba(255, 252, 246, 0.12)',
+                textDecoration: 'none', letterSpacing: '0.06em',
               }}
             >
-              Make It Media
+              Site by Make It Media
             </Link>
-          </span>
+          </div>
         </div>
       </div>
     </footer>

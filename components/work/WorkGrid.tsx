@@ -34,7 +34,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 'amy-angus',
-    filterTags: ['live', 'naturopath'],
+    filterTags: ['live'],
     fullWidth: true,
     href: '/work/amy-angus',
     browserUrl: 'amy-angus-naturopathy.com.au',
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     title: 'Amy Angus Naturopathy',
     practice: 'Naturopath · Brisbane, QLD · Tier 2 — Visibility package',
     pills: [
-      '5-page custom website',
+      '6-page custom website',
       'Professional copywriting',
       'Online bookings',
       '30-day content launch',
@@ -57,10 +57,51 @@ export const PROJECTS: Project[] = [
       'GA4 + Clarity setup',
     ],
     link: { label: 'View case study', href: '/work/amy-angus' },
+    screenshot: '/images/portfolio/amy-angus-naturopathy/amy-angus-naturopath-website.jpg',
+  },
+  {
+    id: 'position-ready-finance',
+    filterTags: ['live'],
+    fullWidth: false,
+    href: 'https://positionreadyfinance.com.au/',
+    browserUrl: 'positionreadyfinance.com.au',
+    previewVariant: 'amy',
+    previewH1: ['w-75', 'w-90'],
+    previewBody: [{ w: 'w-100', mt: true }, { w: 'w-80' }],
+    cardTags: [
+      { label: '✦ Live site', variant: 'live' },
+      { label: 'Mortgage broker', variant: 'type' },
+      { label: 'Australia', variant: 'type' },
+    ],
+    title: 'Position Ready Finance',
+    practice: 'Mortgage Broker · Australia · Full website rebuild',
+    pills: ['Full rebuild', 'Booking integration', 'SEO foundations', 'Conversion-focused'],
+    link: { label: 'View live site', href: 'https://positionreadyfinance.com.au/' },
+    screenshot: '/images/portfolio/position-ready-finance/position-ready-wesbite.jpg',
+  },
+  {
+    id: 'walkers-landing',
+    filterTags: ['live'],
+    fullWidth: false,
+    href: 'https://walkerslandinggeorgia.com/',
+    browserUrl: 'walkerslandinggeorgia.com',
+    previewVariant: 'amy',
+    previewH1: ['w-75', 'w-90'],
+    previewBody: [{ w: 'w-100', mt: true }, { w: 'w-80' }],
+    cardTags: [
+      { label: '✦ Live site', variant: 'live' },
+      { label: 'Real estate', variant: 'type' },
+      { label: 'Georgia, USA', variant: 'type' },
+    ],
+    title: "Walker's Landing Georgia",
+    practice: 'Real Estate · Georgia, USA · Sales landing page',
+    pills: ['Multilingual (4 languages)', '3D renders & video', 'Interactive lot map', 'ROI calculator', 'Email automations'],
+    link: { label: 'View live site', href: 'https://walkerslandinggeorgia.com/' },
+    screenshot: '/images/portfolio/walkers-landing/walkers-landing-website.jpg',
   },
   {
     id: 'concept-nutritionist',
-    filterTags: ['concept', 'nutritionist'],
+    filterTags: ['concept'],
     fullWidth: false,
     href: '/work/concept-nutritionist',
     browserUrl: 'concept — nutritionist',
@@ -79,7 +120,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'concept-womens-coach',
-    filterTags: ['concept', 'coach'],
+    filterTags: ['concept'],
     fullWidth: false,
     href: '/work/concept-womens-coach',
     browserUrl: "concept — women's health coach",
@@ -94,11 +135,11 @@ export const PROJECTS: Project[] = [
     practice: "Women's health coach · Blush rose palette · Tier 2 — Visibility",
     pills: ['6-page website', 'Brand messaging', 'Instagram launch kit', 'Email sequence'],
     link: { label: 'View concept site', href: '/work/concept-womens-coach' },
-    screenshot: '/images/portfolio/concept-womens-health-coach-shethrivesco/shethrivesco-preview.jpg',
+    screenshot: '/images/portfolio/concept-womens-health-coach-shethrivesco/shethrives-conceptsite.jpg',
   },
   {
     id: 'concept-integrative-gp',
-    filterTags: ['concept', 'gp'],
+    filterTags: ['concept'],
     fullWidth: false,
     href: '/work/concept-integrative-gp',
     browserUrl: 'concept — integrative GP',
@@ -185,9 +226,9 @@ function BrowserPreview({ project }: { project: Project }) {
 // ── TAG STYLES ────────────────────────────────────────────────────────────────
 
 const tagStyles: Record<string, string> = {
-  live: 'bg-sage-pale text-sage-dark border border-sage-light',
-  concept: 'bg-terra-pale text-terra border border-terra-light',
-  type: 'bg-white text-ink-mid border border-[rgba(122,158,135,0.2)]',
+  live: 'bg-gold-pale text-gold-dark border border-gold-light',
+  concept: 'bg-warm-white text-ink-light border border-[rgba(201,168,76,0.2)]',
+  type: 'bg-white text-ink-mid border border-[rgba(201,168,76,0.15)]',
 }
 
 // ── WORK CARD ─────────────────────────────────────────────────────────────────
@@ -234,7 +275,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
           {project.pills.map((pill) => (
             <span
               key={pill}
-              className="text-[11px] text-ink-mid bg-warm-white border border-[rgba(122,158,135,0.2)] px-2.5 py-1 rounded-full"
+              className="text-[11px] text-ink-mid bg-warm-white border border-[rgba(201,168,76,0.15)] px-2.5 py-1 rounded-full"
             >
               {pill}
             </span>
@@ -242,7 +283,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {project.link ? (
-          <span className="inline-flex items-center gap-[5px] text-[13px] font-medium text-sage-dark border-b border-sage-light pb-px group-hover:text-ink group-hover:border-ink transition-colors duration-200">
+          <span className="inline-flex items-center gap-[5px] text-[13px] font-medium text-gold border-b border-gold-light pb-px group-hover:text-ink group-hover:border-ink transition-colors duration-200">
             {project.link.label}
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-[3px] transition-transform duration-200">
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -257,7 +298,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
     </>
   )
 
-  const sharedClass = `group bg-white rounded-[20px] overflow-hidden border border-[rgba(122,158,135,0.2)] block no-underline text-inherit`
+  const sharedClass = `group bg-white rounded-[20px] overflow-hidden border border-[rgba(201,168,76,0.15)] block no-underline text-inherit`
 
   return (
     <motion.a

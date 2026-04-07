@@ -13,9 +13,9 @@ In Next.js 14 use dangerouslySetInnerHTML in layout.tsx or individual page.tsx f
       "@id": "https://makeitmedia.com.au/#organization",
       "name": "Make It Media",
       "url": "https://makeitmedia.com.au",
-      "description": "AI-powered web design and digital marketing agency for health practitioners in Australia.",
+      "description": "AI-powered web design and digital marketing agency for Australian small businesses.",
       "areaServed": "AU",
-      "knowsAbout": ["Naturopath website design","Health practitioner digital marketing","Nutritionist website design"]
+      "knowsAbout": ["Small business website design","Digital marketing for small business","Health practitioner website design","SEO for small business"]
     },
     {
       "@type": "WebSite",
@@ -28,30 +28,46 @@ In Next.js 14 use dangerouslySetInnerHTML in layout.tsx or individual page.tsx f
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How much does a naturopath website cost in Australia?",
+          "name": "How much does a small business website cost in Australia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Make It Media offers naturopath website packages from $2,200 AUD for a 5-page professional website. The Visibility package at $3,200 includes SEO setup and content strategy."
+            "text": "Make It Media offers small business website packages from $2,200 AUD for a 6-page professional website. The Visibility package at $3,200 includes SEO setup and content strategy."
           }
         },
         {
           "@type": "Question",
-          "name": "How long does it take to build a naturopath website?",
+          "name": "How long does it take to build a small business website?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most health practitioner websites are delivered within 2–4 weeks from project start."
+            "text": "Most small business websites are delivered within 2–4 weeks from project start."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you specialise in health practitioner websites?",
+          "name": "Do you work with businesses in any industry?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Make It Media exclusively serves health practitioners. The founder holds a Bachelor of Health Science (Naturopathy)."
+            "text": "Yes. Make It Media works with small businesses across all industries — health & wellness, professional services, hospitality, trades, coaching, retail, and more. We also have a dedicated service for health practitioners."
           }
         }
       ]
     }
+  ]
+}
+
+## Health Practitioners Page
+
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Health Practitioner Website Design",
+  "description": "Professional website design for naturopaths and health practitioners in Australia from $2,200 AUD. Built by a naturopath.",
+  "provider": { "@type": "Organization", "name": "Make It Media", "url": "https://makeitmedia.com.au" },
+  "areaServed": { "@type": "Country", "name": "Australia" },
+  "offers": [
+    { "@type": "Offer", "name": "Presence", "price": "2200", "priceCurrency": "AUD" },
+    { "@type": "Offer", "name": "Visibility", "price": "3200", "priceCurrency": "AUD" },
+    { "@type": "Offer", "name": "Growth", "price": "997", "priceCurrency": "AUD" }
   ]
 }
 
@@ -60,8 +76,8 @@ In Next.js 14 use dangerouslySetInnerHTML in layout.tsx or individual page.tsx f
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Health Practitioner Website Design",
-  "description": "Professional website design for naturopaths and health practitioners in Australia from $2,200 AUD.",
+  "name": "Small Business Website Design",
+  "description": "Professional website design for Australian small businesses from $2,200 AUD.",
   "provider": { "@type": "Organization", "name": "Make It Media", "url": "https://makeitmedia.com.au" },
   "areaServed": { "@type": "Country", "name": "Australia" },
   "offers": [

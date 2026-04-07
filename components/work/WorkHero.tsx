@@ -37,15 +37,15 @@ export default function WorkHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <div className="page-eyebrow-dot inline-flex items-center bg-sage-pale border border-sage-light text-sage-dark text-[12px] font-medium tracking-[0.08em] uppercase px-[14px] py-[6px] rounded-full mb-6">
+            <div className="inline-flex items-center bg-gold-pale border border-gold-light text-night text-[12px] font-medium tracking-[0.08em] uppercase px-[14px] py-[6px] rounded-full mb-6">
               Portfolio
             </div>
             <h1
               className="font-display font-normal leading-[1.05] text-ink"
               style={{ fontSize: 'clamp(48px, 6vw, 80px)' }}
             >
-              Built for practitioners.<br />
-              <em className="italic text-sage-dark">See the proof.</em>
+              Built for businesses<br />
+              <em className="italic" style={{ color: '#c9a84c' }}>like yours.</em>
             </h1>
           </motion.div>
 
@@ -57,11 +57,11 @@ export default function WorkHero() {
             className="pb-3"
           >
             <p className="text-[17px] text-ink-mid font-light leading-[1.75] mb-7">
-              Every site in this naturopath website portfolio is built custom — no templates, no drag-and-drop, no shortcuts. One live client, three concept designs showing the range of what's possible across different practice types.
+              Every site is built custom — no templates, no drag-and-drop, no shortcuts. Real businesses across different industries, each with a website designed to bring in clients.
             </p>
             <div className="flex gap-8">
               {[
-                { num: '1', label: 'live client site' },
+                { num: '3', label: 'live client sites' },
                 { num: '3', label: 'concept designs' },
                 { num: '2–3', label: 'week delivery' },
               ].map((stat) => (

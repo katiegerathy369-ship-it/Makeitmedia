@@ -2,18 +2,18 @@
 
 const items = [
   'Custom Website Design', 'Professional Copywriting', 'Brand Messaging',
-  'SEO Foundations', 'Booking Integration', 'Built by a Naturopath',
+  'SEO Foundations', 'Booking Integration', 'Built for Small Business',
   'Conversion-Focused', '2–3 Week Delivery', 'Email Marketing',
   'Mobile Optimised', 'Instagram Content', 'Analytics Setup',
   'Canva-First Design Process', '100% Custom Design', 'Lead Magnet Design',
-  'Health Practitioners Only'
+  'All Industries Welcome'
 ]
 
 const doubled = [...items, ...items]
 
 export default function MarqueeBanner() {
   return (
-    <div style={{ width: '100%', overflow: 'hidden', background: '#4a6e57', height: '52px', display: 'flex', alignItems: 'center', marginTop: '40px' }}>
+    <div style={{ width: '100%', overflow: 'hidden', background: '#141414', height: '52px', display: 'flex', alignItems: 'center', marginTop: '40px' }}>
       <div style={{
         display: 'flex',
         alignItems: 'center',
@@ -32,7 +32,7 @@ export default function MarqueeBanner() {
               textTransform: 'uppercase',
             }}>{item}</span>
             <span style={{
-              color: '#b8d4c0',
+              color: '#c9a84c',
               fontSize: '9px',
               margin: '0 28px',
               opacity: 0.8,

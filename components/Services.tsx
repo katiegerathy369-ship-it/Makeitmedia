@@ -13,9 +13,9 @@ const tiers = [
     priceNote: '+ GST · one-time · founding rate',
     monthly: true,
     features: [
-      'Custom 5-page website, built from scratch',
+      'Custom 6-page website, built from scratch',
       'Professional copywriting for all pages',
-      'Online booking integration (Cliniko, Simple Clinic, or Go High Level)',
+      'Online booking or contact integration',
       'On-page SEO foundations',
       'GA4 + Search Console + Clarity setup',
       'Lead magnet opt-in page',
@@ -27,7 +27,7 @@ const tiers = [
   {
     tier: 'Tier 02',
     name: 'Visibility',
-    desc: 'Website plus a full 30-day marketing launch to start driving bookings immediately.',
+    desc: 'Website plus a full 30-day marketing launch to start driving leads immediately.',
     price: 3200,
     priceNote: '+ GST · one-time · founding rate',
     monthly: true,
@@ -45,7 +45,7 @@ const tiers = [
   {
     tier: 'Tier 03',
     name: 'Growth',
-    desc: 'Ongoing marketing management so you can focus on your patients.',
+    desc: 'Ongoing marketing management so you can focus on running your business.',
     price: 997,
     priceNote: '+ GST · per month · founding rate',
     monthly: false,
@@ -81,20 +81,18 @@ function getPriceNote(card: typeof tiers[0], mode: PaymentMode) {
   return `+ GST · per week × ${INSTALLMENTS} weeks · founding rate`
 }
 
-// ── Hover variants ────────────────────────────────────────────────────────────
-
 const regularVariants = {
   rest: {
     y: 0,
     scale: 1,
-    boxShadow: '0 0px 0px rgba(74,110,87,0)',
-    borderColor: 'rgba(122,158,135,0.2)',
+    boxShadow: '0 0px 0px rgba(20,20,20,0)',
+    borderColor: 'rgba(201,168,76,0.2)',
   },
   hover: {
     y: -8,
     scale: 1,
-    boxShadow: '0 20px 40px rgba(74,110,87,0.12)',
-    borderColor: 'rgba(122,158,135,0.4)',
+    boxShadow: '0 20px 40px rgba(20,20,20,0.08)',
+    borderColor: 'rgba(201,168,76,0.4)',
   },
 }
 
@@ -102,18 +100,16 @@ const featuredVariants = {
   rest: {
     y: 0,
     scale: 1.03,
-    boxShadow: '0 24px 56px rgba(74,110,87,0.3)',
+    boxShadow: '0 24px 56px rgba(20,20,20,0.25)',
   },
   hover: {
     y: -8,
     scale: 1.03,
-    boxShadow: '0 24px 48px rgba(74,110,87,0.28)',
+    boxShadow: '0 24px 48px rgba(20,20,20,0.22)',
   },
 }
 
 const springTransition = { type: 'spring', stiffness: 300, damping: 20 } as const
-
-// ─────────────────────────────────────────────────────────────────────────────
 
 const paymentOptions: { key: PaymentMode; label: string }[] = [
   { key: 'upfront', label: 'Pay upfront' },
@@ -133,7 +129,7 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-terra mb-4">
+          <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-gold mb-4">
             Services &amp; Pricing
           </p>
           <h2
@@ -141,22 +137,22 @@ export default function Services() {
             style={{ fontSize: 'clamp(36px, 4vw, 56px)' }}
           >
             Everything you need to<br />
-            <em className="italic text-sage-dark">grow online</em>
+            <em className="italic" style={{ color: '#c9a84c' }}>grow online</em>
           </h2>
           <p className="text-[16px] text-ink-mid font-light max-w-[520px] leading-[1.7] mb-10">
-            Built specifically for health practitioners — not by agencies that don't understand your patients, your language, or what people are actually searching for.
+            Custom websites and marketing systems built for small businesses. No templates, no page builders — just clean, fast, conversion-focused design.
           </p>
 
-          {/* ── Payment plan toggle ──────────────────────────────────────── */}
+          {/* Payment plan toggle */}
           <div className="flex items-center gap-2 mb-16">
-            <div className="inline-flex rounded-full border border-[rgba(122,158,135,0.25)] bg-white p-1">
+            <div className="inline-flex rounded-full border border-[rgba(201,168,76,0.25)] bg-white p-1">
               {paymentOptions.map((opt) => (
                 <button
                   key={opt.key}
                   onClick={() => setPaymentMode(opt.key)}
                   className={`relative px-5 py-2 rounded-full text-[13px] font-medium tracking-[0.01em] transition-all duration-200 ${
                     paymentMode === opt.key
-                      ? 'bg-sage-dark text-white shadow-sm'
+                      ? 'bg-night text-white shadow-sm'
                       : 'text-ink-mid hover:text-ink'
                   }`}
                 >
@@ -171,7 +167,7 @@ export default function Services() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -8 }}
                   transition={{ duration: 0.2 }}
-                  className="text-[12px] text-sage-dark font-medium ml-2"
+                  className="text-[12px] text-gold font-medium ml-2"
                 >
                   0% interest · no credit checks
                 </motion.span>
@@ -186,7 +182,6 @@ export default function Services() {
             const priceNote = getPriceNote(card, paymentMode)
 
             return (
-            // ── Outer: entrance animation only ──────────────────────────────
             <motion.div
               key={card.name}
               initial={{ opacity: 0, y: 20 }}
@@ -194,14 +189,13 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.1 }}
             >
-              {/* ── Inner: hover animation + visual styling ───────────────── */}
               <motion.div
                 className={`relative rounded-[20px] px-8 py-9 ${
                   card.featured ? '' : 'bg-white'
                 }`}
                 style={
                   card.featured
-                    ? { background: 'var(--sage-dark)' }
+                    ? { background: 'var(--night)' }
                     : { borderWidth: '1px', borderStyle: 'solid' }
                 }
                 initial="rest"
@@ -210,7 +204,6 @@ export default function Services() {
                 variants={card.featured ? featuredVariants : regularVariants}
                 transition={springTransition}
               >
-                {/* Glow layer — fades in on hover via variant propagation */}
                 <motion.div
                   variants={{
                     rest: { opacity: 0 },
@@ -221,22 +214,20 @@ export default function Services() {
                   style={{
                     zIndex: 0,
                     background: card.featured
-                      ? 'radial-gradient(circle at 50% 0%, rgba(184,212,192,0.12) 0%, transparent 70%)'
-                      : 'radial-gradient(circle at 50% 0%, rgba(122,158,135,0.07) 0%, transparent 70%)',
+                      ? 'radial-gradient(circle at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 70%)'
+                      : 'radial-gradient(circle at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%)',
                   }}
                 />
 
-                {/* "Most popular" badge — above glow */}
                 {card.featured && (
                   <div
-                    className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-terra text-white text-[11px] font-medium tracking-[0.06em] uppercase px-[14px] py-[5px] rounded-full whitespace-nowrap"
+                    className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-gold text-night text-[11px] font-medium tracking-[0.06em] uppercase px-[14px] py-[5px] rounded-full whitespace-nowrap"
                     style={{ zIndex: 2 }}
                   >
                     Most popular
                   </div>
                 )}
 
-                {/* Card content — above glow */}
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <div
                     className={`text-[11px] font-medium tracking-[0.1em] uppercase mb-2 ${
@@ -318,8 +309,8 @@ export default function Services() {
                   <CalButton
                     className={`block w-full text-center py-[14px] rounded-full font-body text-[14px] font-medium tracking-[0.01em] no-underline transition-all duration-200 cursor-pointer ${
                       card.featured
-                        ? 'bg-white text-sage-dark hover:bg-warm-white hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] border-none'
-                        : 'bg-transparent border-[1.5px] border-sage text-sage-dark hover:bg-sage-pale'
+                        ? 'bg-gold text-night hover:bg-gold-light hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] border-none'
+                        : 'bg-transparent border-[1.5px] border-gold text-night hover:bg-gold-pale'
                     }`}
                   >
                     Book a free strategy call

@@ -4,10 +4,6 @@ export type FilterKey =
   | 'all'
   | 'live'
   | 'concept'
-  | 'naturopath'
-  | 'nutritionist'
-  | 'coach'
-  | 'gp'
 
 interface Pill {
   key: FilterKey
@@ -16,13 +12,9 @@ interface Pill {
 }
 
 const PILLS: Pill[] = [
-  { key: 'all', label: 'All work', count: 4 },
-  { key: 'live', label: 'Live sites', count: 1 },
+  { key: 'all', label: 'All work', count: 6 },
+  { key: 'live', label: 'Live sites', count: 3 },
   { key: 'concept', label: 'Concept designs', count: 3 },
-  { key: 'naturopath', label: 'Naturopath' },
-  { key: 'nutritionist', label: 'Nutritionist' },
-  { key: 'coach', label: 'Health coach' },
-  { key: 'gp', label: 'Integrative GP' },
 ]
 
 interface FilterBarProps {
@@ -34,7 +26,7 @@ interface FilterBarProps {
 export default function FilterBar({ activeFilter, onFilter, visibleCount }: FilterBarProps) {
   return (
     <div
-      className="border-b border-sage/20 sticky z-[90] py-5 md:py-8"
+      className="border-b border-gold/20 sticky z-[90] py-5 md:py-8"
       style={{
         top: 65,
         background: 'rgba(250,248,244,0.92)',
@@ -52,8 +44,8 @@ export default function FilterBar({ activeFilter, onFilter, visibleCount }: Filt
                 style={
                   activeFilter === pill.key
                     ? {
-                        background: 'var(--sage-dark)',
-                        borderColor: 'var(--sage-dark)',
+                        background: 'var(--night)',
+                        borderColor: 'var(--night)',
                         color: '#fff',
                       }
                     : {

@@ -11,7 +11,8 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const isWork = pathname === '/work'
-  const s = isWork ? '/' : ''
+  const isPractitioners = pathname === '/health-practitioners'
+  const s = isWork || isPractitioners ? '/' : ''
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
@@ -33,13 +34,13 @@ export default function Nav() {
   }, [])
 
   const linkClass =
-    'font-body text-[14px] font-normal text-ink-mid tracking-[0.02em] no-underline hover:text-sage-dark transition-colors duration-200'
+    'font-body text-[14px] font-normal text-ink-mid tracking-[0.02em] no-underline hover:text-gold transition-colors duration-200'
   const activeLinkClass =
     'font-body text-[14px] font-medium text-ink tracking-[0.02em] no-underline'
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between backdrop-blur-md border-b border-sage/20 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between backdrop-blur-md border-b border-gold/20 transition-all duration-300"
       style={{
         padding: scrolled ? '14px clamp(16px, 4vw, 48px)' : '20px clamp(16px, 4vw, 48px)',
         background: 'rgba(250,248,244,0.85)',
@@ -50,7 +51,7 @@ export default function Nav() {
           ref={scope}
           style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
         >
-          {/* Botanical mark */}
+          {/* Botanical mark — plant/grow logo */}
           <svg
             width={52}
             height={62}
@@ -63,7 +64,7 @@ export default function Nav() {
               cx="28"
               cy="28"
               r="22"
-              stroke="#4a6e57"
+              stroke="#c9a84c"
               strokeWidth="2.2"
               strokeDasharray="157"
               strokeDashoffset="157"
@@ -74,7 +75,7 @@ export default function Nav() {
               y1="66"
               x2="28"
               y2="2"
-              stroke="#4a6e57"
+              stroke="#141414"
               strokeWidth="2.4"
               strokeLinecap="round"
               strokeDasharray="74"
@@ -83,13 +84,13 @@ export default function Nav() {
             <path
               id="logo-leaf1"
               d="M28 36 C18 29 10 25 10 14 C18 14 28 22 28 36Z"
-              fill="#4a6e57"
+              fill="#141414"
               opacity={0}
             />
             <path
               id="logo-leaf2"
               d="M28 22 C38 14 46 11 48 2 C40 3 28 11 28 22Z"
-              fill="#7a9e87"
+              fill="#c9a84c"
               opacity={0}
             />
             <circle
@@ -97,7 +98,7 @@ export default function Nav() {
               cx="28"
               cy="2"
               r="4"
-              fill="#4a6e57"
+              fill="#c9a84c"
               style={{ opacity: 0, transform: 'scale(0)', transformOrigin: '28px 2px' }}
             />
           </svg>
@@ -124,7 +125,7 @@ export default function Nav() {
                 fontSize: '22px',
                 fontWeight: 600,
                 fontStyle: 'italic',
-                color: '#4a6e57',
+                color: '#c9a84c',
                 letterSpacing: '0.02em',
               }}
             >
@@ -147,17 +148,15 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <a href={`${s}#about`} className={linkClass}>
-            About
-          </a>
+          <Link
+            href="/health-practitioners"
+            className={isPractitioners ? activeLinkClass : `${linkClass} text-gold`}
+          >
+            For Practitioners
+          </Link>
         </li>
         <li>
-          <a href={`${s}#faq`} className={linkClass}>
-            FAQ
-          </a>
-        </li>
-        <li>
-          <CalButton className="font-body text-[13px] font-medium tracking-[0.03em] no-underline px-[22px] py-[10px] rounded-full bg-sage-dark text-white hover:bg-ink hover:-translate-y-px transition-all duration-200 border-none cursor-pointer">
+          <CalButton className="font-body text-[13px] font-medium tracking-[0.03em] no-underline px-[22px] py-[10px] rounded-full bg-night text-white hover:bg-gold hover:text-night hover:-translate-y-px transition-all duration-200 border-none cursor-pointer">
             Book a call
           </CalButton>
         </li>
@@ -216,25 +215,16 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <a
-                href={`${s}#about`}
-                className={`${linkClass} block py-3 text-[16px]`}
+              <Link
+                href="/health-practitioners"
+                className={`${linkClass} block py-3 text-[16px] text-gold`}
                 onClick={() => setMobileOpen(false)}
               >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href={`${s}#faq`}
-                className={`${linkClass} block py-3 text-[16px]`}
-                onClick={() => setMobileOpen(false)}
-              >
-                FAQ
-              </a>
+                For Practitioners
+              </Link>
             </li>
             <li className="pt-3">
-              <CalButton className="font-body text-[14px] font-medium tracking-[0.03em] no-underline px-[22px] py-[12px] rounded-full bg-sage-dark text-white border-none cursor-pointer w-full text-center block">
+              <CalButton className="font-body text-[14px] font-medium tracking-[0.03em] no-underline px-[22px] py-[12px] rounded-full bg-night text-white border-none cursor-pointer w-full text-center block">
                 Book a call
               </CalButton>
             </li>

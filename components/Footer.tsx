@@ -1,15 +1,17 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer
       className="flex items-center justify-between flex-wrap gap-5 px-12 py-10"
-      style={{ background: 'var(--ink)', color: 'rgba(255,255,255,0.5)' }}
+      style={{ background: 'var(--night)', color: 'rgba(255,255,255,0.5)' }}
     >
       <a
         href="#home"
         className="font-display text-[20px] font-medium no-underline"
         style={{ color: 'rgba(255,255,255,0.85)' }}
       >
-        make it <span className="italic" style={{ color: 'var(--sage-light)' }}>media</span>
+        make it <span className="italic" style={{ color: 'var(--gold)' }}>media</span>
       </a>
 
       <div className="flex flex-col items-center gap-1">
@@ -26,6 +28,13 @@ export default function Footer() {
       </div>
 
       <div className="flex gap-6">
+        <Link
+          href="/health-practitioners"
+          className="text-[13px] no-underline transition-colors duration-200 hover:text-white/85"
+          style={{ color: 'var(--gold)' }}
+        >
+          For Practitioners
+        </Link>
         <a
           href="/privacy"
           className="text-[13px] no-underline transition-colors duration-200 hover:text-white/85"

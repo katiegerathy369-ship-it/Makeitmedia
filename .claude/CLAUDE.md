@@ -7,8 +7,10 @@ Read this file and all files in `.agents/` before touching anything.
 
 **Site:** Make It Media agency website
 **Stack:** Next.js 14, Tailwind CSS, Framer Motion, Netlify
-**Purpose:** Lead generation for health practitioner web design clients in Australia
+**Purpose:** Lead generation for web design and marketing clients across all industries in Australia
+**Secondary niche:** Dedicated health practitioner landing page at /health-practitioners
 **Primary CTA:** Book a free strategy call
+**Brand theme:** Growth — plant logo represents small businesses growing
 
 ## Quick Reference — Agent Files
 
@@ -26,9 +28,11 @@ Read this file and all files in `.agents/` before touching anything.
 
 ### Copy
 - Never use: "transform," "unlock," "skyrocket," "game-changer," "innovative"
-- Always use: specific outcomes, practitioner language, evidence of expertise
+- Always use: specific outcomes, business-appropriate language, evidence of expertise
 - Voice: direct, dry, confident — like a sharp colleague, not a salesperson
 - All headlines must pass the 5-second clarity test
+- Homepage copy is general/broad — no practitioner-specific language
+- Practitioner-specific copy lives only on /health-practitioners
 
 ### SEO
 - Every page needs: unique <title>, unique <meta description>, one <h1>
@@ -43,11 +47,27 @@ Read this file and all files in `.agents/` before touching anything.
 - All CTAs must have tracking-ready id attributes for GA4
 - Page components live in /app, reusable components in /components
 
-### Brand colours
-- Ink charcoal (primary): #2a2520
-- Tan/warm accent: #8b7355
-- Cream background: #f5f2ee
-- Nav background: #2a2520
+### Brand Colours — Dual Palette
+
+**Homepage / General site (black + gold):**
+- Night (primary dark): #141414
+- Gold accent: #c9a84c
+- Gold light: #e8d5a3
+- Gold pale: #faf6eb
+- Cream background: #faf8f4
+- Warm white: #f5f2ec
+
+**Health Practitioners page (sage + cream):**
+- Sage dark: #4a6e57
+- Sage: #7a9e87
+- Sage light: #b8d4c0
+- Sage pale: #edf4ef
+- Cream: #faf8f4
+
+**Shared:**
+- Ink charcoal: #2a2520
+- Ink mid: #5a524a
+- Ink light: #8a8078
 
 ## When Making Copy Changes
 1. Check .agents/copy-standards.md for voice rules

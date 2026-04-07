@@ -4,10 +4,20 @@
 
 /* ── CSS VARIABLES ── */
 :root {
+  /* Primary palette — black + gold */
+  --night: #141414;
+  --night-light: #1e1e1e;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gold-pale: #faf6eb;
+  --gold-dark: #a8892e;
+
+  /* Secondary palette — sage (practitioners) */
   --sage: #7a9e87;
   --sage-light: #b8d4c0;
   --sage-dark: #4a6e57;
   --sage-pale: #edf4ef;
+
   --terra: #c4714a;
   --terra-light: #e8b49a;
   --terra-pale: #faf0eb;
@@ -16,7 +26,8 @@
   --ink: #2a2520;
   --ink-mid: #5a524a;
   --ink-light: #8a8078;
-  --border: rgba(122, 158, 135, 0.2);
+  --border: rgba(201, 168, 76, 0.2);
+  --border-sage: rgba(122, 158, 135, 0.2);
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-body: var(--font-dm-sans), system-ui, sans-serif;
   --radius: 16px;
@@ -57,7 +68,7 @@ body::before {
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--sage);
+  background: var(--gold);
   border-radius: 50%;
   display: inline-block;
   margin-right: 8px;
@@ -77,7 +88,7 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--terra-light);
+  background: var(--gold-light);
   border-radius: 2px;
 }
 
@@ -87,12 +98,12 @@ body::before {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--sage-pale);
-  border: 1.5px solid var(--sage);
+  background-color: var(--gold-pale);
+  border: 1.5px solid var(--gold);
   flex-shrink: 0;
   margin-top: 2px;
   display: inline-block;
-  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%234a6e57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%23c9a84c' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 8px 6px;
@@ -114,15 +125,48 @@ body::before {
   background-size: 8px 6px;
 }
 
+/* Sage variant for practitioners page */
+.feature-check-sage::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--sage-pale);
+  border: 1.5px solid var(--sage);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3l2 2 4-4' stroke='%234a6e57' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px 6px;
+}
+
 /* ── QUALIFY CHECK ── */
 .qualify-check::before {
   content: '✓';
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--sage-pale);
-  border: 1.5px solid var(--sage);
-  color: var(--sage-dark);
+  background: var(--gold-pale);
+  border: 1.5px solid var(--gold);
+  color: var(--gold-dark);
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.practitioner-qualify-check::before {
+  content: '✓';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #edf4ef;
+  border: 1.5px solid #7a9e87;
+  color: #4a6e57;
   font-size: 10px;
   font-weight: 700;
   display: inline-flex;
@@ -136,7 +180,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(122,158,135,0.15)' stroke-width='1'/%3E%3C/svg%3E") repeat;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(201,168,76,0.15)' stroke-width='1'/%3E%3C/svg%3E") repeat;
   background-size: 60px 60px;
 }
 
@@ -148,7 +192,7 @@ body::before {
   right: -16px;
   width: 32px;
   height: 1px;
-  background: linear-gradient(to right, var(--sage-light), transparent);
+  background: linear-gradient(to right, var(--gold-light), transparent);
 }
 
 /* ── SELECT CUSTOM ARROW ── */
@@ -161,7 +205,7 @@ body::before {
 }
 
 .form-select-custom option {
-  background: var(--sage-dark);
+  background: var(--night);
   color: #fff;
 }
 
@@ -173,7 +217,7 @@ body::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(to right, var(--sage), var(--sage-light));
+  background: linear-gradient(to right, var(--gold), var(--gold-light));
 }
 
 /* ── PAGE EYEBROW DOT (work page hero) ── */
@@ -181,7 +225,7 @@ body::before {
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--sage);
+  background: var(--gold);
   border-radius: 50%;
   display: inline-block;
   margin-right: 8px;
@@ -317,4 +361,3 @@ body::before {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-

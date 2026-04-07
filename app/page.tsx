@@ -4,7 +4,6 @@ import MarqueeBanner from '@/components/MarqueeBanner'
 import Services from '@/components/Services'
 import StudentDiscount from '@/components/StudentDiscount'
 import PortfolioPreview from '@/components/PortfolioPreview'
-import About from '@/components/About'
 import Process from '@/components/Process'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
@@ -20,7 +19,6 @@ export default function Home() {
         <Services />
         <StudentDiscount />
         <PortfolioPreview />
-        <About />
         <Process />
         <FAQ />
         <Contact />

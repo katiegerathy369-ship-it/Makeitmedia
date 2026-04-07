@@ -7,31 +7,31 @@ import Image from 'next/image'
 const projects = [
   {
     title: 'Amy Angus Naturopathy',
-    type: 'Naturopath · Brisbane',
+    type: 'Health & wellness · Brisbane',
     tag: 'Live site',
     href: '/work/amy-angus',
-    image: '/images/portfolio/amy-angus-naturopathy/desktop-after/desktop-after-home.png',
+    image: '/images/portfolio/amy-angus-naturopathy/amy-angus-naturopath-website.jpg',
   },
   {
-    title: 'Nourish & Co.',
-    type: 'Nutritionist · Concept',
-    tag: 'Concept',
-    href: '/work/concept-nutritionist',
-    image: '/images/portfolio/concept-nutritionist/nourish-and-co-preview.png',
+    title: 'Position Ready Finance',
+    type: 'Mortgage broker · Australia',
+    tag: 'Live site',
+    href: 'https://positionreadyfinance.com.au/',
+    image: '/images/portfolio/position-ready-finance/position-ready-wesbite.jpg',
   },
   {
-    title: 'She Thrives Co.',
-    type: "Women's health coach · Concept",
-    tag: 'Concept',
-    href: '/work/concept-womens-coach',
-    image: '/images/portfolio/concept-womens-health-coach-shethrivesco/shethrivesco-preview.jpg',
+    title: "Walker's Landing Georgia",
+    type: 'Real estate · Georgia, USA',
+    tag: 'Live site',
+    href: 'https://walkerslandinggeorgia.com/',
+    image: '/images/portfolio/walkers-landing/walkers-landing-website.jpg',
   },
   {
-    title: 'Dr James Whitfield — Integrative GP',
-    type: 'Integrative GP · Concept',
-    tag: 'Concept',
-    href: 'https://concept-site-3-integrative-gp.netlify.app/',
-    image: '/images/portfolio/concept-integrative-gp/integrative-gp-preview.png',
+    title: 'Prestige Car & Aircraft Detailing',
+    type: 'Car & aircraft detailing · Australia',
+    tag: 'Coming soon',
+    href: null,
+    image: null,
   },
 ]
 
@@ -83,7 +83,7 @@ export default function PortfolioPreview() {
           className="flex items-end justify-between"
         >
           <div>
-            <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-terra mb-4">
+            <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-gold mb-4">
               Portfolio
             </p>
             <h2
@@ -91,12 +91,12 @@ export default function PortfolioPreview() {
               style={{ fontSize: 'clamp(36px, 4vw, 56px)' }}
             >
               Sites I&rsquo;ve built for<br />
-              <em className="italic text-sage-dark">health practitioners</em>
+              <em className="italic" style={{ color: '#c9a84c' }}>businesses like yours</em>
             </h2>
           </div>
           <a
             href="/work"
-            className="inline-flex items-center gap-2 text-[14px] font-medium text-sage-dark border-b border-sage-light pb-px hover:text-ink hover:border-ink transition-colors duration-200 no-underline mb-2"
+            className="inline-flex items-center gap-2 text-[14px] font-medium text-gold border-b border-gold-light pb-px hover:text-ink hover:border-ink transition-colors duration-200 no-underline mb-2"
           >
             View all work
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -114,42 +114,72 @@ export default function PortfolioPreview() {
         className="flex gap-6 overflow-x-auto px-12 scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {slides.map((project, i) => (
-          <motion.a
-            key={`${project.title}-${i}`}
-            href={project.href}
-            className="group flex-shrink-0 w-[420px] bg-white rounded-[20px] overflow-hidden border border-[rgba(122,158,135,0.15)] no-underline text-inherit block"
-            whileHover={{ y: -6, boxShadow: '0 20px 44px rgba(42,37,32,0.12)' }}
-            transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-          >
-            <div className="aspect-[16/10] overflow-hidden bg-[#f5f3f0]">
-              <Image
-                src={project.image}
-                alt={`${project.title} website preview`}
-                width={840}
-                height={525}
-                className="w-full h-full object-cover object-left-top group-hover:scale-[1.03] transition-transform duration-500"
-              />
-            </div>
-            <div className="px-6 py-5">
-              <div className="flex items-center gap-2 mb-2">
-                <span className={`text-[11px] font-medium tracking-[0.07em] uppercase px-[10px] py-[3px] rounded-full ${
-                  project.tag === 'Live site'
-                    ? 'bg-sage-pale text-sage-dark border border-sage-light'
-                    : 'bg-terra-pale text-terra border border-terra-light'
-                }`}>
-                  {project.tag}
-                </span>
+        {slides.map((project, i) => {
+          const inner = (
+            <>
+              <div className="aspect-[16/10] overflow-hidden bg-[#f5f3f0]">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} website design example`}
+                    width={840}
+                    height={525}
+                    className="w-full h-full object-cover object-left-top group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-[#f0ece6]">
+                    <span className="font-display text-[22px] font-medium text-ink-mid leading-[1.2] text-center px-6">
+                      {project.title}
+                    </span>
+                    <span className="text-[12px] text-ink-light font-light mt-2 tracking-[0.05em] uppercase">
+                      Coming soon
+                    </span>
+                  </div>
+                )}
               </div>
-              <div className="font-display text-[20px] font-medium text-ink leading-[1.2] mb-1">
-                {project.title}
+              <div className="px-6 py-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`text-[11px] font-medium tracking-[0.07em] uppercase px-[10px] py-[3px] rounded-full ${
+                    project.tag === 'Live site'
+                      ? 'bg-gold-pale text-gold-dark border border-gold-light'
+                      : 'bg-warm-white text-ink-light border border-[rgba(201,168,76,0.2)]'
+                  }`}>
+                    {project.tag}
+                  </span>
+                </div>
+                <div className="font-display text-[20px] font-medium text-ink leading-[1.2] mb-1">
+                  {project.title}
+                </div>
+                <div className="text-[13px] text-ink-light font-light">
+                  {project.type}
+                </div>
               </div>
-              <div className="text-[13px] text-ink-light font-light">
-                {project.type}
-              </div>
-            </div>
-          </motion.a>
-        ))}
+            </>
+          )
+
+          return project.href ? (
+            <motion.a
+              key={`${project.title}-${i}`}
+              href={project.href}
+              target={project.href.startsWith('http') ? '_blank' : undefined}
+              rel={project.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="group flex-shrink-0 w-[420px] bg-white rounded-[20px] overflow-hidden border border-[rgba(201,168,76,0.15)] no-underline text-inherit block"
+              whileHover={{ y: -6, boxShadow: '0 20px 44px rgba(20,20,20,0.1)' }}
+              transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+            >
+              {inner}
+            </motion.a>
+          ) : (
+            <motion.div
+              key={`${project.title}-${i}`}
+              className="group flex-shrink-0 w-[420px] bg-white rounded-[20px] overflow-hidden border border-[rgba(201,168,76,0.15)]"
+              whileHover={{ y: -6, boxShadow: '0 20px 44px rgba(20,20,20,0.1)' }}
+              transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+            >
+              {inner}
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )

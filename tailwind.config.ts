@@ -9,6 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary palette — black + gold (homepage / general)
+        night: {
+          DEFAULT: '#141414',
+          light: '#1e1e1e',
+        },
+        gold: {
+          DEFAULT: '#c9a84c',
+          light: '#e8d5a3',
+          pale: '#faf6eb',
+          dark: '#a8892e',
+        },
+        // Secondary palette — sage (health practitioners page)
         sage: {
           DEFAULT: '#7a9e87',
           light: '#b8d4c0',

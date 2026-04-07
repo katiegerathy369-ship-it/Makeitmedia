@@ -40,7 +40,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center pt-[160px] overflow-hidden"
       style={{ background: 'var(--cream)' }}
     >
-      {/* Background blobs */}
+      {/* Background blobs — gold tones */}
       <motion.div
         className="absolute rounded-full pointer-events-none"
         style={{
@@ -48,7 +48,7 @@ export default function Hero() {
           willChange: 'transform',
           width: 600,
           height: 600,
-          background: 'radial-gradient(circle, rgba(184,212,192,0.35) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%)',
           filter: 'blur(80px)',
           top: -100,
           right: -100,
@@ -61,7 +61,7 @@ export default function Hero() {
           willChange: 'transform',
           width: 400,
           height: 400,
-          background: 'radial-gradient(circle, rgba(232,180,154,0.2) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(232,213,163,0.15) 0%, transparent 70%)',
           filter: 'blur(80px)',
           bottom: 0,
           left: -80,
@@ -77,9 +77,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0 }}
-              className="hero-eyebrow inline-flex items-center bg-sage-pale border border-sage-light text-sage-dark text-[12px] font-medium tracking-[0.08em] uppercase px-[14px] py-[6px] rounded-full mb-7"
+              className="hero-eyebrow inline-flex items-center bg-gold-pale border border-gold-light text-night text-[12px] font-medium tracking-[0.08em] uppercase px-[14px] py-[6px] rounded-full mb-7"
             >
-              Built by a naturopath, for health practitioners
+              Websites that grow your business
             </motion.div>
 
             <motion.h1
@@ -89,25 +89,19 @@ export default function Hero() {
               className="font-display font-normal leading-[1.1] text-ink mb-6"
               style={{ fontSize: 'clamp(44px, 5.5vw, 72px)' }}
             >
-              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>Your</motion.span>
-              {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>practice</motion.span>
-              {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>deserves</motion.span>
-              <br />
-              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>a</motion.span>
+              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>A</motion.span>
               {' '}
               <motion.span variants={wordVariants} style={{ display: 'inline-block' }} className="accent-underline">website</motion.span>
               {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#4a6e57' }}>as</motion.span>
-              {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#4a6e57' }}>good</motion.span>
+              <motion.span variants={wordVariants} style={{ display: 'inline-block' }}>that</motion.span>
               <br />
-              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#4a6e57' }}>as</motion.span>
+              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#c9a84c' }}>grows</motion.span>
               {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#4a6e57' }}>your</motion.span>
+              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#c9a84c' }}>with</motion.span>
               {' '}
-              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#4a6e57' }}>work</motion.span>
+              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#c9a84c' }}>your</motion.span>
+              <br />
+              <motion.span variants={wordVariants} style={{ display: 'inline-block', fontStyle: 'italic', color: '#c9a84c' }}>business</motion.span>
             </motion.h1>
 
             <motion.p
@@ -116,7 +110,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.9 }}
               className="text-[17px] leading-[1.7] text-ink-mid max-w-[480px] mb-10 font-light"
             >
-              Websites and marketing systems for naturopaths, nutritionists and health practitioners — designed by someone who understands your world from the inside.
+              Custom websites and marketing systems for small businesses across Australia. Designed to attract clients, built to grow with you.
             </motion.p>
 
             <motion.div
@@ -126,7 +120,7 @@ export default function Hero() {
               className="flex items-center gap-5"
             >
               <CalButton
-                className="inline-flex items-center gap-2 bg-sage-dark text-white px-8 py-[15px] rounded-full font-body text-[15px] font-medium tracking-[0.01em] no-underline hover:bg-ink hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(42,37,32,0.15)] transition-all duration-200 border-none cursor-pointer"
+                className="inline-flex items-center gap-2 bg-night text-white px-8 py-[15px] rounded-full font-body text-[15px] font-medium tracking-[0.01em] no-underline hover:bg-gold hover:text-night hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(20,20,20,0.2)] transition-all duration-200 border-none cursor-pointer"
               >
                 Book a free strategy call
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -135,7 +129,7 @@ export default function Hero() {
               </CalButton>
               <a
                 href="#services"
-                className="inline-flex items-center gap-1.5 text-ink-mid text-[14px] font-normal no-underline tracking-[0.01em] hover:text-sage-dark transition-colors duration-200 group"
+                className="inline-flex items-center gap-1.5 text-ink-mid text-[14px] font-normal no-underline tracking-[0.01em] hover:text-gold transition-colors duration-200 group"
               >
                 View packages
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-[3px] transition-transform duration-200">

@@ -9,7 +9,8 @@ Like a sharp colleague who builds beautiful things and knows exactly why they wo
 
 | Page | Tone | Primary job |
 |------|------|-------------|
-| Homepage | Confident, direct | Signal credibility + niche immediately |
+| Homepage | Confident, direct | Signal credibility + broad appeal immediately |
+| Health Practitioners | Credibility-led, niche-specific | Show deep understanding of practitioner world |
 | Services | Clear, specific | Remove objections, make pricing feel like value |
 | Portfolio | Understated | Let the work speak, add context |
 | About | Personal but professional | Build trust through story + credentials |
@@ -18,8 +19,9 @@ Like a sharp colleague who builds beautiful things and knows exactly why they wo
 
 ## Words to Use
 
-build, establish, attract, convert, clear, specific, fast, professional,
-practitioner, patient, clinical, evidence, designed for, built for, works because
+**General (all pages):** build, establish, attract, convert, grow, clear, specific, fast, professional, designed for, built for, works because, clients, customers, leads, bookings, revenue
+
+**Health practitioners page only:** practitioner, patient, clinical, evidence, practice, modality
 
 ## Words to Never Use
 
@@ -31,27 +33,27 @@ empower, world-class, cutting-edge, next-level
 
 - Short sentences. One idea per sentence. One idea per paragraph.
 - Active voice always.
-  Good: "We build websites for naturopaths."
-  Bad: "Websites are built for naturopaths by our team."
+  Good: "We build websites for small businesses."
+  Bad: "Websites are built for businesses by our team."
 - Specific beats vague always.
-  Good: "A 5-page website delivered in 3 weeks, from $2,200."
+  Good: "A 6-page website delivered in 3 weeks, from $2,200."
   Bad: "Affordable websites delivered quickly."
 - Benefits before features.
-  Good: "More enquiries, less admin — your website works while you're in clinic."
+  Good: "More enquiries, less admin — your website works while you're with clients."
   Bad: "Our websites include Cal.com booking integration and GA4 analytics."
 - No exclamation marks in web copy.
 - No passive voice.
 
 ## Headlines
 
-5-second test: can a naturopath landing on this page immediately know
+5-second test: can a business owner landing on this page immediately know
 (1) what this is, (2) who it's for, (3) why they should care?
 If no to any — rewrite.
 
 Formulas:
-- Outcome-led: "More patients. Less marketing. A website that works for your practice."
-- Specificity: "Web design for naturopaths, built by one."
-- Problem-aware: "Your skills are excellent. Your website shouldn't be the reason clients don't book."
+- Outcome-led: "More clients. Less marketing. A website that works for your business."
+- Specificity: "Custom websites from $2,200. Live in 3 weeks."
+- Problem-aware: "Your work is excellent. Your website shouldn't be the reason clients don't book."
 
 ## CTA Copy
 
@@ -63,7 +65,7 @@ Forms: "Send my enquiry" or "Book my call" — never "Submit"
 
 ## Proof Points
 
-Format: [Client name] — [modality], [city] — [what was built] — [outcome if known]
+Format: [Client name] — [industry], [city] — [what was built] — [outcome if known]
 Example: "Amy Angus — naturopath, Brisbane — full 7-page website, booking integration, GA4. Delivered in 2 weeks."
 Never fabricate outcomes.
 
@@ -71,8 +73,7 @@ Never fabricate outcomes.
 
 - First paragraph in third person for AI extractability:
   "Make It Media is an Australian web design agency..."
-- Lead with credential before story:
-  "Kate studied naturopathy for four years before building websites for practitioners."
+- Lead with credential before story
 - Avoid: "passionate about," "dedicated to," "committed to"
 - Use: specific facts, specific decisions, specific outcomes
 
