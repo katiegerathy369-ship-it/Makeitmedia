@@ -11,8 +11,9 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const isWork = pathname === '/work'
-  const practitionerPaths = ['/health-practitioners', '/work/amy-angus', '/work/vitalis-naturopathy']
-  const isPractitioners = practitionerPaths.includes(pathname)
+  const practitionerExactPaths = ['/work/amy-angus', '/work/vitalis-naturopathy']
+  const isPractitioners =
+    pathname.startsWith('/health-practitioners') || practitionerExactPaths.includes(pathname)
   const s = isWork || isPractitioners ? '/' : ''
   const accent = isPractitioners ? '#7a9e87' : '#c9a84c'
   const [scope, animate] = useAnimate()
