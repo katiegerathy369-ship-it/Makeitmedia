@@ -33,15 +33,18 @@
 
   .page {
     width: 210mm;
-    min-height: 297mm;
-    padding: 25mm 22mm;
+    height: 297mm;
+    padding: 20mm 22mm 22mm;
     margin: 16px auto;
     background: var(--cream);
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     page-break-after: always;
     break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .page:last-child { page-break-after: auto; }
@@ -234,12 +237,12 @@
 
   .mistake-number {
     font-family: var(--font-display);
-    font-size: 130pt;
+    font-size: 88pt;
     font-weight: 300;
     line-height: 0.9;
     color: var(--sage-light);
     letter-spacing: -0.04em;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .mistake-label {
@@ -249,16 +252,16 @@
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--sage-dark);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .mistake-title {
     font-family: var(--font-display);
-    font-size: 28pt;
+    font-size: 24pt;
     font-weight: 500;
     line-height: 1.1;
     color: var(--ink);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     max-width: 150mm;
     letter-spacing: -0.005em;
   }
@@ -267,12 +270,14 @@
 
   .section-heading {
     font-family: var(--font-display);
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: 600;
     font-style: italic;
     color: var(--sage-dark);
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .section-heading:first-of-type { margin-top: 0; }
@@ -280,15 +285,17 @@
   .bullet-list {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .bullet-list li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 8px;
-    font-size: 11pt;
-    line-height: 1.55;
+    margin-bottom: 6px;
+    font-size: 10.5pt;
+    line-height: 1.5;
     color: var(--ink);
   }
 
@@ -306,15 +313,17 @@
     list-style: none;
     counter-reset: fix-counter;
     padding-left: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .fix-list li {
     counter-increment: fix-counter;
     position: relative;
     padding-left: 28px;
-    margin-bottom: 10px;
-    font-size: 11pt;
-    line-height: 1.55;
+    margin-bottom: 7px;
+    font-size: 10.5pt;
+    line-height: 1.5;
     color: var(--ink);
   }
 
