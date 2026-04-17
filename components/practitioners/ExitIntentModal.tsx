@@ -148,20 +148,16 @@ export default function ExitIntentModal() {
             >
               {!submitted ? (
                 <>
-                  <div className="inline-flex items-center bg-white border border-sage-light text-sage-dark text-[11px] font-medium tracking-[0.1em] uppercase px-3 py-[5px] rounded-full mb-4">
-                    <span className="w-[5px] h-[5px] rounded-full bg-sage mr-2" />
-                    Before you go
-                  </div>
                   <h2
                     id="exit-title"
                     className="font-display font-normal leading-[1.1] text-ink"
-                    style={{ fontSize: 'clamp(26px, 3vw, 32px)' }}
+                    style={{ fontSize: 'clamp(24px, 2.8vw, 30px)' }}
                   >
-                    Grab the free guide{' '}
-                    <em className="italic text-sage-dark">first.</em>
+                    5 Website Mistakes{' '}
+                    <em className="italic text-sage-dark">Costing Health Practitioners Clients</em>
                   </h2>
-                  <p className="text-[14px] text-ink-mid font-light leading-[1.65] mt-3">
-                    5 website mistakes costing health practitioners clients — and exactly how to fix them. 10 pages, no fluff.
+                  <p className="text-[11px] font-medium tracking-[0.14em] uppercase text-sage-dark mt-4">
+                    Free guide · 10 pages
                   </p>
                 </>
               ) : (
@@ -174,7 +170,7 @@ export default function ExitIntentModal() {
                       <path d="M5 12l5 5L20 7" stroke="#4a6e57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h2 id="exit-title" className="font-display text-[24px] leading-[1.15] text-ink mb-2">
+                  <h2 className="font-display text-[24px] leading-[1.15] text-ink mb-2">
                     Your guide is downloading.
                   </h2>
                   <p className="text-[14px] text-ink-mid font-light">
