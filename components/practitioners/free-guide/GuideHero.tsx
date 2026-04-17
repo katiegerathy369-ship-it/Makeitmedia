@@ -18,6 +18,7 @@ const wordVariants = {
 }
 
 const PDF_URL = '/downloads/5-website-mistakes-practitioners.pdf'
+const KIT_FORM_URL = 'https://app.kit.com/forms/9337733/subscriptions'
 
 export default function GuideHero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -28,28 +29,24 @@ export default function GuideHero() {
   const blob1Y = useTransform(scrollYProgress, [0, 1], ['-25px', '25px'])
   const blob2Y = useTransform(scrollYProgress, [0, 1], ['-15px', '15px'])
 
-  const [form, setForm] = useState({ firstName: '', email: '', practiceType: '' })
+  const [form, setForm] = useState({ firstName: '', email: '' })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }))
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setForm((p) => ({ ...p, [e.target.name]: e.target.value }))
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const data = new URLSearchParams()
-      data.append('form-name', 'guide-download')
-      Object.entries(form).forEach(([k, v]) => data.append(k, v))
-      await fetch('/__forms.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data.toString(),
-      })
+      const data = new FormData()
+      data.append('fields[first_name]', form.firstName)
+      data.append('email_address', form.email)
+      await fetch(KIT_FORM_URL, { method: 'POST', body: data, mode: 'no-cors' })
       setSubmitted(true)
       window.open(PDF_URL, '_blank', 'noopener,noreferrer')
     } catch {
       setSubmitted(true)
+      window.open(PDF_URL, '_blank', 'noopener,noreferrer')
     }
   }
 
@@ -175,9 +172,8 @@ export default function GuideHero() {
             </div>
 
             <form
-              name="guide-download"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              action={KIT_FORM_URL}
+              method="post"
               onSubmit={handleSubmit}
               className="relative rounded-[20px] p-9 bg-white"
               style={{
@@ -186,22 +182,6 @@ export default function GuideHero() {
                 zIndex: 1,
               }}
             >
-              <input type="hidden" name="form-name" value="guide-download" />
-              <div className="hidden">
-                <label>
-                  Don&apos;t fill this out: <input name="bot-field" />
-                </label>
-              </div>
-
-              {/* === EMAIL TOOL EMBED SLOT ===
-                  To replace this Netlify form with a MailerLite / ConvertKit / Beehiiv inline embed:
-                  1. Delete the <input>, <select> and <button> elements below.
-                  2. Paste your tool's inline embed code (HTML/script) inside this <form> wrapper,
-                     OR replace the entire <form> with the embed snippet.
-                  3. Set the embed's "thank you" redirect to /downloads/5-website-mistakes-practitioners.pdf
-                     so the PDF opens automatically after submit.
-              */}
-
               {!submitted ? (
                 <>
                   <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-sage-dark mb-2">
@@ -226,7 +206,7 @@ export default function GuideHero() {
                     />
                   </div>
 
-                  <div className="mb-4">
+                  <div className="mb-6">
                     <label className="block text-[12px] font-medium tracking-[0.06em] uppercase text-ink-mid mb-2">
                       Email
                     </label>
@@ -239,29 +219,6 @@ export default function GuideHero() {
                       className={inputBase}
                       required
                     />
-                  </div>
-
-                  <div className="mb-6">
-                    <label className="block text-[12px] font-medium tracking-[0.06em] uppercase text-ink-mid mb-2">
-                      Practice type
-                    </label>
-                    <select
-                      name="practiceType"
-                      value={form.practiceType}
-                      onChange={handleChange}
-                      className={`${inputBase} form-select-custom cursor-pointer`}
-                      required
-                    >
-                      <option value="" disabled>Select your practice type</option>
-                      <option>Naturopath</option>
-                      <option>Nutritionist</option>
-                      <option>Health coach</option>
-                      <option>Women's health coach</option>
-                      <option>Herbalist</option>
-                      <option>Integrative GP / functional medicine</option>
-                      <option>Other health practitioner</option>
-                      <option>Student / new grad</option>
-                    </select>
                   </div>
 
                   <button

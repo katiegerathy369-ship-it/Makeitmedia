@@ -9,6 +9,7 @@ const DISMISS_DAYS = 7
 const MOBILE_DELAY_MS = 30_000
 const MOBILE_SCROLL_THRESHOLD = 0.5
 const PDF_URL = '/downloads/5-website-mistakes-practitioners.pdf'
+const KIT_FORM_URL = 'https://app.kit.com/forms/9337733/subscriptions'
 
 export default function ExitIntentModal() {
   const [open, setOpen] = useState(false)
@@ -85,18 +86,15 @@ export default function ExitIntentModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const data = new URLSearchParams()
-      data.append('form-name', 'guide-download-exit')
-      Object.entries(form).forEach(([k, v]) => data.append(k, v))
-      await fetch('/__forms.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data.toString(),
-      })
+      const data = new FormData()
+      data.append('fields[first_name]', form.firstName)
+      data.append('email_address', form.email)
+      await fetch(KIT_FORM_URL, { method: 'POST', body: data, mode: 'no-cors' })
       setSubmitted(true)
       window.open(PDF_URL, '_blank', 'noopener,noreferrer')
     } catch {
       setSubmitted(true)
+      window.open(PDF_URL, '_blank', 'noopener,noreferrer')
     }
   }
 
@@ -183,19 +181,11 @@ export default function ExitIntentModal() {
 
             {!submitted && (
               <form
-                name="guide-download-exit"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                action={KIT_FORM_URL}
+                method="post"
                 onSubmit={handleSubmit}
                 className="px-10 pt-6 pb-9"
               >
-                <input type="hidden" name="form-name" value="guide-download-exit" />
-                <div className="hidden">
-                  <label>
-                    Don&apos;t fill this out: <input name="bot-field" />
-                  </label>
-                </div>
-
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <input
                     type="text"
