@@ -59,7 +59,7 @@ export default function NourishContact() {
             Ready to feel<br />good in your<br /><em style={{ fontStyle: 'italic', color: PERIWINKLE_DARK, fontWeight: 300 }}>body again?</em>
           </h2>
           <p style={{ fontFamily: 'var(--font-dm-sans-nourish), system-ui, sans-serif', fontSize: '15px', color: '#4a4a30', fontWeight: 300, lineHeight: 1.8, marginBottom: '28px' }}>
-            Book a free 20-minute discovery call. No awkward sales pitch — just an honest chat about what&apos;s going on and whether I can help.
+            Book a free 20-minute discovery call. No awkward sales pitch, just an honest chat about what&apos;s going on and whether I can help.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '32px' }}>

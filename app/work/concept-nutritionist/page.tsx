@@ -28,8 +28,8 @@ const ZIGZAG = 'polygon(0% 0%, 2.5% 100%, 5% 0%, 7.5% 100%, 10% 0%, 12.5% 100%, 
 const ZIGZAG_REVERSE = 'polygon(0% 100%, 2.5% 0%, 5% 100%, 7.5% 0%, 10% 100%, 12.5% 0%, 15% 100%, 17.5% 0%, 20% 100%, 22.5% 0%, 25% 100%, 27.5% 0%, 30% 100%, 32.5% 0%, 35% 100%, 37.5% 0%, 40% 100%, 42.5% 0%, 45% 100%, 47.5% 0%, 50% 100%, 52.5% 0%, 55% 100%, 57.5% 0%, 60% 100%, 62.5% 0%, 65% 100%, 67.5% 0%, 70% 100%, 72.5% 0%, 75% 100%, 77.5% 0%, 80% 100%, 82.5% 0%, 85% 100%, 87.5% 0%, 90% 100%, 92.5% 0%, 95% 100%, 97.5% 0%, 100% 100%, 100% 100%, 0% 100%)'
 
 export const metadata: Metadata = {
-  title: 'Nourish & Co. — Nutritionist | Concept Design by Make It Media',
-  description: 'A concept design for a Brisbane nutritionist — retro-playful aesthetic with lemon palette, Fraunces typography, and full service site.',
+  title: 'Nourish & Co. - Nutritionist | Concept Design by Make It Media',
+  description: 'A concept design for a Brisbane nutritionist. Retro-playful aesthetic with lemon palette, Fraunces typography, and full service site.',
 }
 
 export default function NourishPage() {

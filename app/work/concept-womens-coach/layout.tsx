@@ -15,7 +15,7 @@ const raleway = Raleway({
 })
 
 export const metadata = {
-  title: 'She Thrives Co. — Concept by Make It Media',
+  title: 'She Thrives Co. - Concept by Make It Media',
   description:
     "Women's naturopathy-led wellness retreat concept site designed by Make It Media.",
 }

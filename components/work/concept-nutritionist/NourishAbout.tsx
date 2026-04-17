@@ -57,10 +57,10 @@ export default function NourishAbout() {
           </h2>
 
           <p style={{ fontFamily: 'var(--font-dm-sans-nourish), system-ui, sans-serif', fontSize: '15px', color: '#4a4a30', fontWeight: 300, lineHeight: 1.85, marginBottom: '14px' }}>
-            I&apos;m Clara — a holistic Clinical Nutritionist passionate about helping people implement realistic nutrition strategies that are sustainable and results-driven. I believe in a personalised nutrition approach when working with my clients to support them wherever they are in their journey.
+            I&apos;m Clara, a holistic Clinical Nutritionist passionate about helping people implement realistic nutrition strategies that are sustainable and results-driven. I believe in a personalised nutrition approach when working with my clients to support them wherever they are in their journey.
           </p>
           <p style={{ fontFamily: 'var(--font-dm-sans-nourish), system-ui, sans-serif', fontSize: '15px', color: '#4a4a30', fontWeight: 300, lineHeight: 1.85, marginBottom: '20px' }}>
-            As a tertiary-qualified Clinical Nutritionist (BHSc), I take detailed health histories, interpret pathology results, and design personalised nutritional medicine programs — combining evidence-based dietary protocols with targeted supplementation.{' '}
+            As a tertiary-qualified Clinical Nutritionist (BHSc), I take detailed health histories, interpret pathology results, and design personalised nutritional medicine programs, combining evidence-based dietary protocols with targeted supplementation.{' '}
             <strong style={{ fontWeight: 700, color: INK }}>I offer 1-on-1 nutrition counselling and group coaching programs.</strong>
           </p>
 

@@ -53,7 +53,7 @@ export default function StudentDiscount() {
             </h2>
 
             <p className="text-[15px] text-ink-mid font-light leading-[1.75] mb-7">
-              Building a business from scratch is hard enough without worrying about whether your website and marketing are doing their job. I've been there — and I want to make it easier for new business owners to start strong.
+              Building a business from scratch is hard enough without worrying about whether your website and marketing are doing their job. I've been there, and I want to make it easier for new business owners to start strong.
             </p>
 
             <ul className="flex flex-col gap-2.5 mb-8">
@@ -73,7 +73,7 @@ export default function StudentDiscount() {
             </ul>
 
             <p className="text-[13px] text-ink-light font-light leading-[1.6] mt-2">
-              Applications are reviewed individually — not everyone will qualify, and that's intentional. I only take on new businesses I can genuinely help.
+              Applications are reviewed individually. Not everyone will qualify, and that's intentional. I only take on new businesses I can genuinely help.
             </p>
           </motion.div>
 

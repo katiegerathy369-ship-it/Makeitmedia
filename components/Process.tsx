@@ -33,7 +33,7 @@ const steps = [
   {
     num: '01',
     title: 'Discovery call',
-    desc: '30 minutes to understand your business, your clients, and your goals. No jargon, no templates — just real conversation.',
+    desc: '30 minutes to understand your business, your clients, and your goals. No jargon, no templates. Just real conversation.',
   },
   {
     num: '02',
@@ -43,7 +43,7 @@ const steps = [
   {
     num: '03',
     title: 'Build & refine',
-    desc: "You approve the full design in Canva first. Then I build it — custom code, fast-loading, and mobile-perfect. Two rounds of revisions until it's exactly right.",
+    desc: "You approve the full design in Canva first. Then I build it. Custom code, fast-loading, and mobile-perfect. Two rounds of revisions until it's exactly right.",
   },
   {
     num: '04',

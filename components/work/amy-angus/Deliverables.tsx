@@ -5,33 +5,33 @@ import { motion } from 'framer-motion'
 const deliverables = [
   {
     num: '01',
-    title: 'Custom website build',
-    desc: '5-page site built from scratch with custom animations. No templates, no shared aesthetic with any other site.',
+    title: 'Custom-coded 5-page site',
+    desc: 'Home, About, Services, Blog, Contact. Custom-coded in Next.js 14, not a template, not Squarespace. Built for performance, SEO, and future-proof scalability.',
   },
   {
     num: '02',
-    title: 'Brand new visual identity',
-    desc: 'Colour palette, typography, and visual language developed from scratch to reflect Amy\'s clinical expertise and warm, approachable practice style.',
+    title: 'Full blog system',
+    desc: 'Dynamic routing, long-form articles, and SEO-optimised slugs ready to scale content marketing. Built to grow with the practice.',
   },
   {
     num: '03',
-    title: 'Professional copywriting',
-    desc: 'Every word on the site written by Make It Media — using naturopathic clinical background to write copy that speaks your patients\' language and converts.',
+    title: 'Editorial design system',
+    desc: 'Bespoke brand palette (emerald, magenta, sage, taupe, cream). Cormorant Garamond + DM Sans typography pairing. Magazine-style layouts with dual-image composites and layered scroll animations.',
   },
   {
     num: '04',
-    title: 'Simple Clinic integration',
-    desc: 'Online booking linked directly to Amy\'s Simple Clinic account. Patients can book, complete intake forms, and manage appointments without Amy\'s manual involvement.',
+    title: 'Conversion architecture',
+    desc: 'Services page with category cards and clear pathways from symptom to consultation. Google Reviews carousel and testimonials pulling social proof into the conversion flow. Every page drives toward booking.',
   },
   {
     num: '05',
-    title: 'SEO foundations',
-    desc: 'On-page SEO across all pages — meta titles, descriptions, semantic HTML structure, image alt text, and Google Search Console setup and verification.',
+    title: 'Simple Clinic + Netlify Forms',
+    desc: 'Seamless consult scheduling via Simple Clinic. Branded contact form with Netlify Forms integration. No third-party clutter, no spam.',
   },
   {
     num: '06',
-    title: 'GA4 + analytics setup',
-    desc: 'Google Analytics 4 and Microsoft Clarity installed and verified. Amy can see exactly where patients come from, which pages they visit, and where they drop off.',
+    title: 'SEO + analytics from day one',
+    desc: 'Sitemap, meta optimisation, semantic HTML, and image alt text for organic discoverability. GA4 + Microsoft Clarity wired in for analytics and heatmap tracking.',
   },
 ]
 

@@ -40,7 +40,7 @@ export default function Testimonial() {
               opacity: 0.6,
             }}
           >
-            Amy&apos;s testimonial will appear here — check your messages!
+            Amy&apos;s testimonial will appear here. Check your messages!
           </p>
 
           <div

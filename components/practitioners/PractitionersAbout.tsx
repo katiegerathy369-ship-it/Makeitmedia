@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion'
 
 const credentials = [
-  { icon: '🌿', text: 'Bachelor of Health Science (Naturopathy) — 6 years' },
-  { icon: '🎨', text: 'Graphic design, UX & UI — built for how patients actually browse' },
+  { icon: '🌿', text: 'Bachelor of Health Science (Naturopathy), 6 years' },
+  { icon: '🎨', text: 'Graphic design, UX & UI, built for how patients actually browse' },
   { icon: '📱', text: '80K+ wellness content creator (TikTok)' },
-  { icon: '✦', text: 'Canva-first design process — you approve the design before anything gets built' },
-  { icon: '⚡', text: 'AI development tools — faster builds, lower cost, no shortcuts' },
+  { icon: '✦', text: 'Canva-first design process: you approve the design before anything gets built' },
+  { icon: '⚡', text: 'AI development tools: faster builds, lower cost, no shortcuts' },
 ]
 
 export default function PractitionersAbout() {
@@ -61,7 +61,7 @@ export default function PractitionersAbout() {
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
                 I already had a background in graphic design and a sharp eye for UX. I knew what practitioners needed because I'd needed it myself. So I built it.{' '}
                 <strong className="font-medium text-ink">
-                  I design everything in Canva first — you see exactly what your site will look like before a single line of code is written.
+                  I design everything in Canva first. You see exactly what your site will look like before a single line of code is written.
                 </strong>
                 {' '}Once you're happy, I build it. No surprises.
               </p>

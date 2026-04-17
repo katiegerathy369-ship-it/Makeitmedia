@@ -102,7 +102,7 @@ function PageHero() {
               maxWidth: 440,
             }}
           >
-            She Thrives Co. was born from my own journey — years of exhaustion,
+            She Thrives Co. was born from my own journey. Years of exhaustion,
             hormone chaos, and feeling like my body was working against me.
             I created this practice so no woman has to figure it out alone.
           </motion.p>
@@ -148,16 +148,16 @@ const storyBeats = [
     pullQuote: 'I kept pushing through until my body made me stop.',
     bg: '#fdfaf6',
     paragraphs: [
-      'For years, I was the woman who did it all — high-pressure career, early morning workouts, packed weekends, always saying yes. On paper, everything looked great. Behind the scenes, I was running on caffeine and adrenaline, my periods had disappeared, and I couldn\'t remember the last time I woke up feeling rested.',
+      'For years, I was the woman who did it all. High-pressure career, early morning workouts, packed weekends, always saying yes. On paper, everything looked great. Behind the scenes, I was running on caffeine and adrenaline, my periods had disappeared, and I couldn\'t remember the last time I woke up feeling rested.',
       'The breaking point came when I collapsed at work. My doctor told me my cortisol was through the roof, my thyroid was struggling, and my body was in survival mode. I\'d spent so long ignoring the signals that I\'d completely burned out.',
     ],
   },
   {
     label: 'What I learned',
-    pullQuote: 'Health isn\'t about perfection — it\'s about listening.',
+    pullQuote: 'Health isn\'t about perfection. It\'s about listening.',
     bg: '#f8f2e8',
     paragraphs: [
-      'Recovery forced me to slow down and ask better questions. I started studying integrative health, completed my certification through the Institute for Integrative Nutrition, and trained in hormone health and NLP. I learned that women\'s bodies have unique rhythms — and that most mainstream health advice completely ignores them.',
+      'Recovery forced me to slow down and ask better questions. I started studying integrative health, completed my certification through the Institute for Integrative Nutrition, and trained in hormone health and NLP. I learned that women\'s bodies have unique rhythms, and that most mainstream health advice completely ignores them.',
       'I discovered cycle syncing, nervous system regulation, and the power of building a life that works with your biology instead of against it. The transformation wasn\'t overnight, but it was real. And I knew I had to share it.',
     ],
   },
@@ -167,7 +167,7 @@ const storyBeats = [
     bg: '#fdf4f0',
     paragraphs: [
       'I created She Thrives Co. because I know what it feels like to be dismissed, to be told "it\'s just stress" or "that\'s normal." It\'s not normal to feel exhausted all the time. It\'s not normal to dread your period. And you shouldn\'t have to accept it.',
-      'I work with women who are done with quick fixes and ready for real, lasting change. Whether you\'re dealing with hormone imbalances, chronic fatigue, or you just feel disconnected from your body — I\'m here to help you build a foundation that actually holds.',
+      'I work with women who are done with quick fixes and ready for real, lasting change. Whether you\'re dealing with hormone imbalances, chronic fatigue, or you just feel disconnected from your body, I\'m here to help you build a foundation that actually holds.',
     ],
   },
 ]
@@ -401,17 +401,17 @@ const values = [
   {
     num: '01',
     title: 'Whole-person health',
-    body: 'We don\'t treat symptoms in isolation. Your energy, mood, hormones, sleep, and stress are all connected — and we look at the full picture. Real results come from understanding how your body works as a whole, not just patching the loudest problem.',
+    body: 'We don\'t treat symptoms in isolation. Your energy, mood, hormones, sleep, and stress are all connected, and we look at the full picture. Real results come from understanding how your body works as a whole, not just patching the loudest problem.',
   },
   {
     num: '02',
     title: 'Your pace, your path',
-    body: 'There\'s no one-size-fits-all program here. Your plan is built around your life, your body, and your goals. Whether you\'re a shift worker, a new mum, or mid-career and burning out — we meet you where you are and move at a pace that sticks.',
+    body: 'There\'s no one-size-fits-all program here. Your plan is built around your life, your body, and your goals. Whether you\'re a shift worker, a new mum, or mid-career and burning out, we meet you where you are and move at a pace that sticks.',
   },
   {
     num: '03',
     title: 'Evidence meets intuition',
-    body: 'Everything we do is grounded in research and clinical training. But we also believe in the wisdom of lived experience — yours and mine. Science gives us the framework. Your body gives us the feedback. Together, they build something that actually works.',
+    body: 'Everything we do is grounded in research and clinical training. But we also believe in the wisdom of lived experience, yours and mine. Science gives us the framework. Your body gives us the feedback. Together, they build something that actually works.',
   },
 ]
 

@@ -9,11 +9,11 @@ const PERIWINKLE_DARK = '#4a4fad'
 const LEMON = '#ffebae'
 
 const services = [
-  { icon: '🌿', name: 'Nourish Kickstart', desc: "A 4-week jumpstart — initial consult, personalised plan, two follow-ups, and unlimited messaging support to get you moving.", price: 'From $195', bg: '#fdeee4' },
+  { icon: '🌿', name: 'Nourish Kickstart', desc: "A 4-week jumpstart: initial consult, personalised plan, two follow-ups, and unlimited messaging support to get you moving.", price: 'From $195', bg: '#fdeee4' },
   { icon: '⭐', name: 'Nourish 8-Week Program', desc: 'The full transformation. Eight weeks of structured nutrition coaching, weekly check-ins, meal planning, and full lab review support.', price: 'From $680', bg: LEMON, featured: true },
-  { icon: '🔄', name: 'Single Consultation', desc: 'A one-off 60-minute session for a specific concern — gut health, hormones, sports nutrition, or a second opinion on your current plan.', price: 'From $145', bg: '#dceef7' },
+  { icon: '🔄', name: 'Single Consultation', desc: 'A one-off 60-minute session for a specific concern: gut health, hormones, sports nutrition, or a second opinion on your current plan.', price: 'From $145', bg: '#dceef7' },
   { icon: '⚡', name: 'Hormone Reset', desc: 'Targeted nutrition for PCOS, thyroid, perimenopause and cycle irregularities. Works alongside your GP or specialist.', price: 'From $520', bg: '#fffef8' },
-  { icon: '📋', name: 'Meal Plan Add-on', desc: 'A 4-week plan built for your actual life — your preferences, your schedule, your budget. Not a generic PDF.', price: 'From $95', bg: '#d4e2fe' },
+  { icon: '📋', name: 'Meal Plan Add-on', desc: 'A 4-week plan built for your actual life: your preferences, your schedule, your budget. Not a generic PDF.', price: 'From $95', bg: '#d4e2fe' },
   { icon: '☎️', name: 'Free Discovery Call', desc: '20 minutes to chat about what\'s going on and figure out the right starting point. No pressure, no obligation.', price: 'Free 🎉', bg: '#fff8e0' },
 ]
 

@@ -7,21 +7,21 @@ const faqs = [
   {
     q: "Why should I choose a designer who's also a naturopath?",
     a: [
-      "Because I don't need you to explain what a naturopath does, how patients find you, or why your copy needs to sound clinical but approachable. I've lived it — six years of study, clinical practice, and building my own marketing from scratch.",
+      "Because I don't need you to explain what a naturopath does, how patients find you, or why your copy needs to sound clinical but approachable. I've lived it. Six years of study, clinical practice, and building my own marketing from scratch.",
       "<strong>I write copy that sounds like you, not like a marketing agency guessing at your profession.</strong> Your patients will feel the difference.",
     ],
   },
   {
     q: "Do you only work with naturopaths?",
     a: [
-      "No — I work with any health or wellness practitioner. Naturopaths, nutritionists, herbalists, health coaches, women's coaches, integrative GPs, and more.",
-      "My background is in naturopathy, which gives me a deep understanding of the broader health practitioner world — the patient relationship, the language, the way your clients search for help online. <strong>If you work in health and wellness, I can help you.</strong>",
+      "No. I work with any health or wellness practitioner. Naturopaths, nutritionists, herbalists, health coaches, women's coaches, integrative GPs, and more.",
+      "My background is in naturopathy, which gives me a deep understanding of the broader health practitioner world: the patient relationship, the language, the way your clients search for help online. <strong>If you work in health and wellness, I can help you.</strong>",
     ],
   },
   {
     q: "Can you integrate with my clinic management software?",
     a: [
-      "Yes. I integrate with Cliniko, Simple Clinic, Go High Level, and Cal.com. If you use a different booking platform, I'll work with it — or recommend the best option for your practice.",
+      "Yes. I integrate with Cliniko, Simple Clinic, Go High Level, and Cal.com. If you use a different booking platform, I'll work with it, or recommend the best option for your practice.",
     ],
   },
   {
@@ -34,14 +34,14 @@ const faqs = [
   {
     q: "Do you write the copy or do I need to?",
     a: [
-      "I write all of it. Every page, every heading, every call to action — using my clinical background to make it sound like you, not a template.",
+      "I write all of it. Every page, every heading, every call to action, using my clinical background to make it sound like you, not a template.",
       "All I need is a 60-minute brand messaging session and answers to a short questionnaire. <strong>You don't need to write a single word.</strong>",
     ],
   },
   {
     q: "Is there a student or new grad discount?",
     a: [
-      "Yes — 20% off all packages for current students and practitioners within their first 12 months of practice. Mention it when you enquire and I'll ask for brief verification.",
+      "Yes. 20% off all packages for current students and practitioners within their first 12 months of practice. Mention it when you enquire and I'll ask for brief verification.",
     ],
   },
 ]

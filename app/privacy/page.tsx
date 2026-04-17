@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Make It Media',
+  title: 'Privacy Policy - Make It Media',
   description:
     'How Make It Media collects, uses and protects your personal information.',
 }
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
                 <li>Contact details including your name, email address, phone number and practice name when you submit our contact form or enquiry form</li>
                 <li>Booking information including your name, email address and appointment details when you book a strategy call through Cal.com</li>
                 <li>Usage data including pages visited, time spent on pages, browser type and general location data collected automatically through Google Analytics 4</li>
-                <li>Payment information if you engage our services — payment processing is handled securely by Stripe and we do not store your card details</li>
+                <li>Payment information if you engage our services. Payment processing is handled securely by Stripe and we do not store your card details</li>
               </ul>
             </section>
 
@@ -104,16 +104,16 @@ export default function PrivacyPage() {
               <p className="mb-4">We use the following third party services which may collect or process your data:</p>
               <div className="flex flex-col gap-4">
                 <p>
-                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Google Analytics 4</strong> — We use GA4 to understand website traffic and user behaviour. Google Analytics collects anonymised usage data. You can opt out of Google Analytics tracking at tools.google.com/dlpage/gaoptout. Google&rsquo;s privacy policy is available at policies.google.com/privacy.
+                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Google Analytics 4</strong>: We use GA4 to understand website traffic and user behaviour. Google Analytics collects anonymised usage data. You can opt out of Google Analytics tracking at tools.google.com/dlpage/gaoptout. Google&rsquo;s privacy policy is available at policies.google.com/privacy.
                 </p>
                 <p>
-                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Cal.com</strong> — We use Cal.com to manage appointment bookings. When you book a strategy call, your name and email are processed by Cal.com. Cal.com&rsquo;s privacy policy is available at cal.com/privacy.
+                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Cal.com</strong>: We use Cal.com to manage appointment bookings. When you book a strategy call, your name and email are processed by Cal.com. Cal.com&rsquo;s privacy policy is available at cal.com/privacy.
                 </p>
                 <p>
-                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Netlify</strong> — Our website is hosted on Netlify, which processes server logs and form submissions. Netlify&rsquo;s privacy policy is available at netlify.com/privacy.
+                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Netlify</strong>: Our website is hosted on Netlify, which processes server logs and form submissions. Netlify&rsquo;s privacy policy is available at netlify.com/privacy.
                 </p>
                 <p>
-                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Stripe</strong> — Payment processing for our services is handled by Stripe. We do not store your payment card information. Stripe&rsquo;s privacy policy is available at stripe.com/privacy.
+                  <strong className="font-medium" style={{ color: 'var(--ink)' }}>Stripe</strong>: Payment processing for our services is handled by Stripe. We do not store your payment card information. Stripe&rsquo;s privacy policy is available at stripe.com/privacy.
                 </p>
               </div>
             </section>
@@ -194,7 +194,7 @@ export default function PrivacyPage() {
               </h2>
               <p>For any privacy-related questions or requests:</p>
               <p className="mt-2" style={{ color: 'var(--ink)' }}>
-                Kate Gerathy — Make It Media<br />
+                Kate Gerathy - Make It Media<br />
                 <a href="mailto:kate@makeitmedia.io" className="underline" style={{ color: 'var(--sage-dark)' }}>kate@makeitmedia.io</a><br />
                 makeitmedia.io
               </p>

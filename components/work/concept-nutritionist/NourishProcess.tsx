@@ -30,7 +30,7 @@ const steps = [
   },
   {
     num: '04', title: 'Ongoing support',
-    desc: 'Regular check-ins to track progress and adjust as life happens. Because life always happens — and that\'s fine.',
+    desc: 'Regular check-ins to track progress and adjust as life happens. Because life always happens, and that\'s fine.',
     bg: '#d4e2fe', rotate: '2.5deg',
     pattern: 'repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(26,26,14,0.06) 8px, rgba(26,26,14,0.06) 16px)',
   },

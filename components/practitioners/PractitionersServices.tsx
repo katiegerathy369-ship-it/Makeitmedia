@@ -12,7 +12,7 @@ const tiers = [
   {
     tier: 'Tier 01',
     name: 'Presence',
-    desc: 'Your professional practice online — custom-built and patient-ready.',
+    desc: 'Your professional practice online, custom-built and patient-ready.',
     price: 2200,
     priceNote: '+ GST · one-time · founding rate',
     monthly: true,
@@ -107,7 +107,7 @@ export default function PractitionersServices() {
             <em className="italic text-sage-dark">grow your practice</em>
           </h2>
           <p className="text-[16px] text-ink-mid font-light max-w-[520px] leading-[1.7] mb-10">
-            Built specifically for health practitioners — not by agencies that don't understand your patients, your language, or what people are actually searching for.
+            Built specifically for health practitioners. Not by agencies that don't understand your patients, your language, or what people are actually searching for.
           </p>
 
           {/* Payment plan toggle */}

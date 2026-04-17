@@ -34,7 +34,7 @@ export default function WorkCtaStrip() {
           <em className="italic" style={{ color: '#e8d5a3' }}>on this page.</em>
         </h2>
         <p className="text-[15px] font-light leading-[1.7]" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Founding client spots remaining at current rates. Book a free 30-minute strategy call — no pressure, just an honest conversation.
+          Founding client spots remaining at current rates. Book a free 30-minute strategy call. No pressure, just an honest conversation.
         </p>
       </div>
 

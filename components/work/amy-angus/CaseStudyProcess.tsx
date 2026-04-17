@@ -12,7 +12,7 @@ const timelineItems = [
   {
     num: '02',
     title: 'Copy & strategy',
-    desc: 'All 5 pages of copy written using clinical background knowledge and patient search behaviour. Sent to Amy for review — minimal changes needed because the brief was done properly upfront.',
+    desc: 'All 5 pages of copy written using clinical background knowledge and patient search behaviour. Sent to Amy for review. Minimal changes needed because the brief was done properly upfront.',
     tag: 'Week 1–2',
   },
   {
@@ -30,12 +30,13 @@ const timelineItems = [
 ]
 
 const techStack = [
-  { label: 'Framework', value: 'Next.js 14' },
+  { label: 'Framework', value: 'Next.js 14 (App Router)' },
   { label: 'Styling', value: 'Tailwind CSS' },
   { label: 'Animations', value: 'Framer Motion' },
   { label: 'Bookings', value: 'Simple Clinic' },
-  { label: 'Analytics', value: 'GA4 + Clarity' },
-  { label: 'Hosting', value: 'Netlify' },
+  { label: 'Forms', value: 'Netlify Forms' },
+  { label: 'Analytics', value: 'GA4 + Microsoft Clarity' },
+  { label: 'Hosting', value: 'Netlify CDN' },
 ]
 
 export default function CaseStudyProcess() {

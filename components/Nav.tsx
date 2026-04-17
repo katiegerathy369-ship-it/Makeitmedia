@@ -11,8 +11,10 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const isWork = pathname === '/work'
-  const isPractitioners = pathname === '/health-practitioners'
+  const practitionerPaths = ['/health-practitioners', '/work/amy-angus', '/work/vitalis-naturopathy']
+  const isPractitioners = practitionerPaths.includes(pathname)
   const s = isWork || isPractitioners ? '/' : ''
+  const accent = isPractitioners ? '#7a9e87' : '#c9a84c'
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function Nav() {
               cx="28"
               cy="28"
               r="22"
-              stroke="#c9a84c"
+              stroke={accent}
               strokeWidth="2.2"
               strokeDasharray="157"
               strokeDashoffset="157"
@@ -90,7 +92,7 @@ export default function Nav() {
             <path
               id="logo-leaf2"
               d="M28 22 C38 14 46 11 48 2 C40 3 28 11 28 22Z"
-              fill="#c9a84c"
+              fill={accent}
               opacity={0}
             />
             <circle
@@ -98,7 +100,7 @@ export default function Nav() {
               cx="28"
               cy="2"
               r="4"
-              fill="#c9a84c"
+              fill={accent}
               style={{ opacity: 0, transform: 'scale(0)', transformOrigin: '28px 2px' }}
             />
           </svg>
@@ -125,7 +127,7 @@ export default function Nav() {
                 fontSize: '22px',
                 fontWeight: 600,
                 fontStyle: 'italic',
-                color: '#c9a84c',
+                color: accent,
                 letterSpacing: '0.02em',
               }}
             >

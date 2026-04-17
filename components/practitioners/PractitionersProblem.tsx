@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const problems = [
   {
     title: "They don't speak your language",
-    desc: "Generic agencies write copy about 'services' and 'solutions.' Your patients search for 'naturopath near me' and 'help with hormonal acne.' There's a gap — and it costs you bookings.",
+    desc: "Generic agencies write copy about 'services' and 'solutions.' Your patients search for 'naturopath near me' and 'help with hormonal acne.' There's a gap, and it costs you bookings.",
   },
   {
     title: "They don't understand your patients",
@@ -13,7 +13,7 @@ const problems = [
   },
   {
     title: "They build for themselves, not for you",
-    desc: "Most agencies optimise for what looks good in their portfolio. I optimise for what gets your phone ringing — because I know what it's like to sit in clinic and wait for bookings.",
+    desc: "Most agencies optimise for what looks good in their portfolio. I optimise for what gets your phone ringing, because I know what it's like to sit in clinic and wait for bookings.",
   },
 ]
 

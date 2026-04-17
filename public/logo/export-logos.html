@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Logo Export — Right-click &gt; Save Image As</title>
+<style>
+  body { background: #f5f5f5; font-family: Arial, sans-serif; padding: 40px; }
+  h2 { margin-top: 40px; color: #333; }
+  p { color: #888; font-size: 14px; }
+  .logo-container { display: inline-block; margin: 20px 40px 20px 0; }
+  canvas { border: 1px solid #ddd; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>LinkedIn Logo & Cover Export</h1>
+<p>Right-click each image below and select "Save Image As..." to download as PNG.</p>
+
+<h2>1. Gold Logo (400 x 400)</h2>
+<div class="logo-container">
+  <canvas id="gold" width="400" height="400"></canvas>
+</div>
+
+<h2>2. Sage Logo (400 x 400)</h2>
+<div class="logo-container">
+  <canvas id="sage" width="400" height="400"></canvas>
+</div>
+
+<h2>3. LinkedIn Cover (4200 x 700)</h2>
+<p>This one is large — scroll right to see full image.</p>
+<div style="overflow-x:auto">
+  <canvas id="cover" width="4200" height="700"></canvas>
+</div>
+
+<script>
+function drawLogo(canvasId, bg, accent, accentHalf, leafDark) {
+  const c = document.getElementById(canvasId);
+  const ctx = c.getContext('2d');
+  const cx = 200, cy = 200;
+
+  // Background circle
+  ctx.beginPath();
+  ctx.arc(cx, cy, 200, 0, Math.PI * 2);
+  ctx.fillStyle = bg;
+  ctx.fill();
+
+  // Ring
+  ctx.beginPath();
+  ctx.arc(cx, 190, 110, 0, Math.PI * 2);
+  ctx.strokeStyle = accent;
+  ctx.lineWidth = 8;
+  ctx.stroke();
+
+  // Stem
+  ctx.beginPath();
+  ctx.moveTo(200, 360);
+  ctx.lineTo(200, 40);
+  ctx.strokeStyle = accent;
+  ctx.lineWidth = 9;
+  ctx.lineCap = 'round';
+  ctx.stroke();
+
+  // Left leaf
+  ctx.beginPath();
+  ctx.moveTo(200, 230);
+  ctx.bezierCurveTo(160, 205, 126, 190, 126, 155);
+  ctx.bezierCurveTo(160, 155, 200, 178, 200, 230);
+  ctx.fillStyle = leafDark;
+  ctx.fill();
+
+  // Right leaf
+  ctx.beginPath();
+  ctx.moveTo(200, 165);
+  ctx.bezierCurveTo(240, 138, 270, 128, 275, 90);
+  ctx.bezierCurveTo(240, 93, 200, 118, 200, 165);
+  ctx.fillStyle = accentHalf;
+  ctx.fill();
+
+  // Top dot
+  ctx.beginPath();
+  ctx.arc(200, 40, 16, 0, Math.PI * 2);
+  ctx.fillStyle = accent;
+  ctx.fill();
+}
+
+// Gold version
+drawLogo('gold', '#141414', '#c9a84c', 'rgba(201,168,76,0.5)', '#c9a84c');
+
+// Sage version
+drawLogo('sage', '#2a2520', '#b8d4c0', 'rgba(184,212,192,0.65)', '#7a9e87');
+
+// Cover
+(function() {
+  const c = document.getElementById('cover');
+  const ctx = c.getContext('2d');
+  const W = 4200, H = 700;
+
+  // Background
+  ctx.fillStyle = '#141414';
+  ctx.fillRect(0, 0, W, H);
+
+  // Glow right
+  const g1 = ctx.createRadialGradient(3570, 350, 0, 3570, 350, 1680);
+  g1.addColorStop(0, 'rgba(201,168,76,0.12)');
+  g1.addColorStop(1, 'rgba(201,168,76,0)');
+  ctx.fillStyle = g1;
+  ctx.fillRect(0, 0, W, H);
+
+  // Glow left
+  const g2 = ctx.createRadialGradient(630, 420, 0, 630, 420, 1260);
+  g2.addColorStop(0, 'rgba(201,168,76,0.06)');
+  g2.addColorStop(1, 'rgba(201,168,76,0)');
+  ctx.fillStyle = g2;
+  ctx.fillRect(0, 0, W, H);
+
+  // Logo mark
+  ctx.save();
+  ctx.translate(320, 180);
+  ctx.scale(4.5, 4.5);
+
+  // Ring
+  ctx.beginPath();
+  ctx.arc(28, 28, 22, 0, Math.PI * 2);
+  ctx.strokeStyle = '#c9a84c';
+  ctx.lineWidth = 2.2;
+  ctx.stroke();
+
+  // Stem
+  ctx.beginPath();
+  ctx.moveTo(28, 66);
+  ctx.lineTo(28, 2);
+  ctx.strokeStyle = '#c9a84c';
+  ctx.lineWidth = 2.4;
+  ctx.lineCap = 'round';
+  ctx.stroke();
+
+  // Left leaf
+  ctx.beginPath();
+  ctx.moveTo(28, 36);
+  ctx.bezierCurveTo(18, 29, 10, 25, 10, 14);
+  ctx.bezierCurveTo(18, 14, 28, 22, 28, 36);
+  ctx.fillStyle = '#c9a84c';
+  ctx.fill();
+
+  // Right leaf
+  ctx.beginPath();
+  ctx.moveTo(28, 22);
+  ctx.bezierCurveTo(38, 14, 46, 11, 48, 2);
+  ctx.bezierCurveTo(40, 3, 28, 11, 28, 22);
+  ctx.fillStyle = 'rgba(201,168,76,0.5)';
+  ctx.fill();
+
+  // Dot
+  ctx.beginPath();
+  ctx.arc(28, 2, 4, 0, Math.PI * 2);
+  ctx.fillStyle = '#c9a84c';
+  ctx.fill();
+
+  ctx.restore();
+
+  // Divider
+  ctx.beginPath();
+  ctx.moveTo(680, 220);
+  ctx.lineTo(680, 480);
+  ctx.strokeStyle = 'rgba(201,168,76,0.3)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Wordmark
+  ctx.font = '600 96px Georgia, "Times New Roman", serif';
+  ctx.fillStyle = '#ffffff';
+  ctx.letterSpacing = '3px';
+  ctx.fillText('make it', 740, 340);
+
+  ctx.font = 'italic 600 96px Georgia, "Times New Roman", serif';
+  ctx.fillStyle = '#c9a84c';
+  ctx.fillText('media', 740, 440);
+
+  // Tagline
+  ctx.font = '300 36px Arial, Helvetica, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText('WEBSITES  &  MARKETING  FOR  SMALL  BUSINESSES', 740, 520);
+
+  // Bottom accent
+  ctx.fillStyle = '#c9a84c';
+  ctx.fillRect(0, 694, W, 6);
+})();
+</script>
+</body>
+</html>

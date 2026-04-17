@@ -404,7 +404,7 @@ function RetreatPreview() {
                 fontSize: 17, fontWeight: 300, lineHeight: 1.7,
                 color: 'var(--st-on-surface-variant)',
               }}>
-                Five days of guided naturopathy, movement, and stillness — designed to bring
+                Five days of guided naturopathy, movement, and stillness, designed to bring
                 your nervous system back to baseline and your body back to balance.
               </p>
               <p style={{
@@ -535,7 +535,7 @@ function MeetGrace() {
                 color: 'var(--st-on-surface-variant)', marginBottom: 20, maxWidth: 460,
               }}>
                 With roots in clinical naturopathy and a heart shaped by a decade of healing practice,
-                Grace created She Thrives to be the space she once needed — a soft place to land
+                Grace created She Thrives to be the space she once needed, a soft place to land
                 when the world feels too heavy.
               </p>
 

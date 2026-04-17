@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-type Page = 'home' | 'about' | 'booking' | 'contact'
+type Page = 'home' | 'about' | 'services' | 'contact' | 'blog'
 type Viewport = 'desktop' | 'mobile'
 type Side = 'before' | 'after'
 
@@ -12,31 +12,34 @@ const BASE = '/images/portfolio/amy-angus-naturopathy'
 const images: Record<Side, Record<Viewport, Record<Page, string | null>>> = {
   before: {
     desktop: {
-      home:    `${BASE}/desktop-before/desktop-before-amy-angus-home.png`,
-      about:   `${BASE}/desktop-before/desktop-before-amy-angus-about.png`,
-      booking: `${BASE}/desktop-before/desktop-before-amy-angus-booking.png`,
-      contact: `${BASE}/desktop-before/desktop-before-amy-angus-contact.png`,
+      home:     `${BASE}/desktop-before/desktop-before-amy-angus-home.png`,
+      about:    `${BASE}/desktop-before/desktop-before-amy-angus-about.png`,
+      services: `${BASE}/desktop-before/desktop-before-amy-angus-booking.png`,
+      contact:  `${BASE}/desktop-before/desktop-before-amy-angus-contact.png`,
+      blog:     null,
     },
     mobile: {
-      home:    `${BASE}/mobile-before/mobile-before-home.jpeg`,
-      about:   `${BASE}/mobile-before/mobile-before-about.jpeg`,
-      booking: `${BASE}/mobile-before/mobile-before-book.jpeg`,
-      contact: `${BASE}/mobile-before/mobile-before-contact.jpeg`,
+      home:     `${BASE}/mobile-before/mobile-before-home.jpeg`,
+      about:    `${BASE}/mobile-before/mobile-before-about.jpeg`,
+      services: `${BASE}/mobile-before/mobile-before-book.jpeg`,
+      contact:  `${BASE}/mobile-before/mobile-before-contact.jpeg`,
+      blog:     null,
     },
   },
   after: {
     desktop: {
-      home:    `${BASE}/desktop-after/desktop-after-home.png`,
-      about:   `${BASE}/desktop-after/desktop-after-about.png`,
-      booking: `${BASE}/desktop-after/desktop-after-booking.png`,
-      contact: `${BASE}/desktop-after/desktop-after-contact.png`,
+      home:     `${BASE}/desktop-after/desktop-after-homepage-new.png`,
+      about:    `${BASE}/desktop-after/desktop-after-aboutpage-new.png`,
+      services: `${BASE}/desktop-after/desktop-after-servicespage-new.png`,
+      contact:  `${BASE}/desktop-after/desktop-after-contactpage-new.png`,
+      blog:     `${BASE}/desktop-after/desktop-after-blogpage-new.png`,
     },
-    mobile:  { home: null, about: null, booking: null, contact: null },
+    mobile: { home: null, about: null, services: null, contact: null, blog: null },
   },
 }
 
 const pageLabels: Record<Page, string> = {
-  home: 'Home', about: 'About', booking: 'Booking', contact: 'Contact',
+  home: 'Home', about: 'About', services: 'Services', contact: 'Contact', blog: 'Blog',
 }
 
 const MonitorIcon = () => (
@@ -67,11 +70,17 @@ function BACard({
   viewport: Viewport
   onViewportChange: (v: Viewport) => void
 }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [activePage, viewport])
+
   const isBefore = side === 'before'
   const imgSrc = images[side][viewport][activePage]
   const dotColor = isBefore ? 'var(--terra)' : 'var(--sage)'
   const labelColor = isBefore ? 'var(--terra)' : 'var(--sage-dark)'
-  const cardLabel = isBefore ? 'Before — old site' : 'After — Make It Media'
+  const cardLabel = isBefore ? 'Before - old site' : 'After - Make It Media'
 
   return (
     <div
@@ -144,10 +153,41 @@ function BACard({
 
       {/* Screen */}
       {viewport === 'desktop' ? (
-        <div style={{ height: 520, overflowY: imgSrc ? 'scroll' : 'hidden', background: 'var(--warm-white)', scrollbarWidth: 'thin', scrollbarColor: 'rgba(122,158,135,0.3) transparent' }}>
+        <div ref={scrollRef} style={{ height: 520, overflowY: imgSrc ? 'scroll' : 'hidden', background: 'var(--warm-white)', scrollbarWidth: 'thin', scrollbarColor: 'rgba(122,158,135,0.3) transparent' }}>
           {imgSrc ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={imgSrc} alt={`${side} ${activePage} desktop`} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          ) : isBefore && activePage === 'blog' ? (
+            <div
+              className="flex flex-col items-center justify-center gap-4 px-10 text-center"
+              style={{ height: '100%', background: 'linear-gradient(155deg,#f5f0ea 0%,#ede8e2 100%)' }}
+            >
+              <div
+                style={{
+                  width: 48, height: 48, borderRadius: '50%',
+                  background: 'var(--terra-pale)', border: '1.5px solid var(--terra-light)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 20, color: 'var(--terra)', opacity: 0.6,
+                }}
+              >
+                &times;
+              </div>
+              <div className="font-display" style={{ fontSize: 22, fontWeight: 500, color: 'var(--ink)', lineHeight: 1.2 }}>
+                No blog existed
+              </div>
+              <p style={{ fontSize: 13, color: 'var(--ink-mid)', lineHeight: 1.6, maxWidth: 320, fontWeight: 300 }}>
+                The old site had no blog. Without one, there was no way to rank for patient search terms, build authority with Google, or give visitors a reason to return.
+              </p>
+              <div
+                style={{
+                  marginTop: 4, fontSize: 10,
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  color: 'var(--terra)', fontWeight: 500,
+                }}
+              >
+                A blog is one of the strongest SEO tools a practitioner can have.
+              </div>
+            </div>
           ) : (
             <div
               className="flex flex-col items-center justify-center gap-2"
@@ -155,21 +195,7 @@ function BACard({
             >
               <div style={{ fontSize: 28, opacity: 0.3 }}>{isBefore ? '📸' : '✦'}</div>
               <div className="font-display italic" style={{ fontSize: 13, color: 'var(--ink-light)', opacity: 0.7 }}>
-                {pageLabels[activePage]} — desktop
-              </div>
-              <div style={{ fontSize: 10, color: 'var(--ink-light)', opacity: 0.45, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                Add screenshot to activate
-              </div>
-              <div
-                style={{
-                  marginTop: 8, fontSize: 10,
-                  color: 'var(--terra)', opacity: 0.5,
-                  letterSpacing: '0.06em', textTransform: 'uppercase',
-                  background: 'var(--terra-pale)', border: '1px solid var(--terra-light)',
-                  padding: '3px 10px', borderRadius: 100,
-                }}
-              >
-                {isBefore ? 'Upload before images' : 'Upload after images'}
+                {pageLabels[activePage]} - desktop
               </div>
             </div>
           )}
@@ -203,6 +229,7 @@ function BACard({
             >
               {imgSrc ? (
                 <div
+                  ref={scrollRef}
                   style={{
                     position: 'absolute', inset: 0,
                     overflowY: 'scroll',
@@ -215,7 +242,7 @@ function BACard({
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
                   <div className="font-display italic" style={{ fontSize: 11, color: 'var(--ink-light)', opacity: 0.7 }}>
-                    {pageLabels[activePage]} — mobile
+                    {pageLabels[activePage]} - mobile
                   </div>
                 </div>
               )}
@@ -276,7 +303,7 @@ export default function BeforeAfter() {
         </motion.div>
 
         <p className="text-center mt-4" style={{ fontSize: 12, color: 'var(--ink-light)', fontWeight: 300, fontStyle: 'italic' }}>
-          Page selectors are synced — changing one updates both sides simultaneously.
+          Page selectors are synced. Changing one updates both sides simultaneously.
         </p>
 
         {/* Comparison list */}
@@ -296,13 +323,13 @@ export default function BeforeAfter() {
             </div>
             <ul className="flex flex-col gap-2.5">
               {[
-                'Outdated platform, slow load times',
-                'Generic template design',
+                'Outdated template platform, slow load times',
+                'Generic design that didn\'t reflect clinical expertise',
                 'No online booking system',
-                'Copy written without clinical context',
-                'No SEO foundations or analytics',
+                'Copy without clinical context or patient language',
+                'No blog, no SEO, no analytics',
                 'Not optimised for mobile',
-                'No clear patient journey',
+                'No clear path from browsing to booking',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5" style={{ fontSize: 13, color: 'var(--ink-mid)', fontWeight: 300, lineHeight: 1.5 }}>
                   <span
@@ -327,13 +354,13 @@ export default function BeforeAfter() {
             </div>
             <ul className="flex flex-col gap-2.5">
               {[
-                'Custom-built — fast, modern, scalable',
-                'Unique brand identity and visual design',
-                'Simple Clinic booking integration',
-                'Practitioner-written copy that speaks to patients',
-                'GA4 + Google Search Console live',
-                'Fully responsive across all devices',
-                'Clear path from landing to booking',
+                'Custom-coded Next.js 14 site, fast and scalable',
+                'Editorial design system with bespoke brand palette',
+                'Full blog system with dynamic routing and SEO slugs',
+                'Simple Clinic booking + Netlify Forms integration',
+                'Evidence-based copy written by a naturopath',
+                'Google Reviews carousel and social proof throughout',
+                'GA4 + Microsoft Clarity from day one',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5" style={{ fontSize: 13, color: 'var(--ink-mid)', fontWeight: 300, lineHeight: 1.5 }}>
                   <span

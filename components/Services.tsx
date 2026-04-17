@@ -8,7 +8,7 @@ const tiers = [
   {
     tier: 'Tier 01',
     name: 'Presence',
-    desc: 'Your professional home online — custom-built and conversion-ready.',
+    desc: 'Your professional home online, custom-built and conversion-ready.',
     price: 2200,
     priceNote: '+ GST · one-time · founding rate',
     monthly: true,
@@ -140,7 +140,7 @@ export default function Services() {
             <em className="italic" style={{ color: '#c9a84c' }}>grow online</em>
           </h2>
           <p className="text-[16px] text-ink-mid font-light max-w-[520px] leading-[1.7] mb-10">
-            Custom websites and marketing systems built for small businesses. No templates, no page builders — just clean, fast, conversion-focused design.
+            Custom websites and marketing systems built for small businesses. No templates, no page builders. Just clean, fast, conversion-focused design.
           </p>
 
           {/* Payment plan toggle */}

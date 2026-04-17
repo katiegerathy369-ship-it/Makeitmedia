@@ -13,7 +13,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Health Practitioner Website Design | Make It Media',
   description:
-    'Custom websites for naturopaths and health practitioners — built by a practitioner using AI tools for faster delivery and better SEO. Book a free call.',
+    'Custom websites for naturopaths and health practitioners, built by a practitioner using AI tools for faster delivery and better SEO. Book a free call.',
 }
 
 export default function HealthPractitioners() {

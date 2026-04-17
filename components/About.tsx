@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import { useParallax } from '@/hooks/useParallax'
 
 const credentials = [
-  { icon: '🎨', text: 'Graphic design, UX & UI — built for how people actually browse' },
-  { icon: '🌿', text: 'Bachelor of Health Science — I know what it\u2019s like to run a business' },
-  { icon: '📱', text: '80K+ content creator (TikTok) — I understand what gets attention' },
-  { icon: '✦', text: 'Canva-first design process — you approve the design before anything gets built' },
-  { icon: '⚡', text: 'AI development tools — faster builds, lower cost, no shortcuts' },
+  { icon: '🎨', text: 'Graphic design, UX & UI, built for how people actually browse' },
+  { icon: '🌿', text: 'Bachelor of Health Science. I know what it\u2019s like to run a business' },
+  { icon: '📱', text: '80K+ content creator (TikTok). I understand what gets attention' },
+  { icon: '✦', text: 'Canva-first design process: you approve the design before anything gets built' },
+  { icon: '⚡', text: 'AI development tools: faster builds, lower cost, no shortcuts' },
 ]
 
 export default function About() {
@@ -77,12 +77,12 @@ export default function About() {
 
             <div className="mt-6 space-y-5">
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
-                Make It Media is an Australian web design agency that builds websites and marketing systems for small businesses. I started my career in health — studying naturopathy for six years and running my own practice. I know what it's like to be great at what you do but have no idea how to market it.
+                Make It Media is an Australian web design agency that builds websites and marketing systems for small businesses. I started my career in health, studying naturopathy for six years and running my own practice. I know what it's like to be great at what you do but have no idea how to market it.
               </p>
               <p className="text-[16px] text-ink-mid font-light leading-[1.8]">
                 I already had a background in graphic design and a sharp eye for UX. I knew what small business owners needed because I'd needed it myself. So I built it.{' '}
                 <strong className="font-medium text-ink">
-                  I design everything in Canva first — you see exactly what your site will look like before a single line of code is written.
+                  I design everything in Canva first. You see exactly what your site will look like before a single line of code is written.
                 </strong>
                 {' '}Once you're happy, I build it. No surprises.
               </p>

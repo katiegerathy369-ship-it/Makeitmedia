@@ -232,7 +232,7 @@ const practices = [
   },
   {
     name: 'Nutritional Wellness',
-    description: 'Every meal is a ceremony. Whole-food, plant-forward menus crafted by our in-house nutritionist — designed to nourish your gut, balance your hormones, and awaken your palate to the medicine of real food.',
+    description: 'Every meal is a ceremony. Whole-food, plant-forward menus crafted by our in-house nutritionist, designed to nourish your gut, balance your hormones, and awaken your palate to the medicine of real food.',
     icon: 'bowl',
   },
   {
@@ -242,7 +242,7 @@ const practices = [
   },
   {
     name: 'Guided Meditation & Breathwork',
-    description: 'From silent seated practice to guided visualisations and conscious connected breathwork — each session is designed to peel back layers of tension and return you to the stillness beneath the noise.',
+    description: 'From silent seated practice to guided visualisations and conscious connected breathwork. Each session is designed to peel back layers of tension and return you to the stillness beneath the noise.',
     icon: 'meditation',
   },
   {
@@ -262,21 +262,21 @@ const practices = [
   },
   {
     name: 'Nature Immersion',
-    description: 'Forest bathing, sunrise walks, barefoot grounding, and landscape meditation. Each retreat location is chosen for its capacity to hold you — to remind your body what it means to be held by the earth.',
+    description: 'Forest bathing, sunrise walks, barefoot grounding, and landscape meditation. Each retreat location is chosen for its capacity to hold you, to remind your body what it means to be held by the earth.',
     icon: 'tree',
   },
 ]
 
 const inclusions = [
   '5 nights premium eco-lodge accommodation',
-  'All meals — nutritionist-designed, whole-food, plant-forward',
+  'All meals, nutritionist-designed, whole-food, plant-forward',
   'Daily yoga, meditation & breathwork sessions',
   'One-on-one naturopathic consultation',
   'Personalised herbal medicine protocol to take home',
   'Sound healing & hydrotherapy ceremonies',
   'Guided nature immersion & forest bathing',
   'Daily journaling kit & guided prompts',
-  'Herbal tea & elixir bar — available all day',
+  'Herbal tea & elixir bar, available all day',
   'Pre-retreat wellness questionnaire & intention-setting call',
   'Post-retreat integration guide & 30-day journaling practice',
   'Airport transfers on arrival & departure days',
@@ -390,7 +390,7 @@ function PhilosophyIntro() {
           }}
         >
           These retreats are not about escaping your life.<br />
-          They are about <em style={{ fontStyle: 'italic' }}>returning to it</em> — whole.
+          They are about <em style={{ fontStyle: 'italic' }}>returning to it</em>, whole.
         </motion.h2>
 
         <motion.p
@@ -405,7 +405,7 @@ function PhilosophyIntro() {
         >
           Each gathering weaves together clinical naturopathy, movement, stillness,
           and the quiet intelligence of the natural world. We hold space for 12 women
-          at a time — intimate enough to be seen, spacious enough to breathe. No
+          at a time, intimate enough to be seen, spacious enough to breathe. No
           rigid schedules, no performance. Just the steady, gentle work of coming
           home to yourself.
         </motion.p>
@@ -666,14 +666,14 @@ function SacredPractices() {
 /* ── 5. A DAY IN YOUR RETREAT ────────────────────────────────────────────── */
 
 const dailyRhythm = [
-  { time: '6:00 am', label: 'Sunrise', activity: 'Guided meditation or ocean swim — greet the day in stillness or movement, your choice.' },
+  { time: '6:00 am', label: 'Sunrise', activity: 'Guided meditation or ocean swim. Greet the day in stillness or movement, your choice.' },
   { time: '7:30 am', label: 'Morning Practice', activity: 'Restorative yoga flow followed by breathwork. Gentle enough to welcome the body awake.' },
-  { time: '9:00 am', label: 'Nourish', activity: 'Breakfast — seasonal, whole-food, prepared with intention. Herbal elixirs and fresh-pressed juices.' },
-  { time: '10:30 am', label: 'Healing Session', activity: 'Naturopathy consultations, herbal medicine workshops, or hydrotherapy — rotating each day.' },
-  { time: '1:00 pm', label: 'Midday Feast', activity: 'Lunch — a shared table, unhurried. Nutritionist-designed, always nourishing, always beautiful.' },
-  { time: '2:30 pm', label: 'Sacred Pause', activity: 'Free time for journaling, nature walks, reading, or simply being. Rest is not optional — it is essential.' },
+  { time: '9:00 am', label: 'Nourish', activity: 'Breakfast. Seasonal, whole-food, prepared with intention. Herbal elixirs and fresh-pressed juices.' },
+  { time: '10:30 am', label: 'Healing Session', activity: 'Naturopathy consultations, herbal medicine workshops, or hydrotherapy. Rotating each day.' },
+  { time: '1:00 pm', label: 'Midday Feast', activity: 'Lunch. A shared table, unhurried. Nutritionist-designed, always nourishing, always beautiful.' },
+  { time: '2:30 pm', label: 'Sacred Pause', activity: 'Free time for journaling, nature walks, reading, or simply being. Rest is not optional. It is essential.' },
   { time: '4:30 pm', label: 'Afternoon Ritual', activity: 'Sound healing ceremony, nature immersion, or gentle movement. The body softens, the mind quietens.' },
-  { time: '6:30 pm', label: 'Evening Nourishment', activity: 'Dinner — gathered around candlelight. Warming, grounding, designed to ease you into the evening.' },
+  { time: '6:30 pm', label: 'Evening Nourishment', activity: 'Dinner. Gathered around candlelight. Warming, grounding, designed to ease you into the evening.' },
   { time: '8:00 pm', label: 'Evening Reflection', activity: 'Guided journaling, stargazing, or fireside sharing circle. Close the day with intention.' },
 ]
 
@@ -710,7 +710,7 @@ function DailyRhythm() {
               maxWidth: 520, margin: '0 auto',
             }}>
               No rigid timetable. A gentle rhythm that invites you to participate
-              as deeply — or as softly — as you need.
+              as deeply, or as softly, as you need.
             </p>
           </motion.div>
 
@@ -851,11 +851,11 @@ function Transformation() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 32 }}>
                 {[
-                  'A nervous system that remembers what rest feels like — not the shallow, guilty kind, but the deep, cellular reset that changes how you move through every day after.',
+                  'A nervous system that remembers what rest feels like. Not the shallow, guilty kind, but the deep, cellular reset that changes how you move through every day after.',
                   'Clarity about what your body actually needs. Not from a textbook, but from five days of listening to it in an environment designed to let it speak.',
-                  'A personalised herbal protocol and nutritional framework you can continue at home — rooted in clinical naturopathy, not trends.',
+                  'A personalised herbal protocol and nutritional framework you can continue at home, rooted in clinical naturopathy, not trends.',
                   'The quiet confidence that comes from knowing you chose yourself. That you gave yourself permission to stop, to soften, to return to the version of you that exists beneath the exhaustion.',
-                  'A community of 12 women who held space with you. Not a networking event — a gathering of souls who understand what it means to need this.',
+                  'A community of 12 women who held space with you. Not a networking event. A gathering of souls who understand what it means to need this.',
                 ].map((text, i) => (
                   <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                     <div style={{
@@ -1029,7 +1029,7 @@ function InquiryCta() {
             }}>
               Spots fill quietly. If something in you stirred while reading this page,
               that&apos;s worth listening to. Reach out and we&apos;ll share everything
-              you need to know — including pricing, travel details, and how to prepare.
+              you need to know, including pricing, travel details, and how to prepare.
             </p>
 
             {/* Upcoming dates */}
@@ -1045,7 +1045,7 @@ function InquiryCta() {
                     fontSize: 13, fontWeight: 400, letterSpacing: '0.04em',
                     color: 'rgba(255,255,255,0.7)',
                   }}>
-                    {r.dates} — {r.location}
+                    {r.dates} - {r.location}
                   </span>
                 </div>
               ))}
@@ -1127,9 +1127,9 @@ function InquiryCta() {
                   }}
                 >
                   <option value="" disabled>Which retreat interests you?</option>
-                  <option value="bali-april-2026">Bali — 7–11 April 2026</option>
-                  <option value="swiss-alps-august-2026">Swiss Alps — 16–20 August 2026</option>
-                  <option value="byron-bay-october-2026">Byron Bay — 18–22 October 2026</option>
+                  <option value="bali-april-2026">Bali - 7-11 April 2026</option>
+                  <option value="swiss-alps-august-2026">Swiss Alps - 16-20 August 2026</option>
+                  <option value="byron-bay-october-2026">Byron Bay - 18-22 October 2026</option>
                   <option value="undecided">I&apos;m not sure yet</option>
                 </select>
 

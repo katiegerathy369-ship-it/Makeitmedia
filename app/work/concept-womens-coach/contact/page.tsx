@@ -133,7 +133,7 @@ function LeftPanel() {
           maxWidth: 340,
         }}
       >
-        Book a free 20-minute discovery call — no pitch, no pressure. Just an
+        Book a free 20-minute discovery call. No pitch, no pressure. Just an
         honest conversation about where you are and where you want to be.
       </p>
 
@@ -196,7 +196,7 @@ function LeftPanel() {
                 textTransform: 'uppercase',
               }}
             >
-              — {t.name} · {t.program}
+              - {t.name} · {t.program}
             </span>
           </blockquote>
         ))}
@@ -474,7 +474,7 @@ function RightPanel() {
             <textarea
               value={form.message}
               onChange={(e) => update('message', e.target.value)}
-              placeholder="Share as much or as little as you'd like — the more I know, the better I can help."
+              placeholder="Share as much or as little as you'd like. The more I know, the better I can help."
               style={{ ...inputStyle, minHeight: 120, resize: 'vertical' }}
               {...focus}
             />

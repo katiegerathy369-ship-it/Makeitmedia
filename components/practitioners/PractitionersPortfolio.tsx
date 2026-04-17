@@ -9,7 +9,7 @@ const projects = [
     type: 'Naturopath · Brisbane',
     tag: 'Live site',
     href: '/work/amy-angus',
-    image: '/images/portfolio/amy-angus-naturopathy/amy-angus-naturopath-website.jpg',
+    image: '/images/portfolio/amy-angus-naturopathy/desktop-after/preview-screenshot.png',
   },
   {
     title: 'Nourish & Co.',

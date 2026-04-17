@@ -1,0 +1,14 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="#141414"/>
+  <!-- Circle -->
+  <circle cx="200" cy="190" r="110" fill="none" stroke="#c9a84c" stroke-width="8"/>
+  <!-- Stem -->
+  <line x1="200" y1="360" x2="200" y2="40" stroke="#c9a84c" stroke-width="9" stroke-linecap="round"/>
+  <!-- Left leaf -->
+  <path d="M200 230 C160 205 126 190 126 155 C160 155 200 178 200 230Z" fill="#c9a84c"/>
+  <!-- Right leaf -->
+  <path d="M200 165 C240 138 270 128 275 90 C240 93 200 118 200 165Z" fill="rgba(201,168,76,0.5)"/>
+  <!-- Top dot -->
+  <circle cx="200" cy="40" r="16" fill="#c9a84c"/>
+</svg>

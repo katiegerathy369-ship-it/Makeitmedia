@@ -79,7 +79,7 @@ export default function HeroMockup() {
             </div>
             <div className="flex-1">
               <div className="text-[13px] font-medium text-ink leading-[1.3]">
-                Amy Angus — Naturopath
+                Amy Angus - Naturopath
               </div>
               <div className="text-[11px] text-ink-light font-light">
                 Brisbane, QLD

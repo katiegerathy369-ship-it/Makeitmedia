@@ -22,13 +22,13 @@ export default function Overview() {
               className="font-display font-normal text-ink mb-4"
               style={{ fontSize: 'clamp(32px, 3.5vw, 48px)', lineHeight: 1.12 }}
             >
-              An outdated site that didn&apos;t reflect her <em className="italic text-sage-dark">expertise</em>
+              A website as good as <em className="italic text-sage-dark">the work</em>
             </h2>
             <p style={{ fontSize: 15, color: 'var(--ink-mid)', fontWeight: 300, lineHeight: 1.8, marginBottom: 16 }}>
-              Amy had been practising naturopathy for years but her online presence didn&apos;t match the quality of her work. Her existing site was built on an outdated platform — slow, generic, and not converting visitors into bookings.
+              Amy is a degree-qualified clinical naturopath in Brisbane specialising in women&apos;s hormonal health: endometriosis, PCOS, PMDD, adenomyosis, and gut healing. She serves clients Australia-wide.
             </p>
             <p style={{ fontSize: 15, color: 'var(--ink-mid)', fontWeight: 300, lineHeight: 1.8, marginBottom: 16 }}>
-              She needed something that felt <strong style={{ fontWeight: 500, color: 'var(--ink)' }}>premium, personal, and professional</strong> — a site that immediately communicated her expertise and made it easy for patients to book. And she needed someone who understood the naturopathic world well enough to write the copy without her having to explain it.
+              She needed a bespoke website that positioned her as a <strong style={{ fontWeight: 500, color: 'var(--ink)' }}>premium, evidence-based practitioner</strong>. Editorial in feel, warm in voice, and engineered to convert browsers into booked consultations. And she needed someone who understood the naturopathic world well enough to write the copy without her having to explain it.
             </p>
             <p style={{ fontSize: 15, color: 'var(--ink-mid)', fontWeight: 300, lineHeight: 1.8 }}>
               That&apos;s where Make It Media came in.
@@ -41,13 +41,13 @@ export default function Overview() {
               {
                 icon: '⚡',
                 title: 'The problem',
-                desc: 'Outdated site on an old platform. Slow load times, no booking integration, copy that didn\'t reflect her clinical expertise, and no SEO foundations in place.',
+                desc: 'Outdated template site on an old platform. Slow load times, no booking integration, generic copy that didn\'t reflect her clinical specialisation in hormonal health, and no SEO foundations.',
                 delay: 0.1,
               },
               {
                 icon: '✦',
                 title: 'The solution',
-                desc: 'A fully custom website with professional copywriting, Simple Clinic integration for online bookings, on-page SEO, GA4 analytics, and a brand identity that finally matched her level of practice.',
+                desc: 'A custom-coded 5-page site with full blog system, editorial design, Simple Clinic booking integration, Google Reviews carousel, GA4 + Microsoft Clarity analytics, and copy written in an evidence-based tone by a naturopath. Built to look like a boutique clinic, not a one-person business.',
                 delay: 0.2,
               },
             ].map((card) => (

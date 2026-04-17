@@ -139,7 +139,7 @@ const programs: Program[] = [
     duration: '12 Weeks',
     bg: 'var(--blush-pale)',
     whoFor:
-      'Women who are ready for a full reset — you want to rebuild your energy, balance your hormones, and create sustainable habits that actually stick.',
+      'Women who are ready for a full reset. You want to rebuild your energy, balance your hormones, and create sustainable habits that actually stick.',
     includes: [
       'Weekly 1:1 coaching sessions',
       'Personalised wellness protocol',
@@ -166,7 +166,7 @@ const programs: Program[] = [
     duration: '6 Weeks',
     bg: 'var(--warm)',
     whoFor:
-      'Women dealing with PCOS, irregular cycles, perimenopause, or hormonal symptoms that are disrupting daily life — you want targeted support without a long-term commitment.',
+      'Women dealing with PCOS, irregular cycles, perimenopause, or hormonal symptoms that are disrupting daily life. You want targeted support without a long-term commitment.',
     includes: [
       'Fortnightly 1:1 coaching sessions',
       'Hormone health protocol',
@@ -191,7 +191,7 @@ const programs: Program[] = [
     duration: '6 Weeks',
     bg: 'var(--rose-pale)',
     whoFor:
-      'Women experiencing chronic fatigue, burnout, or exhaustion despite getting rest — you need a plan that addresses the root cause, not just the symptoms.',
+      'Women experiencing chronic fatigue, burnout, or exhaustion despite getting rest. You need a plan that addresses the root cause, not just the symptoms.',
     includes: [
       'Sleep audit & optimisation plan',
       'Stress & nervous system protocol',
@@ -216,7 +216,7 @@ const programs: Program[] = [
     duration: '90 Minutes',
     bg: 'var(--cream)',
     whoFor:
-      'You don\'t need an ongoing program — just a focused session with clear direction. Walk away with a personalised action plan and no commitment required.',
+      'You don\'t need an ongoing program. Just a focused session with clear direction. Walk away with a personalised action plan and no commitment required.',
     includes: [
       '90-minute intensive coaching session',
       'Personalised action plan',
@@ -405,7 +405,7 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
               color: '#9a4a44', flexShrink: 0,
             }}>{program.testimonial.initial}</div>
             <p style={{ fontSize: '12px', color: '#9a8a84', fontStyle: 'italic', lineHeight: 1.5, margin: 0 }}>
-              &ldquo;{program.testimonial.quote}&rdquo; — {program.testimonial.name}
+              &ldquo;{program.testimonial.quote}&rdquo; - {program.testimonial.name}
             </p>
           </div>
         </motion.div>
@@ -496,15 +496,15 @@ const faqs = [
   },
   {
     q: 'Are sessions in-person or online?',
-    a: 'All sessions are held online via Zoom, so you can join from anywhere in Australia (or the world). This keeps things flexible and means you can show up from your couch in trackies — no judgement here.',
+    a: 'All sessions are held online via Zoom, so you can join from anywhere in Australia (or the world). This keeps things flexible and means you can show up from your couch in trackies. No judgement here.',
   },
   {
     q: 'How is this different from seeing a doctor or naturopath?',
-    a: 'Doctors and naturopaths are brilliant at diagnosis and treatment. What I offer sits alongside that — ongoing coaching, accountability, and lifestyle support that helps you actually implement changes. Think of it as the missing piece between knowing what to do and consistently doing it.',
+    a: 'Doctors and naturopaths are brilliant at diagnosis and treatment. What I offer sits alongside that: ongoing coaching, accountability, and lifestyle support that helps you actually implement changes. Think of it as the missing piece between knowing what to do and consistently doing it.',
   },
   {
     q: 'What if I\'ve already tried everything?',
-    a: 'I hear this a lot, and it usually means you\'ve tried a lot of things in isolation without the right support or personalisation. My approach is different because we look at the whole picture — hormones, stress, sleep, nutrition, mindset — and we build a plan that\'s truly yours. Not a template.',
+    a: 'I hear this a lot, and it usually means you\'ve tried a lot of things in isolation without the right support or personalisation. My approach is different because we look at the whole picture (hormones, stress, sleep, nutrition, mindset) and we build a plan that\'s truly yours. Not a template.',
   },
   {
     q: 'Do you offer payment plans?',
@@ -512,7 +512,7 @@ const faqs = [
   },
   {
     q: 'How do I know which program is right for me?',
-    a: 'That\'s exactly what the free discovery call is for. We\'ll have a relaxed 20-minute chat about where you\'re at, what you\'re dealing with, and I\'ll recommend the best fit — or let you know if I\'m not the right person. Zero pressure, zero obligation.',
+    a: 'That\'s exactly what the free discovery call is for. We\'ll have a relaxed 20-minute chat about where you\'re at, what you\'re dealing with, and I\'ll recommend the best fit, or let you know if I\'m not the right person. Zero pressure, zero obligation.',
   },
 ]
 
@@ -678,7 +678,7 @@ function CtaBanner() {
             margin: '0 auto 32px',
           }}
         >
-          Book a free 20-minute discovery call — we&apos;ll figure it out together.
+          Book a free 20-minute discovery call. We&apos;ll figure it out together.
         </p>
         <Link
           href={`${BASE}/contact`}

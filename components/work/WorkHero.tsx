@@ -57,7 +57,7 @@ export default function WorkHero() {
             className="pb-3"
           >
             <p className="text-[17px] text-ink-mid font-light leading-[1.75] mb-7">
-              Every site is built custom — no templates, no drag-and-drop, no shortcuts. Real businesses across different industries, each with a website designed to bring in clients.
+              Every site is built custom. No templates, no drag-and-drop, no shortcuts. Real businesses across different industries, each with a website designed to bring in clients.
             </p>
             <div className="flex gap-8">
               {[

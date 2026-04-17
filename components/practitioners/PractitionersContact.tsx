@@ -100,7 +100,7 @@ export default function PractitionersContact() {
               <em className="italic" style={{ color: 'var(--sage-light)' }}>worth finding?</em>
             </h2>
             <p className="text-[15px] font-light leading-[1.7] mb-10" style={{ color: 'rgba(255,255,255,0.65)' }}>
-              Book a free 30-minute strategy call — no sales pressure, just an honest conversation about what your practice needs.
+              Book a free 30-minute strategy call. No sales pressure, just an honest conversation about what your practice needs.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -182,11 +182,11 @@ export default function PractitionersContact() {
                 <label className="block text-[12px] font-medium tracking-[0.06em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>What are you looking for?</label>
                 <select name="service" value={form.service} onChange={handleChange} className={`${inputBase} form-select-custom cursor-pointer`}>
                   <option value="" disabled>Select a service</option>
-                  <option>Tier 1 — Presence (website)</option>
-                  <option>Tier 2 — Visibility (website + launch)</option>
-                  <option>Tier 3 — Growth retainer</option>
-                  <option>Not sure yet — let's chat</option>
-                  <option>Student / new grad — applying for discounted pricing</option>
+                  <option>Tier 1 - Presence (website)</option>
+                  <option>Tier 2 - Visibility (website + launch)</option>
+                  <option>Tier 3 - Growth retainer</option>
+                  <option>Not sure yet - let's chat</option>
+                  <option>Student / new grad - applying for discounted pricing</option>
                 </select>
               </div>
 

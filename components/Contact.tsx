@@ -122,7 +122,7 @@ export default function Contact() {
               </em>
             </h2>
             <p className="text-[15px] font-light leading-[1.7] mb-10" style={{ color: 'rgba(255,255,255,0.65)' }}>
-              Book a free 30-minute strategy call — no sales pressure, just an honest conversation about what you need and whether we're a good fit.
+              Book a free 30-minute strategy call. No sales pressure, just an honest conversation about what you need and whether we're a good fit.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -273,7 +273,7 @@ export default function Contact() {
                   <option>Website redesign</option>
                   <option>Website + marketing launch</option>
                   <option>Ongoing marketing</option>
-                  <option>Not sure yet — let's chat</option>
+                  <option>Not sure yet - let's chat</option>
                 </select>
               </div>
 

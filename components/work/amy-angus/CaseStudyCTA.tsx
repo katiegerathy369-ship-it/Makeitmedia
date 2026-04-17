@@ -34,7 +34,7 @@ export default function CaseStudyCTA() {
               <em className="italic" style={{ color: 'var(--sage-light)' }}>this good too.</em>
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', fontWeight: 300, lineHeight: 1.7 }}>
-              3 founding client spots remaining at current rates. Book a free 30-minute strategy call — no pressure, just an honest conversation about what you need.
+              3 founding client spots remaining at current rates. Book a free 30-minute strategy call. No pressure, just an honest conversation about what you need.
             </p>
           </div>
 

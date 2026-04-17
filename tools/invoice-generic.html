@@ -317,14 +317,32 @@
 
     /* ── Print styles ── */
     @media print {
-      body { background: white; }
+      body { background: white; font-size: 12px; }
       .toolbar, .add-row-btn, .no-print { display: none !important; }
       .invoice-page {
         box-shadow: none;
         margin: 0;
-        padding: 40px 48px 32px;
+        padding: 28px 40px 20px;
         max-width: none;
+        min-height: auto;
       }
+      .invoice-header { margin-bottom: 24px; padding-bottom: 18px; }
+      .invoice-title { font-size: 28px; }
+      .logo-area svg { width: 160px; }
+      .meta-grid { margin-bottom: 24px; gap: 20px; }
+      .field-value { font-size: 12px; }
+      .field-label { font-size: 9px; }
+      .items-table thead th { font-size: 9px; padding: 6px 6px; }
+      .items-table tbody td { padding: 6px 6px; font-size: 12px; }
+      .add-row-btn { display: none; }
+      .totals-area { margin-bottom: 20px; }
+      .totals-table td { padding: 4px 6px; font-size: 12px; }
+      .totals-table .total-row td { font-size: 18px; padding-top: 6px; }
+      .bottom-section { margin-bottom: 16px; gap: 20px; }
+      .section-title { font-size: 14px; margin-bottom: 4px; }
+      .notes-box { font-size: 11px; min-height: auto; padding: 4px; }
+      .payment-details { font-size: 11px; line-height: 1.6; }
+      .invoice-footer { padding-top: 10px; font-size: 10px; }
       [contenteditable]:hover,
       [contenteditable]:focus { background: transparent; }
       .items-table tbody tr:hover { background: transparent; }
@@ -337,7 +355,7 @@
       .print-tax-rate { display: inline; }
       .tax-rate-input { display: none; }
       @page {
-        margin: 0.5in;
+        margin: 0.4in;
         size: A4;
       }
     }
@@ -414,7 +432,7 @@
       </div>
       <div class="meta-row" style="margin-top: 12px;">
         <span class="field-label">Payment Terms</span>
-        <span class="field-value" contenteditable="true" id="paymentTerms">Due within 14 days</span>
+        <span class="field-value" contenteditable="true" id="paymentTerms">Due within 7 days</span>
       </div>
     </div>
   </div>
@@ -455,7 +473,13 @@
         <td id="taxAmount">$0.00</td>
       </tr>
       <tr>
-        <td>Discount</td>
+        <td style="display:flex;align-items:center;justify-content:flex-end;gap:6px;">
+          Discount
+          <span class="no-print" style="display:inline-flex;border:1px solid var(--sage-light);border-radius:3px;overflow:hidden;margin-left:4px;">
+            <button class="discount-mode-btn active" id="btnDiscountDollar" onclick="setDiscountMode('dollar')" style="font-family:var(--font-body);font-size:11px;padding:2px 8px;border:none;cursor:pointer;background:var(--sage);color:white;transition:all 0.2s;">$</button>
+            <button class="discount-mode-btn" id="btnDiscountPercent" onclick="setDiscountMode('percent')" style="font-family:var(--font-body);font-size:11px;padding:2px 8px;border:none;cursor:pointer;background:transparent;color:var(--ink-mid);transition:all 0.2s;">%</button>
+          </span>
+        </td>
         <td contenteditable="true" id="discount" style="cursor:text;">$0.00</td>
       </tr>
       <tr class="total-row">
@@ -561,7 +585,7 @@
   function setFreshDates() {
     const today = new Date();
     const due = new Date(today);
-    due.setDate(due.getDate() + 14);
+    due.setDate(due.getDate() + 7);
     const fmt = d => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
     document.getElementById('dateIssued').textContent = fmt(today);
     document.getElementById('dateDue').textContent = fmt(due);
@@ -616,7 +640,13 @@
     document.querySelector('.print-tax-rate').textContent = taxRate;
 
     const discountText = document.getElementById('discount').textContent.replace(/[^0-9.\-]/g, '');
-    const discount = parseFloat(discountText) || 0;
+    const discountVal = parseFloat(discountText) || 0;
+    let discount;
+    if (discountMode === 'percent') {
+      discount = (subtotal + tax) * (discountVal / 100);
+    } else {
+      discount = discountVal;
+    }
 
     const total = subtotal + tax - discount;
 
@@ -636,11 +666,36 @@
   // ── Attach listeners to existing rows ──
   document.querySelectorAll('#itemsBody tr').forEach(attachListeners);
 
+  // ── Discount mode ──
+  let discountMode = 'dollar'; // 'dollar' or 'percent'
+
+  function setDiscountMode(mode) {
+    discountMode = mode;
+    document.getElementById('btnDiscountDollar').style.background = mode === 'dollar' ? 'var(--sage)' : 'transparent';
+    document.getElementById('btnDiscountDollar').style.color = mode === 'dollar' ? 'white' : 'var(--ink-mid)';
+    document.getElementById('btnDiscountPercent').style.background = mode === 'percent' ? 'var(--sage)' : 'transparent';
+    document.getElementById('btnDiscountPercent').style.color = mode === 'percent' ? 'white' : 'var(--ink-mid)';
+
+    // Reformat the discount field
+    const discountEl = document.getElementById('discount');
+    const val = parseFloat(discountEl.textContent.replace(/[^0-9.\-]/g, '')) || 0;
+    if (mode === 'percent') {
+      discountEl.textContent = val > 0 ? val.toFixed(0) + '%' : '0%';
+    } else {
+      discountEl.textContent = '$' + val.toFixed(2);
+    }
+    recalc();
+  }
+
   // ── Discount field recalc ──
   document.getElementById('discount').addEventListener('input', recalc);
   document.getElementById('discount').addEventListener('blur', function() {
-    const val = parseFloat(this.textContent.replace(/[^0-9.\-]/g, '')) || 0;
-    this.textContent = '$' + val.toFixed(2);
+    const val = parseFloat(this.textContent.replace(/[^0-9.\-%]/g, '')) || 0;
+    if (discountMode === 'percent') {
+      this.textContent = val.toFixed(0) + '%';
+    } else {
+      this.textContent = '$' + val.toFixed(2);
+    }
     recalc();
   });
 
@@ -660,6 +715,7 @@
       paymentTerms: document.getElementById('paymentTerms').textContent,
       taxRate: document.getElementById('taxRate').value,
       discount: document.getElementById('discount').textContent,
+      discountMode: discountMode,
       notes: document.getElementById('notes').innerHTML,
       paymentDetails: document.getElementById('paymentDetails').innerHTML,
       items: []
@@ -693,6 +749,7 @@
     document.getElementById('paymentTerms').textContent = data.paymentTerms;
     document.getElementById('taxRate').value = data.taxRate;
     document.getElementById('discount').textContent = data.discount;
+    if (data.discountMode) setDiscountMode(data.discountMode);
     document.getElementById('notes').innerHTML = data.notes;
     document.getElementById('paymentDetails').innerHTML = data.paymentDetails;
 
@@ -728,7 +785,7 @@
     document.getElementById('toCompany').textContent = 'Company Name';
     document.getElementById('toAddress').textContent = '123 Street, City, State 0000';
     document.getElementById('toEmail').textContent = 'client@email.com';
-    document.getElementById('paymentTerms').textContent = 'Due within 14 days';
+    document.getElementById('paymentTerms').textContent = 'Due within 7 days';
     document.getElementById('discount').textContent = '$0.00';
     document.getElementById('taxRate').value = '10';
     document.getElementById('notes').textContent = 'Thank you for your business.';
@@ -817,6 +874,32 @@
 
   // Initial calc
   recalc();
+
+  // ── Auto-fit to one page on print ──
+  // Measures the invoice content against A4 height and scales down if needed
+  window.addEventListener('beforeprint', function() {
+    const page = document.getElementById('invoicePage');
+    // A4 at 96dpi = 1123px height, minus 0.4in margins top+bottom (77px)
+    const maxHeight = 1046;
+    // Reset any previous scaling
+    page.style.transform = '';
+    page.style.transformOrigin = 'top left';
+    // Measure actual height
+    const actualHeight = page.scrollHeight;
+    if (actualHeight > maxHeight) {
+      const scale = maxHeight / actualHeight;
+      // Don't scale below 70% — if it's that long, it genuinely needs 2 pages
+      const finalScale = Math.max(scale, 0.7);
+      page.style.transform = 'scale(' + finalScale + ')';
+      page.style.transformOrigin = 'top left';
+      page.style.width = (100 / finalScale) + '%';
+    }
+  });
+  window.addEventListener('afterprint', function() {
+    const page = document.getElementById('invoicePage');
+    page.style.transform = '';
+    page.style.width = '';
+  });
 </script>
 
 </body>

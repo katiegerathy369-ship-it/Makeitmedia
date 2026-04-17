@@ -36,7 +36,7 @@ export default function CaseStudyHero() {
           >
             <Link
               href="/work"
-              className="inline-flex items-center gap-1.5 no-underline mb-7 transition-colors duration-200"
+              className="flex items-center gap-1.5 no-underline mb-5 transition-colors duration-200 w-fit"
               style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.02em' }}
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -68,7 +68,7 @@ export default function CaseStudyHero() {
             </h1>
 
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', fontWeight: 300, lineHeight: 1.75, marginBottom: 36 }}>
-              A complete digital rebuild for a Brisbane naturopath — new custom website, brand identity, Simple Clinic integration, and SEO foundations. From outdated and invisible to polished and bookable.
+              A bespoke website for a Brisbane naturopath specialising in women&apos;s hormonal health. Custom-coded, editorial in feel, warm in voice, and engineered to convert browsers into booked consultations. Fully owned, no platform lock-in.
             </p>
 
             <div className="flex flex-wrap gap-2.5">
@@ -96,12 +96,19 @@ export default function CaseStudyHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
           >
-            <div
+            <a
+              href="https://amyangusnaturopathy.com.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block no-underline group"
               style={{
                 background: '#e8e5e0', borderRadius: 16,
                 padding: '14px 14px 0',
                 boxShadow: '0 32px 80px rgba(0,0,0,0.4)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 40px 90px rgba(0,0,0,0.5)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 32px 80px rgba(0,0,0,0.4)' }}
             >
               <div className="flex items-center gap-1.5 mb-2.5">
                 <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ff6058' }} />
@@ -112,27 +119,48 @@ export default function CaseStudyHero() {
                   style={{ background: 'rgba(255,255,255,0.5)', borderRadius: 4, height: 18, marginLeft: 6 }}
                 >
                   <span style={{ fontSize: 9, color: 'var(--ink-light)', fontFamily: 'var(--font-body)' }}>
-                    amy-angus-naturopathy.com.au
+                    amyangusnaturopathy.com.au
                   </span>
                 </div>
               </div>
               <div
-                className="flex flex-col items-center justify-center gap-3"
                 style={{
                   borderRadius: '8px 8px 0 0', overflow: 'hidden',
                   aspectRatio: '16/10',
-                  background: 'linear-gradient(155deg, #f0f7f2 0%, #e6f2ea 100%)',
-                  fontFamily: 'var(--font-display)', fontSize: 16,
-                  fontStyle: 'italic', color: 'var(--sage-dark)',
+                  position: 'relative',
                 }}
               >
-                <div style={{ fontSize: 32, opacity: 0.3 }}>✦</div>
-                <div>Amy&apos;s live site</div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontStyle: 'normal', color: 'var(--sage)', opacity: 0.7, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                  Replace with screenshot
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/portfolio/amy-angus-naturopathy/desktop-after/preview-screenshot.png"
+                  alt="Amy Angus Naturopathy website homepage"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                />
+                <div
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: 'rgba(42,37,32,0.5)' }}
+                >
+                  <span
+                    className="inline-flex items-center gap-2"
+                    style={{
+                      background: 'rgba(255,255,255,0.95)',
+                      borderRadius: 100,
+                      padding: '10px 20px',
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: 'var(--ink)',
+                      fontFamily: 'var(--font-body)',
+                      letterSpacing: '0.02em',
+                    }}
+                  >
+                    Explore the live site
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 11L11 3M11 3H5M11 3v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
                 </div>
               </div>
-            </div>
+            </a>
           </motion.div>
 
         </div>

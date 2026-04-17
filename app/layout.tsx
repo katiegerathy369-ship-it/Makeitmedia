@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Small Business Website Design Australia | Make It Media',
   description:
-    'Custom websites for Australian small businesses — designed to attract clients and grow your business. From $2,200. Book a free strategy call.',
+    'Custom websites for Australian small businesses, designed to attract clients and grow your business. From $2,200. Book a free strategy call.',
   icons: [{ rel: 'icon', url: '/logo/favicon.svg', type: 'image/svg+xml' }],
 }
 

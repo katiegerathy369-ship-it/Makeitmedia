@@ -111,7 +111,7 @@ export default function PractitionersHero() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.9 }}
             className="text-[17px] leading-[1.7] text-ink-mid max-w-[520px] mb-10 font-light"
           >
-            Websites and marketing systems for naturopaths, nutritionists and health practitioners — designed by someone who understands your world from the inside.
+            Websites and marketing systems for naturopaths, nutritionists and health practitioners, designed by someone who understands your world from the inside.
           </motion.p>
 
           <motion.div

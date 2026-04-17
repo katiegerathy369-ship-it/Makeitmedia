@@ -76,7 +76,7 @@ export default function PractitionersNewBusiness() {
             </ul>
 
             <p className="text-[13px] text-ink-light font-light leading-[1.6] mt-2">
-              Applications are reviewed individually — not everyone will qualify, and that's intentional. I only take on new practices I can genuinely help.
+              Applications are reviewed individually. Not everyone will qualify, and that's intentional. I only take on new practices I can genuinely help.
             </p>
           </motion.div>
 
