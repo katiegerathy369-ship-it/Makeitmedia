@@ -88,7 +88,7 @@ export default function GuideHero() {
 
       <div className="max-w-container mx-auto px-12 w-full relative">
         <div className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr] gap-16 items-center">
-          {/* LEFT — copy */}
+          {/* LEFT: copy */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function GuideHero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.9 }}
               className="text-[17px] leading-[1.7] text-ink-mid max-w-[540px] mb-8 font-light"
             >
-              The silent conversion killers on practice websites — and exactly how to fix them. Written by a naturopath who builds practice sites full-time.
+              The silent conversion killers on practice websites, and exactly how to fix them. Written by a naturopath who builds practice sites full-time.
             </motion.p>
 
             <motion.ul
@@ -151,7 +151,7 @@ export default function GuideHero() {
             </motion.ul>
           </div>
 
-          {/* RIGHT — form card */}
+          {/* RIGHT: form card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

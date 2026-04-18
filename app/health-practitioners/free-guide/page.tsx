@@ -10,7 +10,7 @@ import GuideClosingCTA from '@/components/practitioners/free-guide/GuideClosingC
 export const metadata: Metadata = {
   title: '5 Website Mistakes Costing Health Practitioners Clients | Free Guide',
   description:
-    'Free PDF guide for Australian health practitioners. The 5 silent conversion killers on practice websites — and exactly how to fix them this weekend.',
+    'Free PDF guide for Australian health practitioners. The 5 silent conversion killers on practice websites, and exactly how to fix them this weekend.',
   openGraph: {
     title: '5 Website Mistakes Costing Health Practitioners Clients',
     description:

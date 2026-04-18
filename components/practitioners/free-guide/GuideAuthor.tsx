@@ -51,7 +51,7 @@ export default function GuideAuthor() {
 
             <div className="space-y-5">
               <p className="text-[16px] text-ink-mid font-light leading-[1.85]">
-                I'm Kate. I hold a Bachelor of Health Science in Naturopathy and I run Make It Media — an Australian web design studio for health practitioners.
+                I'm Kate. I hold a Bachelor of Health Science in Naturopathy and I run Make It Media, an Australian web design studio for health practitioners.
               </p>
               <p className="text-[16px] text-ink-mid font-light leading-[1.85]">
                 Every mistake in this guide is one I've seen on dozens of practitioner sites I've audited.{' '}

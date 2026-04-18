@@ -76,7 +76,7 @@ export default function PractitionersPortfolio() {
               <div className="aspect-[16/10] overflow-hidden bg-[#f5f3f0]">
                 <Image
                   src={project.image}
-                  alt={`${project.title} website design — health practitioner example`}
+                  alt={`${project.title} health practitioner website design example`}
                   width={840}
                   height={525}
                   className="w-full h-full object-cover object-left-top group-hover:scale-[1.03] transition-transform duration-500"

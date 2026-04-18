@@ -28,10 +28,11 @@ Read this file and all files in `.agents/` before touching anything.
 
 ### Copy
 - Never use: "transform," "unlock," "skyrocket," "game-changer," "innovative"
+- **Never use em-dashes (`—`) or en-dashes (`–`) in prose.** They're an AI-writing tell. Rewrite as two sentences, use a comma, or use parentheses. Hyphens stay in compound words ("post-pill"); en-dashes stay in numeric ranges ("2–3 weeks"). Full rules in `.agents/copy-standards.md`.
 - Always use: specific outcomes, business-appropriate language, evidence of expertise
-- Voice: direct, dry, confident — like a sharp colleague, not a salesperson
+- Voice: direct, dry, confident. Like a sharp colleague, not a salesperson.
 - All headlines must pass the 5-second clarity test
-- Homepage copy is general/broad — no practitioner-specific language
+- Homepage copy is general and broad. No practitioner-specific language there.
 - Practitioner-specific copy lives only on /health-practitioners
 
 ### SEO

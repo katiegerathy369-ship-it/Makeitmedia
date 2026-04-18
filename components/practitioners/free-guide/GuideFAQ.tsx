@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: 'Is there a cost?',
-    a: ['No. The guide is free. The follow-up emails are free. You can read it, apply the fixes yourself, and never speak to me — that\'s a perfectly good outcome.'],
+    a: ['No. The guide is free. The follow-up emails are free. You can read it, apply the fixes yourself, and never speak to me. That\'s a perfectly good outcome.'],
   },
   {
     q: 'What if I want help applying the fixes?',

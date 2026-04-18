@@ -39,10 +39,34 @@ empower, world-class, cutting-edge, next-level
   Good: "A 6-page website delivered in 3 weeks, from $2,200."
   Bad: "Affordable websites delivered quickly."
 - Benefits before features.
-  Good: "More enquiries, less admin — your website works while you're with clients."
+  Good: "More enquiries, less admin. Your website works while you're with clients."
   Bad: "Our websites include Cal.com booking integration and GA4 analytics."
 - No exclamation marks in web copy.
 - No passive voice.
+
+## Punctuation — Strict Rules
+
+**Never use em-dashes (`—`, U+2014) or en-dashes (`–`, U+2013) in prose.** Em-dashes are a tell for AI-generated copy and do not match this brand's voice. This rule is non-negotiable and applies to every user-facing surface: site copy, emails, lead magnets, PDFs, social captions, form success messages, alt text.
+
+**How to rewrite when tempted to use an em-dash:**
+- Two linked thoughts → period and a new sentence.
+  Good: "Most visitors don't read. They scan."
+  Bad: "Most visitors don't read — they scan."
+- Tightly linked clauses → comma.
+  Good: "Fix these five things, and you'll book more consultations."
+  Bad: "Fix these five things — and you'll book more consultations."
+- Parenthetical aside → commas or parentheses.
+  Good: "Chronic illness, burnout, fatigue (the exact patients you serve) have less bandwidth."
+  Bad: "Chronic illness, burnout, fatigue — the exact patients you serve — have less bandwidth."
+- Introducing a list or explanation → colon.
+  Good: "A lead magnet: a free guide, checklist, or resource."
+  Bad: "A lead magnet — a free guide, checklist, or resource."
+
+**Exceptions (these stay):**
+- Hyphens in compound words: "post-pill", "evidence-based", "in-person"
+- En-dashes in numeric ranges: "2–3 weeks", "100–150 words", "$600–$1,200", "2024–2026"
+
+**If a sentence feels clunky without the dash, rewrite the sentence.** Never substitute a plain hyphen (`-`) for sentence pauses.
 
 ## Headlines
 

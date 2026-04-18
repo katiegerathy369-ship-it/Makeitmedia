@@ -6,22 +6,22 @@ const mistakes = [
   {
     number: '01',
     title: 'Your homepage doesn\'t tell patients who you help in 5 seconds',
-    body: 'Generic openers, soft-focus stock photos, and "holistic" headlines that say nothing. Why patients close the tab in under 3 seconds — and the exact swap to make.',
+    body: 'Generic openers, soft-focus stock photos, and "holistic" headlines that say nothing. Why patients close the tab in under 3 seconds, and the exact swap to make.',
   },
   {
     number: '02',
     title: 'Your site is a wall of text. The eye has nowhere to land',
-    body: 'How visual hierarchy decides whether a fatigued, overwhelmed patient stays on your site or bounces — and the 5 layout rules that make any page scannable.',
+    body: 'How visual hierarchy decides whether a fatigued, overwhelmed patient stays on your site or bounces. Plus the 5 layout rules that make any page scannable.',
   },
   {
     number: '03',
     title: 'Your services page is vague. No one knows what things cost',
-    body: 'Why "book a consult to discuss pricing" is the #1 reason patients abandon practitioner sites — and what to display next to every service to convert.',
+    body: 'Why "book a consult to discuss pricing" is the #1 reason patients abandon practitioner sites, and what to display next to every service to convert.',
   },
   {
     number: '04',
     title: 'You have no clear next step. No booking button, no lead magnet',
-    body: 'Why 95% of website visitors aren\'t ready to book today — and how a single lead magnet captures the other 75% you\'re currently losing forever.',
+    body: 'Why 95% of website visitors aren\'t ready to book today, and how a single lead magnet captures the other 75% you\'re currently losing forever.',
   },
   {
     number: '05',
