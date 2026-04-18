@@ -83,57 +83,108 @@ Work through top to bottom. Check off as you go.
 
 ---
 
-## LinkedIn Optimisation (Parallel Track)
+## Social Profiles (Parallel Track) — Priority Order
 
-### Personal Profiles (You + Dad)
+Priority for Make It Media: **LinkedIn → Instagram → Facebook**. Optimise the top of the list first. TikTok is a separate question — see note at bottom.
+
+---
+
+### 1. LinkedIn (priority #1 — B2B buyers live here)
+
+**Company page — Make It Media (exists, needs polish):**
+- [ ] Upload logo 300x300px
+- [ ] Upload cover banner 1128x191px (sage or gold palette depending on positioning)
+- [ ] Tagline written (120 chars)
+- [ ] About section with keywords
+- [ ] Website, industry, size, HQ, founded filled
+- [ ] Specialties: 20 keyword tags
+- [ ] Custom URL set (e.g. linkedin.com/company/makeitmedia)
+- [ ] Products/Services tab populated
+- [ ] CTA button configured (link to /health-practitioners/guides/website-mistakes)
+- [ ] Pinned post set
+- [ ] Employees associated with page
+
+**Personal profile — Kate (critical; founder-led conversion):**
 - [ ] Professional headshot uploaded
 - [ ] Branded banner (1584x396px) with tagline + CTA
-- [ ] Headline rewritten (what you do | who you help | outcome)
-- [ ] Custom URL set
+- [ ] Headline rewritten: "Practitioner Web Design · Built by a naturopath (B.HSc) · Brisbane" or similar
+- [ ] Custom URL set (linkedin.com/in/kategerathy)
 - [ ] Location + industry correct
 - [ ] "Open to providing services" configured
-- [ ] About section — hook in first 3 lines, proof, keywords, CTA
-- [ ] Featured section — 3–6 pinned items with custom thumbnails
-- [ ] Experience descriptions written (outcomes, not duties)
+- [ ] About section (hook in first 3 lines, proof, keywords, CTA to guide)
+- [ ] Featured section: 3–6 pinned items with custom thumbnails (guide, case study, website link)
+- [ ] Experience descriptions (outcomes, not duties)
 - [ ] Top 3 skills pinned + endorsements requested
 - [ ] 3+ recommendations given, 3+ received
 - [ ] Education, licenses, volunteer filled in
 
-### Make It Media Company Page
-- [ ] Logo 300x300px uploaded
-- [ ] Cover banner 1128x191px on-brand
-- [ ] Tagline written (120 chars)
-- [ ] About section with keywords
-- [ ] Website, industry, size, HQ, founded filled
-- [ ] Specialties — 20 keyword tags
-- [ ] Custom URL set
-- [ ] Products/Services tab populated
-- [ ] CTA button configured
-- [ ] Pinned post set
-- [ ] Employees associated with page
-
-### Austplan Company Page
+**Austplan company page (if still relevant):**
 - [ ] Logo uploaded
 - [ ] Cover banner on-brand
-- [ ] Tagline written
-- [ ] About section with keywords
-- [ ] Website, industry, size, HQ, founded filled
-- [ ] Specialties — 20 keyword tags
+- [ ] Tagline + About + company info filled
 - [ ] Custom URL set
-- [ ] Products/Services tab populated
-- [ ] CTA button configured
-- [ ] Pinned post set
-- [ ] Employees associated with page
+- [ ] Employees associated
 
-### Cross-Check
-- [ ] Personal profiles link to company pages (role tagged)
-- [ ] Messaging consistent across personal ↔ company
+**Cross-check:**
+- [ ] Personal profile links to company pages (role tagged)
+- [ ] Messaging consistent across personal and company
 - [ ] All website links live + correct
 - [ ] Mobile render checked
 - [ ] SSI score baseline noted (linkedin.com/sales/ssi)
 
 ---
 
+### 2. Instagram — @makeitmedia.ig (priority #2 — practitioners live here)
+
+**Account setup:**
+- [x] Handle claimed: @makeitmedia.ig
+- [x] Name field: `Kate | Practitioner Web Design` (30 chars, keyword-loaded)
+- [x] Bio written: *"Websites + marketing systems for health practitioners. Naturopath (B.HSc) · Brisbane. ↓ 5 Website Mistakes Costing Health Practitioners Clients"*
+- [ ] Profile photo uploaded (Kate's face, not logo — founder-led converts better)
+- [ ] Account category: **Business → Web Designer**
+- [ ] Link set to /health-practitioners/guides/website-mistakes
+- [ ] Link label: "Free 10-page guide"
+- [ ] Contact button: email (`hello@makeitmedia.io` or business email)
+
+**Pre-launch content:**
+- [ ] 9 starter posts drafted (3 grid rows for visual coherence before first follower lands)
+- [ ] 3 highlight covers designed (About · Work · Guide)
+- [ ] 1 pinned post: lead magnet announcement
+
+---
+
+### 3. Facebook — Make It Media page (priority #3 — organic reach improving, monetisation rolling out)
+
+**Why now:** Facebook organic reach has ticked up (~8% avg in 2025–26) and the platform is expanding Creator monetisation. Worth a low-effort presence, even if it's just repurposed Instagram content.
+
+**Setup:**
+- [ ] Claim page name "Make It Media"
+- [ ] Logo (180x180px)
+- [ ] Cover photo (820x312px)
+- [ ] Category: Web Designer / Marketing Agency
+- [ ] About section filled with keywords
+- [ ] Services tab populated (websites + marketing systems)
+- [ ] Website + contact email linked
+- [ ] CTA button: "Learn More" → /health-practitioners/guides/website-mistakes
+- [ ] Link Instagram account (cross-post Reels and feed posts automatically)
+
+**Strategy:**
+- [ ] Do NOT create original content for Facebook — repurpose Instagram posts via cross-posting
+- [ ] Join 3–5 Australian small-business / practitioner Facebook groups for listening only (don't pitch)
+
+---
+
 ## 🚀 Launch Gate
 
-Only start posting content when all of **Phase 1** is ✅ and LinkedIn profiles + company pages are ✅.
+Only start posting content when all of **Phase 1** is ✅ and LinkedIn personal + company pages are ✅. Instagram + Facebook can go live in parallel with first posts — they don't gate the launch.
+
+---
+
+## TikTok — Note (not a Make It Media channel)
+
+Kate's existing TikTok (80K+) is a COVID-era wellness/health audience, not a practitioner audience. Do NOT try to force Make It Media content into it — the match is too weak and will tank engagement across the whole account.
+
+**What to do with it instead:**
+- Hold the audience for the hormonal acne case study (planned May 2026). That audience IS the ICP for that offer.
+- Optional light touch: 1–2 "why I pivoted from naturopathy to web design" posts to plant the seed with wellness-adjacent practitioners. Don't make it a campaign.
+- For Make It Media specifically: start a fresh TikTok later (month 3+) if Instagram/LinkedIn traction warrants it. Don't rush this.
