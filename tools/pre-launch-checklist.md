@@ -1,3 +1,4 @@
+
 # Pre-Launch Checklist — Make It Media
 
 Work through top to bottom. Check off as you go.
@@ -7,26 +8,26 @@ Work through top to bottom. Check off as you go.
 ## 🟢 Phase 1 — Must-Have Before First Social Post
 
 ### Email Platform + Delivery
-- [ ] Choose email platform (ConvertKit/Kit, MailerLite, or Beehiiv)
+- [x] Choose email platform (ConvertKit/Kit, MailerLite, or Beehiiv) — **Kit free plan**
 - [ ] Connect domain / verify sender email
 - [ ] Set up brand template (logo, colours, footer)
-- [ ] Build lead magnet delivery email (instant auto-send on signup)
-- [ ] Write welcome sequence — 3–5 emails over 7–14 days
-  - [ ] Email 1: Deliver lead magnet + set expectations
+- [x] Build lead magnet delivery email (instant auto-send on signup) — **Kit incentive email live**
+- [~] Write welcome sequence — 3–5 emails over 7–14 days (blocked: Kit free doesn't support sequences; upgrade at ~50 subs or draft as broadcasts)
+  - [x] Email 1: Deliver lead magnet + set expectations — **incentive email handles this**
   - [ ] Email 2: Story / credibility
   - [ ] Email 3: Value / quick win
   - [ ] Email 4: Case study or social proof
   - [ ] Email 5: Soft CTA to book strategy call
 
 ### Lead Magnets + Landing Pages
-- [ ] Decide on 1–3 higher-ticket lead magnets (topics + formats)
-- [ ] Create lead magnet 1 (PDF/guide/template)
+- [~] Decide on 1–3 higher-ticket lead magnets (topics + formats) — **#1 done, #2 and #3 not yet chosen**
+- [x] Create lead magnet 1 (PDF/guide/template) — **"5 Website Mistakes Costing Health Practitioners Clients", 10-page PDF**
 - [ ] Create lead magnet 2
 - [ ] Create lead magnet 3
-- [ ] Build landing page 1 on site (form connected to email platform)
+- [x] Build landing page 1 on site (form connected to email platform) — **/health-practitioners/guides/website-mistakes, Kit form embedded + exit-intent modal**
 - [ ] Build landing page 2
 - [ ] Build landing page 3
-- [ ] Test: submit form → email arrives → magnet delivers
+- [x] Test: submit form → email arrives → magnet delivers — **verified end-to-end**
 
 ### ManyChat + Social DM Automation
 - [ ] Set up ManyChat account + connect Instagram
