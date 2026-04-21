@@ -41,3 +41,10 @@ public/images/portfolio/concept-womens-health-coach-shethrivesco/retreats video.
 # private / not for deploy
 Invoices/
 logo-deisng_files/
+
+# INTERNAL STRATEGY (never commit — repo is public)
+# Contains competitor intel, CEO Brain, private-community context, and unpublished positioning
+.strategy/
+
+# Memory / Claude working files (keep local only)
+.claude/memory/
