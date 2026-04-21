@@ -8,6 +8,7 @@ import PractitionersFAQ from '@/components/practitioners/PractitionersFAQ'
 import PractitionersNewBusiness from '@/components/practitioners/PractitionersNewBusiness'
 import PractitionersContact from '@/components/practitioners/PractitionersContact'
 import ExitIntentModal from '@/components/practitioners/ExitIntentModal'
+import CalSection from '@/components/CalSection'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -29,6 +30,7 @@ export default function HealthPractitioners() {
         <PractitionersPortfolio />
         <PractitionersAbout />
         <PractitionersFAQ />
+        <CalSection variant="practitioner" />
         <PractitionersContact />
       </main>
       <Footer />
