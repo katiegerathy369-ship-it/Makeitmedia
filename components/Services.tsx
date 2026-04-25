@@ -10,7 +10,7 @@ const tiers = [
     name: 'Presence',
     desc: 'Your professional home online, custom-built and conversion-ready.',
     price: 2200,
-    priceNote: '+ GST · one-time · founding rate',
+    priceNote: 'AUD · + GST · one-time · founding rate',
     monthly: true,
     features: [
       'Custom 6-page website, built from scratch',
@@ -29,7 +29,7 @@ const tiers = [
     name: 'Visibility',
     desc: 'Website plus a full 30-day marketing launch to start driving leads immediately.',
     price: 3200,
-    priceNote: '+ GST · one-time · founding rate',
+    priceNote: 'AUD · + GST · one-time · founding rate',
     monthly: true,
     features: [
       'Everything in Presence',
@@ -47,7 +47,7 @@ const tiers = [
     name: 'Growth',
     desc: 'Ongoing marketing management so you can focus on running your business.',
     price: 997,
-    priceNote: '+ GST · per month · founding rate',
+    priceNote: 'AUD · + GST · per month · founding rate',
     monthly: false,
     features: [
       '12 Instagram posts/month',
@@ -78,7 +78,7 @@ function getDisplayPrice(card: typeof tiers[0], mode: PaymentMode) {
 function getPriceNote(card: typeof tiers[0], mode: PaymentMode) {
   if (!card.monthly) return card.priceNote
   if (mode === 'upfront') return card.priceNote
-  return `+ GST · per week × ${INSTALLMENTS} weeks · founding rate`
+  return `AUD · + GST · per week × ${INSTALLMENTS} weeks · founding rate`
 }
 
 const regularVariants = {

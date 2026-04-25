@@ -138,6 +138,29 @@ export default function PractitionersHero() {
               </svg>
             </a>
           </motion.div>
+
+          {/* Above-the-fold social proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 1.3 }}
+            className="mt-12 flex items-start gap-4 max-w-[520px]"
+          >
+            <div className="w-px bg-sage-light flex-shrink-0 self-stretch min-h-[64px]" />
+            <div>
+              <p className="font-display italic text-sage-dark text-[18px] leading-[1.5] mb-2.5">
+                Exceeded my expectations in every way. The final result looks polished, modern, and exactly on brand.
+              </p>
+              <div className="flex items-center gap-2.5">
+                <div className="font-display flex items-center justify-center w-8 h-8 rounded-full bg-sage-light text-[14px] font-medium text-sage-dark">
+                  A
+                </div>
+                <div className="text-[13px] text-ink-mid font-normal">
+                  Amy Angus <span className="text-ink-light">· Naturopath, Brisbane</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -114,6 +114,9 @@ export default function StudentDiscount() {
               </div>
 
               {/* Pricing rows */}
+              <div className="text-[11px] text-ink-light font-medium tracking-[0.12em] uppercase mb-3">
+                Prices shown in AUD
+              </div>
               <div className="flex flex-col gap-3 mb-5">
                 {startupPrices.map((row) => (
                   <div
